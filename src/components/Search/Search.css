@@ -1,0 +1,28 @@
+.Search form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+}
+
+.Search input {
+  padding-left: 15px;
+  min-width: 290px;
+  width: 83%;
+  max-width: 332px;
+  height: 36.4px;
+}
+
+.Search button {
+  width: 80px;
+  height: 42px;
+  margin: 0;
+  border: 2px solid black;
+  font-size: 17px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Search h1 {
+  font-size: 58px;
+}
