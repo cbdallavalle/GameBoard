@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import $ from 'jquery';
+import { cleanSearch } from '../../helper/bg-api-cleaner';
 import './Search.css';
 
 export class Search extends Component {
@@ -24,16 +24,19 @@ export class Search extends Component {
   }
 
   triggerSearch = async () => {
-    const search = this.state.search.toLowerCase().split(' ').join('%20');
-    console.log(search)
+    // const search = this.state.search.toLowerCase().split(' ').join('+');
+    // console.log(search)
     // const response = await fetch(`https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=${search}`);
-    // const response = await fetch(`https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=pandemic`);
-    // const responseText = await response.text();
-    // const games = new window.DOMParser().parseFromString(responseText, "text/xml")
-    // console.log(games)
-  // "proxy": "https://cors-anywhere.herokuapp.com/"
-    
-    // console.log(JSON.stringify(games))
+    const response = await fetch(`https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=pandemic&type=boardgame`);
+    const responseText = await response.text();
+    // const xmlText = new window.DOMParser().parseFromString(responseText, "text/xml")
+    console.log('pending...');
+
+    var convert = require('xml-js');
+    var options = {ignoreComment: true, alwaysChildren: true };
+    var result = convert.xml2js(responseText, options);
+    const games = cleanSearch(result);
+    console.log(games);
   }
 
   render() {

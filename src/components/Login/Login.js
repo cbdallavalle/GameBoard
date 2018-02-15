@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import dice from '../../assets/dice.gif';
+import { loginUser } from '../../actions';
 // import { NavLink } from 'react-router-dom';
 import './Login.css'
 
@@ -7,12 +8,19 @@ export class Login extends Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      username: '',
-      password: '',
+      user: {
+        name: '',
+        username: '',
+        password: ''
+      },
       displayCreate: false,
     }
   }
+
+  // handleChange = e => {
+  //   e.preventDefault();
+  //   this.setState({})
+  // }
 
   determineDisplay = () => {
     return this.state.displayCreate ?
@@ -76,5 +84,9 @@ export class Login extends Component {
     )
   }
 }
+
+// const mapDispatchToProps = dispatch => ({
+//   addUser = user => dispatch(loginUser({}))
+// })
 
 export default Login;
