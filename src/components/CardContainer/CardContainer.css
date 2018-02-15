@@ -1,0 +1,6 @@
+.CardContainer {
+  width: 450px;
+  height: 650px;
+  background-color: #f4f4f4a6;
+  overflow-y: scroll;
+}

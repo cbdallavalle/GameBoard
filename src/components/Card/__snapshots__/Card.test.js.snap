@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="game-info"
+>
+          <div
+                    className="info-div"
+          />
+          <h3>
+                    Above and Below
+          </h3>
+          <p>
+                    Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d
+          </p>
+</div>,
+        <div
+          className="review-cont"
+>
+          <h3>
+                    Review
+          </h3>
+          <p>
+                    Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d
+          </p>
+</div>,
+      ],
+      "className": "Card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="info-div"
+/>,
+            <h3>
+              Above and Below
+</h3>,
+            <p>
+              Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d
+</p>,
+          ],
+          "className": "game-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "info-div",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Above and Below",
+            },
+            "ref": null,
+            "rendered": "Above and Below",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d",
+            },
+            "ref": null,
+            "rendered": "Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3>
+              Review
+</h3>,
+            <p>
+              Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d
+</p>,
+          ],
+          "className": "review-cont",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Review",
+            },
+            "ref": null,
+            "rendered": "Review",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d",
+            },
+            "ref": null,
+            "rendered": "Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="game-info"
+>
+            <div
+                        className="info-div"
+            />
+            <h3>
+                        Above and Below
+            </h3>
+            <p>
+                        Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d
+            </p>
+</div>,
+          <div
+            className="review-cont"
+>
+            <h3>
+                        Review
+            </h3>
+            <p>
+                        Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d
+            </p>
+</div>,
+        ],
+        "className": "Card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="info-div"
+/>,
+              <h3>
+                Above and Below
+</h3>,
+              <p>
+                Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d
+</p>,
+            ],
+            "className": "game-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "info-div",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Above and Below",
+              },
+              "ref": null,
+              "rendered": "Above and Below",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d",
+              },
+              "ref": null,
+              "rendered": "Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                Review
+</h3>,
+              <p>
+                Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d
+</p>,
+            ],
+            "className": "review-cont",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Review",
+              },
+              "ref": null,
+              "rendered": "Review",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d",
+              },
+              "ref": null,
+              "rendered": "Awvkjs asjdfna awelsd alhwo ,s dlfoie als fljasef d,aslifhawelf sd,mnsld aleledld asjld. asdfd sljf e wls lksdf sld lkjf woe ij aldk asldkf d",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "article",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
