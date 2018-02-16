@@ -5,11 +5,13 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "xml-js": "^1.6.2",
+    "xml2js": "^0.4.19"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,7 +24,10 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.17.0",
+    "fs": "0.0.1-security",
+    "jquery": "^3.2.1",
     "prop-types": "^15.6.0",
     "redux-devtools": "^3.4.1"
-  }
+  },
+  "proxy": "https://cors-anywhprcalere.herokuapp.com/"
 }
