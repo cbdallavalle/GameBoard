@@ -13,6 +13,7 @@ h1 {
   font-family: 'Righteous', cursive;
   font-size: 81px;
   margin-bottom: 15px;
+  color: #313131;
 }
 
 form {
@@ -29,7 +30,7 @@ form {
 }
 
 .create-account input {
-  margin: 6px 0;
+  margin: 15px 0 0 0;
 }
 
 .login-input {
@@ -43,6 +44,14 @@ form {
 
 .login-input::placeholder {
   font-size: 13px;
+}
+
+#toggle-account {
+  background-color: #ffffff7a;
+  width: 245px;
+  padding: 8px;
+  border-radius: 11px;
+  margin: 10px auto 15px auto;
 }
 
 #dice-img {
