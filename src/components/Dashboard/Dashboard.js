@@ -6,19 +6,6 @@ import { Link } from 'react-router-dom';
 import './Dashboard.css';
 
 export class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      gameSearch: '',
-      friendSearch: ''
-    }
-  }
-
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
 
   render() {
     return (
@@ -30,19 +17,9 @@ export class Dashboard extends Component {
           </h2>
           <CardContainer />
           <div className="search">
-            <input 
-              type="text"
-              placeholder="Search Games..."
-              name="gameSearch"
-              onChange={this.handleChange}
-              value={this.state.gameSearch}
-            />
             <Link to='/search'>
-              <button 
-                id="search-btn"
-                onClick={() => this.props.addSearch(this.state.gameSearch)}
-              >
-                Search
+              <button id="search-btn">
+                Search for games 
               </button>
             </Link>
           </div>
@@ -54,14 +31,7 @@ export class Dashboard extends Component {
           </h2>
           <CardContainer />
           <div className="search">
-            <input 
-              type="text"
-              placeholder="Search Friends..."
-              name="friendSearch"
-              value={this.state.friendSearch}
-              onChange={this.handleChange}
-            />
-            <button id="search-btn">Search</button>
+            <button id="search-btn">Search for friends</button>
           </div>
         </section>
       </section>

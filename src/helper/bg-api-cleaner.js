@@ -18,3 +18,13 @@ export const cleanGameDetails = game => {
     return {...gameDetails, id}
   })
 }
+
+export const fetchBoardGames = async url => {
+  const response = await fetch(url);
+  const responseText = await response.text();
+
+  const convert = require('xml-js');
+  const options = {ignoreComment: true, alwaysChildren: true };
+  const result = convert.xml2js(responseText, options);
+  return result
+}

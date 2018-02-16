@@ -1,37 +1,27 @@
 import React, { Component } from 'react';
 import dice from '../../assets/dice.gif';
 import { loginUser } from '../../actions';
-// import { NavLink } from 'react-router-dom';
 import './Login.css'
 
 export class Login extends Component {
   constructor() {
     super();
     this.state = {
-      user: {
-        name: '',
-        username: '',
-        password: ''
-      },
+      name: '',
+      username: '',
+      password: '',
       displayCreate: false,
     }
   }
 
-  // handleChange = e => {
-  //   e.preventDefault();
-  //   this.setState({})
-  // }
+  handleChange = e => {
+    e.preventDefault();
+    this.setState({ [e.target.name]: e.target.value })
+  }
 
   determineDisplay = () => {
     return this.state.displayCreate ?
     <div className="create-account">
-      <input 
-        type="text"
-        className="login-input"
-        placeholder="Name"
-        name="name"
-        value={ this.state.name }
-      />
       <p 
         id="toggle-account"
         onClick={ this.toggleDisplay }
@@ -39,6 +29,14 @@ export class Login extends Component {
         Already have an account? Log in!      
         <i className="fas fa-mouse-pointer" id="pointer"></i>
       </p>
+      <input 
+        type="text"
+        className="login-input"
+        placeholder="Name"
+        name="name"
+        value={ this.state.name }
+        onChange={ this.handleChange }
+      />
 
     </div>
     :
@@ -60,15 +58,18 @@ export class Login extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <form action="submit">
         <img src={ dice } alt="dice-logo" id="dice-img"/>
         <h1>Game Board</h1>
+        { this.determineDisplay() }
         <input 
           type="email"
           className="login-input"
-          placeholder="Email"
+          placeholder="Username"
           name="username"
+          onChange={ this.handleChange }
           value={ this.state.username }
         />
         <input 
@@ -76,10 +77,10 @@ export class Login extends Component {
           className="login-input"
           placeholder="Password"
           name="password"
+          onChange={ this.handleChange }
           value={ this.state.password }
         />
         <button className="LogIn">Log In!</button>
-        { this.determineDisplay() }
       </form>
     )
   }

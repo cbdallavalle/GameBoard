@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { cleanSearch, cleanGameDetails } from '../../helper/bg-api-cleaner';
+import { searchGames } from '../../actions';
+import * as api from '../../helper/bg-api-cleaner';
 import './Search.css';
 
 export class Search extends Component {
@@ -8,13 +9,9 @@ export class Search extends Component {
     super(props);
     this.state = {
       games: [],
-      search: this.props.search,
+      search: '',
       game: {}
     }
-  }
-
-  componentDidMount = () => {
-    this.triggerSearch();
   }
 
   handleChange = e => {
@@ -24,55 +21,49 @@ export class Search extends Component {
     })
   }
 
-  triggerSearch = async () => {
-    const search = this.state.search.toLowerCase().split(' ').join('+');
-    const response = await fetch(`https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=${search}`);
-    const responseText = await response.text();
+  handleSubmit = e => {
+    e.preventDefault();
+    this.triggerSearch(this.state.search);
+    this.setState({search: ''})
+  }
 
-    const convert = require('xml-js');
-    const options = {ignoreComment: true, alwaysChildren: true };
-    const result = convert.xml2js(responseText, options);
-    const games = cleanSearch(result);
-    console.log(games)
+  triggerSearch = async (string) => {
+    const search = string.toLowerCase().split(' ').join('+');
+    const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=${search}`)
+    const games = api.cleanSearch(result);
     this.setState({ games });  
   }
 
   handleChooseGame = async (gameSelected) => {
     const { id, name } = gameSelected;
-    const response = await fetch(`https://cors-anywhere.herokuapp.com/https://www.boardgamegeek.com/xmlapi2/thing?id=${id}`);
-    const responseText = await response.text();
-
-    const convert = require('xml-js');
-    const options = {ignoreComment: true, alwaysChildren: true };
-    const result = convert.xml2js(responseText, options);
-    const game = {...cleanGameDetails(result)[0], name};
-    console.log(game)
+    const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/https://www.boardgamegeek.com/xmlapi2/thing?id=${id}`);
+    const game = {...api.cleanGameDetails(result)[0], name};
     this.setState({game})
   }
 
   displayAllGames = () => {
-    return this.state.games.map((game, index) => <h3 key={index} onClick={() => this.handleChooseGame(game)}>{game.name}</h3> )
+    return this.state.games.length 
+      ? this.state.games.map((game, index) => <h3 key={index} onClick={() => this.handleChooseGame(game)}>{game.name}</h3> )
+      : <h4> No search results currently </h4>
   }
 
   displayGame = () => {
-    return this.state.game.thumbnail ?
-      <article className="game-description">
+    return this.state.game.thumbnail 
+    ?  <article className="game-description">
         <img src={this.state.game.thumbnail} alt="game-image" />
         <div>
           <h4>{this.state.game.name}</h4>
           <p>{this.state.game.description}</p>
         </div>
       </article>
-      :
-      <div>
-      </div>
+    : <div></div>
   }
 
   render() {
     return (
       <section className='Search'>
         <h1>Search for Games</h1>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input 
             type="text"
             name="search"
@@ -85,14 +76,10 @@ export class Search extends Component {
         <section className='search-results'>
           { this.displayAllGames() }
         </section>
-          { this.displayGame() }
+        { this.displayGame() }
       </section>
     )
   }
 }
 
-export const mapStateToProps = state => ({
-  search: state.search
-})
-
-export default connect(mapStateToProps, null)(Search);
+export default Search;
