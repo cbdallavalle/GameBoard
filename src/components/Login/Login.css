@@ -1,10 +1,11 @@
-.submit button {
+#submit-btn {
   min-width: 311px;
   width: 88%;
   max-width: 350px;
   height: 42px;
   margin: 15px 0 7px 0;
-  border: 2px solid black;
+  border: 2px solid #9b9a9a;
+  background-color: #f4f4f4a6;
   font-size: 17px;
   font-family: 'Open Sans', sans-serif;
 }
