@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import dice from '../../assets/dice.gif';
 import { loginUser } from '../../actions';
+import { auth } from '../../firebase';
+import { Link, withRouter } from 'react-router-dom';
 import './Login.css'
+
+const initialState = {
+  name: '',
+  email: '',
+  passwordOne: '',
+  passwordTwo: '',
+  error: null,
+  displayCreate: 'login',
+}
 
 export class Login extends Component {
   constructor() {
     super();
-    this.state = {
-      name: '',
-      username: '',
-      password: '',
-      displayCreate: false,
-    }
+    this.state = {  ...initialState }
   }
 
   handleChange = e => {
@@ -20,7 +26,7 @@ export class Login extends Component {
   }
 
   determineDisplay = () => {
-    return this.state.displayCreate ?
+    return this.state.displayCreate === 'signup' ?
     <div className="create-account">
       <p 
         id="toggle-account"
@@ -37,7 +43,14 @@ export class Login extends Component {
         value={ this.state.name }
         onChange={ this.handleChange }
       />
-
+      <input 
+        type="password"
+        className="login-input"
+        placeholder="Retype password"
+        name="passwordTwo"
+        onChange={ this.handleChange }
+        value={ this.state.passwordTwo }
+      />
     </div>
     :
     <div>
@@ -53,34 +66,85 @@ export class Login extends Component {
   }
 
   toggleDisplay = () => {
-    const displayCreate = !this.state.displayCreate;
-    this.setState({ displayCreate })
+    const displayCreate = this.state.displayCreate === 'login' ? 'signup' : 'login';
+    this.setState({ displayCreate, name: '' })
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const {
+      name,
+      email,
+      passwordOne,
+    } = this.state;
+    
+    this.state.name ? this.signUp(email, passwordOne) : this.logIn(email, passwordOne);
+  }
+
+  signUp = async (email, passwordOne) => {
+    const { history } = this.props;
+
+    try {
+      const user = await auth.doCreateUserWithEmailAndPassword(email, passwordOne);
+      console.log(user);
+      this.setState({ ...initialState })
+      history.push('/');
+    } catch(error) {
+      console.log(error)
+      this.setState({ error })
+    }
+  }
+
+  logIn = async (email, password) => {
+    const { history } = this.props;
+
+    try {
+      await auth.doSignInWithEmailAndPassword(email, password);
+      this.setState({ ...initialState })
+      history.push('/');
+    } catch(error) {
+      console.log(error)
+      this.setState({ error })
+    }
+  }
+
+  determineInvalid = () => {
+    if(this.state.displayCreate === 'login') {
+      return (this.state.email === '' || this.state.passwordOne === '');
+    } else {
+      return (
+        this.state.passwordOne !== this.state.passwordTwo ||
+        this.state.passwordOne === '' ||
+        this.state.email === '' ||
+        this.state.name === ''
+      )
+    }
   }
 
   render() {
-    console.log(this.state)
     return (
-      <form action="submit">
+      <form action="submit" onSubmit={this.handleSubmit}>
         <img src={ dice } alt="dice-logo" id="dice-img"/>
         <h1>Game Board</h1>
         { this.determineDisplay() }
         <input 
           type="email"
           className="login-input"
-          placeholder="Username"
-          name="username"
+          placeholder="email"
+          name="email"
           onChange={ this.handleChange }
-          value={ this.state.username }
+          value={ this.state.email }
         />
         <input 
           type="password"
           className="login-input"
           placeholder="Password"
-          name="password"
+          name="passwordOne"
           onChange={ this.handleChange }
-          value={ this.state.password }
-        />
-        <button className="LogIn">Log In!</button>
+          value={ this.state.passwordOne }
+        />        
+        <button disabled={this.determineInvalid()} className="LogIn" id="submit-btn">Log In!</button>
+        { this.state.error && <p>{this.state.error.message}</p> }
       </form>
     )
   }
@@ -90,4 +154,4 @@ export class Login extends Component {
 //   addUser = user => dispatch(loginUser({}))
 // })
 
-export default Login;
+export default withRouter(Login);

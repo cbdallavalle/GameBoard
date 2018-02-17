@@ -3,6 +3,7 @@ import { CardContainer } from '../CardContainer/CardContainer';
 import { searchGames } from '../../actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { SignOutBtn } from '../SignOutBtn/SignOutBtn';
 import './Dashboard.css';
 
 export class Dashboard extends Component {
@@ -24,6 +25,7 @@ export class Dashboard extends Component {
             </Link>
           </div>
         </section>
+        <SignOutBtn />
         <section>
           <h2>
             <i className="fas fa-users"></i>
