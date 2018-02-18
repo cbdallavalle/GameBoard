@@ -25,14 +25,14 @@ export class AddFriends extends Component {
     const search = e.target.value.toLowerCase();
     const users = this.state.allUsers
     const userIds = Object.keys(users);
-    const matches = userIds.filter(id => (users[id].email.toLowerCase().includes(search) || users[id].username.toLowerCase().includes(search)))
+    const matches = userIds.filter(id => (users[id].email.toLowerCase().includes(search) || users[id].firstName.toLowerCase().includes(search) || users[id].lastName.toLowerCase().includes(search)))
     const usersSearched = matches.map(id => users[id]);
     this.setState({usersSearched})
   }
 
   displayFriends = () => {
     return this.state.usersSearched.length ?
-    this.state.usersSearched.map( (user, index) => <h4 key={index}>{user.username}, {user.email}</h4>)
+    this.state.usersSearched.map( (user, index) => <h4 key={index}>{user.firstName} {user.lastName}, {user.email}</h4>)
     : <div>No friends found :(</div>
   }
 
