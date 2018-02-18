@@ -3,9 +3,9 @@ export const loginUser = user => ({
   user
 })
 
-export const addGame = game => ({
-  type: 'ADD_GAME',
-  game
+export const updateFavorites = favorites => ({
+  type: 'UPDATE_FAVORITES',
+  favorites
 }) 
 
 

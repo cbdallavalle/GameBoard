@@ -1,7 +1,7 @@
 export const gameReducer = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_GAME' :
-      return [...state, action.game]
+    case 'UPDATE_FAVORITES' :
+      return action.favorites
     default:
       return state
   }
