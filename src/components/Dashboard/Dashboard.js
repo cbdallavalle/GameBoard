@@ -41,8 +41,4 @@ export class Dashboard extends Component {
   }
 }
 
-export const mapDispatchToProps = dispatch => ({
-  addSearch: search => dispatch(searchGames(search)),
-})
-
-export default connect(null, mapDispatchToProps)(Dashboard);
+export default connect(null, null)(Dashboard);

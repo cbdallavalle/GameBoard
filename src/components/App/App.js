@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-// import Login from '../Login/Login';
 import Main from '../Main/Main';
 import { auth } from '../../firebase';
 import { loginUser } from '../../actions';
 import './App.css';
 
-class App extends Component {
+export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,12 +22,7 @@ class App extends Component {
         : this.props.loginUser(null)
     });
   }
-
-  // putUserInStore = (user) => {
-  //   this.setState(() => ({ authUser }))
-  //   this.props.loginUser(user)
-  // }
-
+  
   render() {
     return (
       <div className="App">
