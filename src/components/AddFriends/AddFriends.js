@@ -18,7 +18,8 @@ export class AddFriends extends Component {
   getAllUsers = async() => {
     const snapshot = await db.onceGetUsers();
     const value = await snapshot.val();
-    this.setState({ allUsers: value });
+    const allUsers = Object.keys(value).map( key =>{ return {...value[key].user, key}} );
+    this.setState({ allUsers });
   }
 
   handleChange = e => {
@@ -37,6 +38,7 @@ export class AddFriends extends Component {
   }
 
   render() {
+    console.log(this.state.allUsers)
     return (
       <section className="AddFriends">
         <h1>Find new friend</h1>

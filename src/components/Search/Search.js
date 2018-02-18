@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 // import { searchGames } from '../../actions';
+import { db } from '../../firebase';
 import * as api from '../../helper/bg-api-cleaner';
 import './Search.css';
 
@@ -38,7 +39,6 @@ export class Search extends Component {
     const { id, name } = gameSelected;
     const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/https://www.boardgamegeek.com/xmlapi2/thing?id=${id}`);
     const game = {...api.cleanGameDetails(result)[0], name};
-    console.log(game)
     this.setState({game})
   }
 
@@ -48,9 +48,26 @@ export class Search extends Component {
       : <h4> No search results currently </h4>
   }
 
+  getGamesFromDB = async () => {
+    const userId = this.props.user.uid
+    const snapshot = await db.onceGetUsers();
+    const value = await snapshot.val();
+    const favorites = value[userId].favorites;
+    console.log(favorites)
+    //find that user from db info and pull favorites
+    //update store with favorites
+    // const allUsers = Object.keys(value).map( key =>{ return {...value[key].user, key}} );
+  }
+
+  addGameToFavorites = async() => {
+    await db.doWriteFavoriteData(this.props.user.uid, this.state.game)
+    await this.getGamesFromDB()
+  }
+
   displayGame = () => {
     return this.state.game.thumbnail 
     ?  <article className="game-description">
+        <button id="add-game" onClick={this.addGameToFavorites}>Add game to favorites</button>
         <img src={this.state.game.thumbnail} alt="game-icon" />
         <div>
           <h4>{this.state.game.name}</h4>
@@ -83,4 +100,8 @@ export class Search extends Component {
   }
 }
 
-export default Search;
+export const mapStateToProps = state => ({
+  user: state.user
+})
+
+export default connect(mapStateToProps, null)(Search);
