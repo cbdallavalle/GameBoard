@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { searchGames } from '../../actions';
+// import { connect } from 'react-redux';
+// import { searchGames } from '../../actions';
 import * as api from '../../helper/bg-api-cleaner';
 import './Search.css';
 
@@ -50,7 +50,7 @@ export class Search extends Component {
   displayGame = () => {
     return this.state.game.thumbnail 
     ?  <article className="game-description">
-        <img src={this.state.game.thumbnail} alt="game-image" />
+        <img src={this.state.game.thumbnail} alt="game-icon" />
         <div>
           <h4>{this.state.game.name}</h4>
           <p>{this.state.game.description}</p>

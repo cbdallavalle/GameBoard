@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import Login from '../Login/Login';
-import { Main } from '../Main/Main';
-import { firebase, auth } from '../../firebase';
+// import Login from '../Login/Login';
+import Main from '../Main/Main';
+import { auth } from '../../firebase';
+import { loginUser } from '../../actions';
 import './App.css';
 
 class App extends Component {
@@ -18,18 +19,27 @@ class App extends Component {
   componentDidMount = async () => {
     await auth.onAuthStateChanged(authUser => {
       authUser
-        ? this.setState(() => ({ authUser }))
-        : this.setState(() => ({ authUser: null }));
+        ? this.props.loginUser(authUser)
+        : this.props.loginUser(null)
     });
   }
+
+  // putUserInStore = (user) => {
+  //   this.setState(() => ({ authUser }))
+  //   this.props.loginUser(user)
+  // }
 
   render() {
     return (
       <div className="App">
-        <Main authUser={ this.state.authUser }/>
+        <Main />
       </div>
     );
   }
 }
 
-export default withRouter(connect(null, null)(App));
+export const mapDispatchToProps = dispatch => ({
+  loginUser: user => dispatch(loginUser(user))
+})
+
+export default withRouter(connect(null, mapDispatchToProps)(App));

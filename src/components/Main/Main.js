@@ -1,8 +1,9 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom'; 
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom'; 
 import Dashboard from '../Dashboard/Dashboard';
 import Login from '../Login/Login';
 import Search from '../Search/Search';
+import { connect } from 'react-redux';
 
 export const Main = (props) => {
   return (
@@ -10,22 +11,23 @@ export const Main = (props) => {
       <Switch>
         <Route
           exact path="/"
-          render={() => (!props.authUser ? <Redirect to="/login" /> : <Redirect to="/dashboard" />)}
+          render={() => (!props.user ? <Redirect to="/login" /> : <Redirect to="/dashboard" />)}
         />
         <Route 
           path="/dashboard" 
-          render={() => (!props.authUser ? <Redirect to="/login" /> : <Dashboard />)}
+          render={() => (!props.user ? <Redirect to="/login" /> : <Dashboard />)}
         />
         <Route 
           path="/login" 
-          render={() => (!props.authUser ? <Login /> : <Redirect to="/dashboard" />)} />
+          render={() => (!props.user ? <Login /> : <Redirect to="/dashboard" />)} />
         <Route path="/search" component={Search} />
       </Switch>
     </main>
   )
 }
 
-// <Route
-//   path="/login"
-//   render={() => (props.user.name ? <Redirect to="/" /> : <Login />)}
-// />
+export const mapStateToProps = state => ({
+  user: state.user
+})
+
+export default withRouter(connect(mapStateToProps, null)(Main));

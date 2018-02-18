@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import dice from '../../assets/dice.gif';
-import { loginUser } from '../../actions';
-import { auth } from '../../firebase';
-import { Link, withRouter } from 'react-router-dom';
+import { auth, db } from '../../firebase';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './Login.css'
 
 const initialState = {
@@ -86,11 +86,10 @@ export class Login extends Component {
 
     try {
       const user = await auth.doCreateUserWithEmailAndPassword(email, passwordOne);
-      console.log(user);
+      await db.doCreateUser(user.uid, this.state.name, email)
       this.setState({ ...initialState })
-      history.push('/');
+      history.push('/');        
     } catch(error) {
-      console.log(error)
       this.setState({ error })
     }
   }
@@ -103,7 +102,6 @@ export class Login extends Component {
       this.setState({ ...initialState })
       history.push('/');
     } catch(error) {
-      console.log(error)
       this.setState({ error })
     }
   }
@@ -150,8 +148,8 @@ export class Login extends Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => ({
-//   addUser = user => dispatch(loginUser({}))
-// })
+const mapStateToProps = state => ({
+  user: state.user
+})
 
-export default withRouter(Login);
+export default withRouter(connect(mapStateToProps, null)(Login));
