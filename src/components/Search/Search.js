@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // import { searchGames } from '../../actions';
 import { db } from '../../firebase';
 import * as api from '../../helper/bg-api-cleaner';
+import { updateFavorites } from '../../actions';
 import './Search.css';
 
 export class Search extends Component {
@@ -53,15 +54,13 @@ export class Search extends Component {
     const snapshot = await db.onceGetUsers();
     const value = await snapshot.val();
     const favorites = value[userId].favorites;
-    console.log(favorites)
-    //find that user from db info and pull favorites
-    //update store with favorites
-    // const allUsers = Object.keys(value).map( key =>{ return {...value[key].user, key}} );
+    return favorites
   }
 
   addGameToFavorites = async() => {
-    await db.doWriteFavoriteData(this.props.user.uid, this.state.game)
-    await this.getGamesFromDB()
+    await db.doWriteFavoriteData(this.props.user.uid, this.state.game);
+    const favorites = await this.getGamesFromDB();
+    this.props.updateFavorites(favorites)
   }
 
   displayGame = () => {
@@ -104,4 +103,8 @@ export const mapStateToProps = state => ({
   user: state.user
 })
 
-export default connect(mapStateToProps, null)(Search);
+export const mapDispatchToProps = dispatch => ({
+  updateFavorites: favorites => dispatch(updateFavorites(favorites))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
