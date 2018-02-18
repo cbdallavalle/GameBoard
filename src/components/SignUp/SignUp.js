@@ -1,15 +1,23 @@
 import React from 'react';
 
 export const SignUp = (props) => {
-  const { handleChange, email, passwordOne, name, passwordTwo } = props;
+  const { handleChange, email, passwordOne, firstName, lastName, passwordTwo } = props;
   return (
     <div>
       <input 
         type="text"
         className="login-input"
-        placeholder="Name"
-        name="name"
-        value={ name }
+        placeholder="first name"
+        name="firstName"
+        value={ firstName }
+        onChange={ (event) => handleChange(event) }
+      />      
+      <input 
+        type="text"
+        className="login-input"
+        placeholder="last name"
+        name="lastName"
+        value={ lastName }
         onChange={ (event) => handleChange(event) }
       />
       <input 

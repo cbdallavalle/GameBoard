@@ -33,7 +33,9 @@ export class Dashboard extends Component {
           </h2>
           <CardContainer />
           <div className="search">
-            <button id="search-btn">Search for friends</button>
+            <Link to ='/add-friends'>
+              <button id="search-btn">Search for friends</button>
+            </Link>
           </div>
         </section>
       </section>
