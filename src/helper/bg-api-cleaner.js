@@ -19,8 +19,10 @@ export const cleanGameDetails = game => {
   })
 }
 
+//try catch block
 export const fetchBoardGames = async url => {
   const response = await fetch(url);
+  console.log(response);
   const responseText = await response.text();
 
   const convert = require('xml-js');

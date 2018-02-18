@@ -8,6 +8,7 @@ export const SignOutBtn = () => {
     try {
       auth.doSignOut();
     } catch(error) {
+      return error
       console.log(error)
     }
   }

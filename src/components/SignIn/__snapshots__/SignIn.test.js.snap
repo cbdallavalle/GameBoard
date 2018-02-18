@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignIn should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    email="email"
+    handleChange={[Function]}
+    passwordOne="password"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <input
+          className="login-input"
+          name="email"
+          onChange={[Function]}
+          placeholder="email"
+          type="email"
+          value="email"
+/>,
+        <input
+          className="login-input"
+          name="passwordOne"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value="password"
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "login-input",
+          "name": "email",
+          "onChange": [Function],
+          "placeholder": "email",
+          "type": "email",
+          "value": "email",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "login-input",
+          "name": "passwordOne",
+          "onChange": [Function],
+          "placeholder": "Password",
+          "type": "password",
+          "value": "password",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <input
+            className="login-input"
+            name="email"
+            onChange={[Function]}
+            placeholder="email"
+            type="email"
+            value="email"
+/>,
+          <input
+            className="login-input"
+            name="passwordOne"
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+            value="password"
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "login-input",
+            "name": "email",
+            "onChange": [Function],
+            "placeholder": "email",
+            "type": "email",
+            "value": "email",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "login-input",
+            "name": "passwordOne",
+            "onChange": [Function],
+            "placeholder": "Password",
+            "type": "password",
+            "value": "password",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

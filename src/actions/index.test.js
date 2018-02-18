@@ -1,13 +1,13 @@
 import * as actions from './index';
 
-describe("SEARCH_GAMES", () => {
-  it('should return a type of SEARCH_GAMES', () => {
-    const string = "Meeple Circus"
+describe("LOGIN_USER", () => {
+  it('should return a type of LOGIN_USER', () => {
+    const mockUser = {user: 'I AM A USER'}
     const expected = {
-      type: "SEARCH_GAMES",
-      search: "Meeple Circus"
+      type: "LOGIN_USER",
+      user: mockUser
     }
 
-    expect(actions.searchGames(string)).toEqual(expected);
+    expect(actions.loginUser(mockUser)).toEqual(expected);
   })
 })
