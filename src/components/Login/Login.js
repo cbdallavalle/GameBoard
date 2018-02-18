@@ -75,7 +75,7 @@ export class Login extends Component {
       email,
       passwordOne,
     } = this.state;
-    this.state.name ? this.signUp(email, passwordOne) : this.logIn(email, passwordOne);
+    this.state.firstName ? this.signUp(email, passwordOne) : this.logIn(email, passwordOne);
   }
 
   signUp = async (email, passwordOne) => {
@@ -83,7 +83,7 @@ export class Login extends Component {
 
     try {
       const user = await auth.doCreateUserWithEmailAndPassword(email, passwordOne);
-      await db.doCreateUser(user.uid, this.state.name, email)
+      await db.doCreateUser(user.uid, this.state.firstName, this.state.lastName, email)
       this.setState({ ...initialState })
       history.push('/');        
     } catch(error) {
@@ -111,7 +111,8 @@ export class Login extends Component {
         this.state.passwordOne !== this.state.passwordTwo ||
         this.state.passwordOne === '' ||
         this.state.email === '' ||
-        this.state.name === ''
+        this.state.fistName === '' ||
+        this.state.lastName === ''
       )
     }
   }
