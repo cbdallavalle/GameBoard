@@ -3,6 +3,8 @@ import dice from '../../assets/dice.gif';
 import { auth, db } from '../../firebase';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { SignIn } from '../SignIn/SignIn';
+import { SignUp } from '../SignUp/SignUp';
 import './Login.css'
 
 const initialState = {
@@ -27,7 +29,14 @@ export class Login extends Component {
 
   determineDisplay = () => {
     return this.state.displayCreate === 'signup' ?
-    <div className="create-account">
+    <div>
+      <SignUp 
+        handleChange={ this.handleChange }
+        name={ this.state.name }
+        email={ this.state.email }
+        passwordOne={ this.state.passwordOne }
+        passwordTwo={ this.state.passwordTwo }
+      />
       <p 
         id="toggle-account"
         onClick={ this.toggleDisplay }
@@ -35,25 +44,14 @@ export class Login extends Component {
         Already have an account? Log in!      
         <i className="fas fa-mouse-pointer" id="pointer"></i>
       </p>
-      <input 
-        type="text"
-        className="login-input"
-        placeholder="Name"
-        name="name"
-        value={ this.state.name }
-        onChange={ this.handleChange }
-      />
-      <input 
-        type="password"
-        className="login-input"
-        placeholder="Retype password"
-        name="passwordTwo"
-        onChange={ this.handleChange }
-        value={ this.state.passwordTwo }
-      />
     </div>
     :
     <div>
+      <SignIn 
+        handleChange={ this.handleChange }
+        email={ this.state.email }
+        passwordOne={ this.state.passwordOne }
+      />
       <p 
         id="toggle-account"
         onClick={ this.toggleDisplay }
@@ -61,7 +59,6 @@ export class Login extends Component {
         Don't have an account? Create one! 
         <i className="fas fa-mouse-pointer" id="pointer"></i>
       </p>
-
     </div>
   }
 
@@ -73,11 +70,9 @@ export class Login extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const {
-      name,
       email,
       passwordOne,
     } = this.state;
-    
     this.state.name ? this.signUp(email, passwordOne) : this.logIn(email, passwordOne);
   }
 
@@ -90,7 +85,7 @@ export class Login extends Component {
       this.setState({ ...initialState })
       history.push('/');        
     } catch(error) {
-      this.setState({ error })
+      this.setState({ error: error.message })
     }
   }
 
@@ -102,7 +97,7 @@ export class Login extends Component {
       this.setState({ ...initialState })
       history.push('/');
     } catch(error) {
-      this.setState({ error })
+      this.setState({ error: error.message })
     }
   }
 
@@ -125,24 +120,14 @@ export class Login extends Component {
         <img src={ dice } alt="dice-logo" id="dice-img"/>
         <h1>Game Board</h1>
         { this.determineDisplay() }
-        <input 
-          type="email"
-          className="login-input"
-          placeholder="email"
-          name="email"
-          onChange={ this.handleChange }
-          value={ this.state.email }
-        />
-        <input 
-          type="password"
-          className="login-input"
-          placeholder="Password"
-          name="passwordOne"
-          onChange={ this.handleChange }
-          value={ this.state.passwordOne }
-        />        
-        <button disabled={this.determineInvalid()} className="LogIn" id="submit-btn">Log In!</button>
-        { this.state.error && <p>{this.state.error.message}</p> }
+        <button 
+          disabled={this.determineInvalid()} 
+          className="LogIn" 
+          id="submit-btn"
+        >
+          Log In!
+        </button>
+        { this.state.error && <p>{this.state.error}</p> }
       </form>
     )
   }
