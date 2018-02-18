@@ -38,6 +38,7 @@ export class Search extends Component {
     const { id, name } = gameSelected;
     const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/https://www.boardgamegeek.com/xmlapi2/thing?id=${id}`);
     const game = {...api.cleanGameDetails(result)[0], name};
+    console.log(game)
     this.setState({game})
   }
 

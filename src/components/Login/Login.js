@@ -8,7 +8,8 @@ import { SignUp } from '../SignUp/SignUp';
 import './Login.css'
 
 const initialState = {
-  name: '',
+  firstName: '',
+  lastName: '',
   email: '',
   passwordOne: '',
   passwordTwo: '',
@@ -32,7 +33,8 @@ export class Login extends Component {
     <div>
       <SignUp 
         handleChange={ this.handleChange }
-        name={ this.state.name }
+        firstName={ this.state.firstName }
+        lastName={ this.state.lastName }
         email={ this.state.email }
         passwordOne={ this.state.passwordOne }
         passwordTwo={ this.state.passwordTwo }

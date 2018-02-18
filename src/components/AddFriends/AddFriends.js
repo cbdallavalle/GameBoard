@@ -30,6 +30,12 @@ export class AddFriends extends Component {
     this.setState({usersSearched})
   }
 
+  displayFriends = () => {
+    return this.state.usersSearched.length ?
+    this.state.usersSearched.map( (user, index) => <h4 key={index}>{user.username}, {user.email}</h4>)
+    : <div>No friends found :(</div>
+  }
+
   render() {
     return (
       <section className="AddFriends">
@@ -40,7 +46,7 @@ export class AddFriends extends Component {
           onChange={this.handleChange}
         />
         <article>
-          display users that match search
+          { this.displayFriends() }
         </article>
       </section>
     )
