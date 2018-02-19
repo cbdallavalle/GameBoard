@@ -6,6 +6,9 @@ import Search from '../Search/Search';
 import { AddFriends } from '../AddFriends/AddFriends';
 import { connect } from 'react-redux';
 
+        // <Route path="/search" component={Search} />
+        // <Route path="/add-friends" component={AddFriends} />
+
 export const Main = (props) => {
   return (
     <main>
@@ -21,8 +24,7 @@ export const Main = (props) => {
         <Route 
           path="/login" 
           render={() => (!props.user ? <Login /> : <Redirect to="/dashboard" />)} />
-        <Route path="/search" component={Search} />
-        <Route path="/add-friends" component={AddFriends} />
+
       </Switch>
     </main>
   )

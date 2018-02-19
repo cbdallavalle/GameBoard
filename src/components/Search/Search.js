@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { searchGames } from '../../actions';
 import { db } from '../../firebase';
 import * as api from '../../helper/bg-api-cleaner';
+import { Card } from '../Card/Card';
 import { updateFavorites } from '../../actions';
 import './Search.css';
 
@@ -66,12 +66,8 @@ export class Search extends Component {
   displayGame = () => {
     return this.state.game.thumbnail 
     ?  <article className="game-description">
-        <button id="add-game" onClick={this.addGameToFavorites}>Add game to favorites</button>
-        <img src={this.state.game.thumbnail} alt="game-icon" />
-        <div>
-          <h4>{this.state.game.name}</h4>
-          <p>{this.state.game.description}</p>
-        </div>
+        <button id="add-game" onClick={this.addGameToFavorites}><i className="fas fa-plus"></i>game</button>
+        <Card favorite={this.state.game}/>
       </article>
     : <div></div>
   }
@@ -79,7 +75,6 @@ export class Search extends Component {
   render() {
     return (
       <section className='Search'>
-        <h1>Search for Games</h1>
         <form onSubmit={this.handleSubmit}>
           <input 
             type="text"
