@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { db } from '../../firebase';
+import { updateFriends } from '../../actions';
 
 export class AddFriends extends Component {
   constructor(props) {
@@ -19,9 +20,7 @@ export class AddFriends extends Component {
   getAllUsers = async() => {
     const snapshot = await db.onceGetUsers();
     const value = await snapshot.val();
-    console.log('hiiii')
     const allUsers = Object.keys(value).map( key =>{ return {...value[key].user, key}} );
-    console.log(allUsers)
     this.setState({ allUsers });
   }
 
@@ -41,20 +40,12 @@ export class AddFriends extends Component {
   }
 
   addFriendsToDB = async (id) => {
-    //send friend and userId to doWriteFriendsData
     await db.doWriteFriendsData(this.props.user.uid, id);
     const friends = await db.getFriends(this.props.user.uid)
-    // this.props.updateFriends();
-    //Get the new friends from the db
-    // const friends = await db.getFriends();
-    // console.log(friends)
-    // //call updateUsers
-    // // this.props.updateFavorites(favorites)
-    // console.log(user)
+    this.props.updateFriends(friends);
   }
 
   render() {
-    console.log(this.props.user.uid)
     return (
       <section className="AddFriends">
         <h1>Find new friend</h1>
@@ -75,8 +66,8 @@ export const mapStateToProps = state => ({
   user: state.user
 })
 
-// export const mapDispatchToProps = dispatch => ({
-//   updateFriends: friends => dispatch(updateFriends(friends))
-// })
+export const mapDispatchToProps = dispatch => ({
+  updateFriends: friends => dispatch(updateFriends(friends))
+})
 
-export default connect(mapStateToProps, null)(AddFriends)
+export default connect(mapStateToProps, mapDispatchToProps)(AddFriends)
