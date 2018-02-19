@@ -9,8 +9,7 @@ export const updateFavorites = favorites => ({
 }) 
 
 
-
-// export const searchGames = search => ({
-//   type: 'SEARCH_GAMES',
-//   search
-// });
+export const updateFriends = friends => ({
+  type: 'UPDATE_FRIENDS',
+  friends
+})

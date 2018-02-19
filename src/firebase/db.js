@@ -1,7 +1,5 @@
 import { db } from './firebase';
 
-// User API
-
 export const doCreateUser = (id, firstName, lastName, email) =>
   db.ref(`users/${id}`).set({
     user: {
@@ -23,24 +21,20 @@ export const doWriteFavoriteData = async (userId, favorite) => {
   db.ref('users/' + userId + '/favorites').set(newFavorites);
 }
 
-// { 
-    // email: "wren@wren.com",
-    // firstName: "wrenom",
-    // key: "YRrtMzWo0jNquYjLCQGT8ftqz703",
-    // lastName: "little"
-// }
-
-//WORK IN PROGRESS
 export const doWriteFriendsData = async (userId, friendId) => {
-  const friends = getFriends(userId);
-  friends.push(friendId);
-  db.ref('users/' + userId + '/friends').set(friends);
+  const friends = await getFriends(userId);
+  if(friends) {
+    friends.push(friendId);
+    db.ref('users/' + userId + '/friends').set(friends); 
+  } else {
+    db.ref('users/' + userId + '/friends').set([friendId]); 
+  }
 }
 
 export const getFriends = async (userId) => {
   const snapshot = await db.ref('users').once('value');
   const value = await snapshot.val();
-  console.log(value[userId].friends)
+  return value[userId].friends
 }
 
 export const getFavorites = async (userId) => {
@@ -48,6 +42,3 @@ export const getFavorites = async (userId) => {
   const value = await snapshot.val();
   return value[userId].favorites;
 }
-
-//
-// Other Entity APIs ...
