@@ -40,17 +40,9 @@ export class AddFriends extends Component {
   }
 
   addFriendsToDB = async (id) => {
-    //send friend and userId to doWriteFriendsData
     await db.doWriteFriendsData(this.props.user.uid, id);
     const friends = await db.getFriends(this.props.user.uid)
     this.props.updateFriends(friends);
-    // this.props.updateFriends();
-    //Get the new friends from the db
-    // const friends = await db.getFriends();
-    // console.log(friends)
-    // //call updateUsers
-    // // this.props.updateFavorites(favorites)
-    // console.log(user)
   }
 
   render() {
