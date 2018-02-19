@@ -18,7 +18,9 @@ export class AddFriends extends Component {
   getAllUsers = async() => {
     const snapshot = await db.onceGetUsers();
     const value = await snapshot.val();
+    console.log('hiiii')
     const allUsers = Object.keys(value).map( key =>{ return {...value[key].user, key}} );
+    console.log(allUsers)
     this.setState({ allUsers });
   }
 
@@ -33,12 +35,21 @@ export class AddFriends extends Component {
 
   displayFriends = () => {
     return this.state.usersSearched.length ?
-    this.state.usersSearched.map( (user, index) => <h4 key={index}>{user.firstName} {user.lastName}, {user.email}</h4>)
+    this.state.usersSearched.map( (user, index) => <h4 key={index} onClick={() => this.addFriendsToDB(user)}>{user.firstName} {user.lastName}, {user.email}</h4>)
     : <div>No friends found :(</div>
   }
 
+  addFriendsToDB = (user) => {
+    //send friend and userId to doWriteFriendsData
+    // await db.doWriteFavoriteData(this.props.user.uid, this.state.game);
+    //Get the new friends from the db
+    // const favorites = await this.getGamesFromDB();
+    //call updateUsers
+    // this.props.updateFavorites(favorites)
+    console.log(user)
+  }
+
   render() {
-    console.log(this.state.allUsers)
     return (
       <section className="AddFriends">
         <h1>Find new friend</h1>
@@ -55,4 +66,15 @@ export class AddFriends extends Component {
   }
 }
 
+// export const mapDispatchToProps = dispatch => ({
+//   addFriends: friends => dispatch(addFriends(friends))
+// })
+
 export default AddFriends
+
+// { 
+    // email: "wren@wren.com",
+    // firstName: "wrenom",
+    // key: "YRrtMzWo0jNquYjLCQGT8ftqz703",
+    // lastName: "little"
+// }

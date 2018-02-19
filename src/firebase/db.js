@@ -22,14 +22,20 @@ export const doWriteFavoriteData = async (userId, favorite) => {
   db.ref('users/' + userId + '/favorites').set(newFavorites);
 }
 
+export const doWriteFriends = async (userId, friend) => {
+  console.log(friend)
+}
+
+export const getUsers = async (userId) => {
+  const snapshot = await onceGetUsers();
+  const value = await snapshot.val();
+  return value[userId].friends;
+}
+
 export const getFavorites = async (userId) => {
   const snapshot = await onceGetUsers();
   const value = await snapshot.val();
   return value[userId].favorites;
-}
-
-export const getUsers = () => {
-
 }
 
 //

@@ -6,6 +6,7 @@
 }
 
 .game-description {
+  position: relative;
   height: 200px;
   border: 2px solid #9b9a9a;
   width: 600px;
@@ -35,6 +36,7 @@
 }
 
 .Search button {
+
   width: 100px;
   height: 42px;
   margin: 0;
