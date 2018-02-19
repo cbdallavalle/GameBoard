@@ -5,6 +5,7 @@ import { db } from './firebase';
 export const doCreateUser = (id, firstName, lastName, email) =>
   db.ref(`users/${id}`).set({
     user: {
+      id,
       firstName,
       lastName,
       email,
@@ -30,18 +31,16 @@ export const doWriteFavoriteData = async (userId, favorite) => {
 // }
 
 //WORK IN PROGRESS
-export const doWriteFriends = async (userId, friend) => {
-  const { email, firstName, key, lastName } = friend;
-  //grab userID and put into friend obj
-  const friendToAdd = { [email]: {email, firstName, lastName, key } }
-  db.ref('friends/').set(friendToAdd);
-
+export const doWriteFriendsData = async (userId, friendId) => {
+  const friends = getFriends(userId);
+  friends.push(friendId);
+  db.ref('users/' + userId + '/friends').set(friends);
 }
 
 export const getFriends = async (userId) => {
-  const snapshot = await db.ref('favorites').once('value');
+  const snapshot = await db.ref('users').once('value');
   const value = await snapshot.val();
-  console.log(getFriends)
+  console.log(value[userId].friends)
 }
 
 export const getFavorites = async (userId) => {

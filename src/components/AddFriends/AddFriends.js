@@ -36,22 +36,25 @@ export class AddFriends extends Component {
 
   displayFriends = () => {
     return this.state.usersSearched.length ?
-    this.state.usersSearched.map( (user, index) => <h4 key={index} onClick={() => this.addFriendsToDB(user)}>{user.firstName} {user.lastName}, {user.email}</h4>)
+    this.state.usersSearched.map( (friend, index) => <h4 key={index} onClick={() => this.addFriendsToDB(friend.id)}>{friend.firstName} {friend.lastName}, {friend.email}</h4>)
     : <div>No friends found :(</div>
   }
 
-  addFriendsToDB = async (user) => {
+  addFriendsToDB = async (id) => {
     //send friend and userId to doWriteFriendsData
-    await db.doWriteFavoriteData(this.props.user.uid, user);
+    await db.doWriteFriendsData(this.props.user.uid, id);
+    const friends = await db.getFriends(this.props.user.uid)
+    // this.props.updateFriends();
     //Get the new friends from the db
-    const friends = await db.getFavorites();
-    console.log(friends)
-    //call updateUsers
-    // this.props.updateFavorites(favorites)
-    console.log(user)
+    // const friends = await db.getFriends();
+    // console.log(friends)
+    // //call updateUsers
+    // // this.props.updateFavorites(favorites)
+    // console.log(user)
   }
 
   render() {
+    console.log(this.props.user.uid)
     return (
       <section className="AddFriends">
         <h1>Find new friend</h1>
@@ -73,7 +76,7 @@ export const mapStateToProps = state => ({
 })
 
 // export const mapDispatchToProps = dispatch => ({
-//   addFriends: friends => dispatch(addFriends(friends))
+//   updateFriends: friends => dispatch(updateFriends(friends))
 // })
 
 export default connect(mapStateToProps, null)(AddFriends)

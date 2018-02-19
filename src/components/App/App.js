@@ -26,7 +26,9 @@ export class App extends Component {
   loginUser = async(authUser) => {
     this.props.loginUser(authUser);
     const favorites = await db.getFavorites(authUser.uid);
-    this.props.updateFavorites(favorites)
+    if(favorites) {
+      this.props.updateFavorites(favorites)
+    }
   }
   
   render() {

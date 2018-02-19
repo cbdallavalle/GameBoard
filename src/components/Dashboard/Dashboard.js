@@ -44,6 +44,7 @@ export class Dashboard extends Component {
   render() {
     return (
       <section className="Dashboard">
+        <SignOutBtn />
         <nav>
           <button name='your-games' onClick={this.handleClick}>
             <i className="fas fa-user"></i> Your Games
