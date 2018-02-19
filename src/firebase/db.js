@@ -22,14 +22,26 @@ export const doWriteFavoriteData = async (userId, favorite) => {
   db.ref('users/' + userId + '/favorites').set(newFavorites);
 }
 
+// { 
+    // email: "wren@wren.com",
+    // firstName: "wrenom",
+    // key: "YRrtMzWo0jNquYjLCQGT8ftqz703",
+    // lastName: "little"
+// }
+
+//WORK IN PROGRESS
 export const doWriteFriends = async (userId, friend) => {
-  console.log(friend)
+  const { email, firstName, key, lastName } = friend;
+  //grab userID and put into friend obj
+  const friendToAdd = { [email]: {email, firstName, lastName, key } }
+  db.ref('friends/').set(friendToAdd);
+
 }
 
-export const getUsers = async (userId) => {
-  const snapshot = await onceGetUsers();
+export const getFriends = async (userId) => {
+  const snapshot = await db.ref('favorites').once('value');
   const value = await snapshot.val();
-  return value[userId].friends;
+  console.log(getFriends)
 }
 
 export const getFavorites = async (userId) => {

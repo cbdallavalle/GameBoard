@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { db } from '../../firebase';
 
 export class AddFriends extends Component {
@@ -39,11 +40,12 @@ export class AddFriends extends Component {
     : <div>No friends found :(</div>
   }
 
-  addFriendsToDB = (user) => {
+  addFriendsToDB = async (user) => {
     //send friend and userId to doWriteFriendsData
-    // await db.doWriteFavoriteData(this.props.user.uid, this.state.game);
+    await db.doWriteFavoriteData(this.props.user.uid, user);
     //Get the new friends from the db
-    // const favorites = await this.getGamesFromDB();
+    const friends = await db.getFavorites();
+    console.log(friends)
     //call updateUsers
     // this.props.updateFavorites(favorites)
     console.log(user)
@@ -66,15 +68,12 @@ export class AddFriends extends Component {
   }
 }
 
+export const mapStateToProps = state => ({
+  user: state.user
+})
+
 // export const mapDispatchToProps = dispatch => ({
 //   addFriends: friends => dispatch(addFriends(friends))
 // })
 
-export default AddFriends
-
-// { 
-    // email: "wren@wren.com",
-    // firstName: "wrenom",
-    // key: "YRrtMzWo0jNquYjLCQGT8ftqz703",
-    // lastName: "little"
-// }
+export default connect(mapStateToProps, null)(AddFriends)
