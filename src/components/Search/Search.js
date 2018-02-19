@@ -43,12 +43,6 @@ export class Search extends Component {
     this.setState({game})
   }
 
-  displayAllGames = () => {
-    return this.state.games.length 
-      ? this.state.games.map((game, index) => <h3 key={index} onClick={() => this.handleChooseGame(game)}>{game.name}</h3> )
-      : <h4> No search results currently </h4>
-  }
-
   getGamesFromDB = async () => {
     const userId = this.props.user.uid
     const snapshot = await db.onceGetUsers();
@@ -61,6 +55,12 @@ export class Search extends Component {
     await db.doWriteFavoriteData(this.props.user.uid, this.state.game);
     const favorites = await this.getGamesFromDB();
     this.props.updateFavorites(favorites)
+  }
+
+  displayAllGames = () => {
+    return this.state.games.length 
+      ? this.state.games.map((game, index) => <h3 key={index} onClick={() => this.handleChooseGame(game)}>{game.name}</h3> )
+      : <h4> No search results currently </h4>
   }
 
   displayGame = () => {
