@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { CardContainer } from '../CardContainer/CardContainer';
-import { searchGames } from '../../actions';
 import { connect } from 'react-redux';
-import { Nav } from '../Nav/Nav';
-import Search from '../Search/Search';
+import { searchGames } from '../../actions';
+import { auth, db } from '../../firebase';
+
 import AddFriends from '../AddFriends/AddFriends';
+import Search from '../Search/Search';
+import { CardContainer } from '../CardContainer/CardContainer';
 import { Header } from '../Header/Header';
+import { Nav } from '../Nav/Nav';
+
 import './Dashboard.css';
 
 export class Dashboard extends Component {
@@ -13,17 +16,24 @@ export class Dashboard extends Component {
     super()
     this.state = {
       display: 'your-games',
+      friendsFavorites: {}
     }
   }
 
   determineDisplay = () => {
     if(this.state.display === 'your-games') {
       return (
-        <CardContainer favorites={this.props.favorites}/>
+        <CardContainer 
+          favorites={this.props.favorites}
+          type={"games"}
+        />
       )  
     } else if (this.state.display === 'friends-games') {
       return (
-        <CardContainer favorites={{}}/>
+        <CardContainer 
+          favorites={this.state.friendsFavorites}
+          type={"friends"}
+        />
       )
     } else if (this.state.display === 'search-games') {
       return (
@@ -34,31 +44,29 @@ export class Dashboard extends Component {
         <AddFriends />
       )
     }
-
   }
 
-  handleClick = e => {
-    this.setState({ display: e.target.name})
+  getFriendsGames = async () => {
+    return await db.getFriendsFavorites(this.props.user.uid);
+  }
+
+  handleClick = async e => {
+    const name = e.target.name
+    if(name === 'friends-games') {
+      const friendsFavorites = await this.getFriendsGames();
+      this.setState({ display: name, friendsFavorites })
+    } else {
+      this.setState({ display: name})
+    }
   }
 
   render() {
+    console.log(this.props.favorites)
+    console.log(this.state.friendsFavorites)
     return (
       <section className="Dashboard">
         <Header />
-        <nav>
-          <button name='your-games' onClick={this.handleClick}>
-            <i className="fas fa-user"></i> Your Games
-          </button>
-          <button name='friends-games' onClick={this.handleClick}>
-            <i className="fas fa-users"></i> Your friend's games
-          </button>
-          <button name='search-games' onClick={this.handleClick}>
-            Search for games 
-          </button>
-          <button name="search-friends" onClick={this.handleClick}>
-            Search for friends
-          </button>
-        </nav>
+        <Nav handleClick={this.handleClick}/>
         {this.determineDisplay()}
       </section>
     )
@@ -66,7 +74,8 @@ export class Dashboard extends Component {
 }
 
 export const mapStateToProps = state => ({
-  favorites: state.favorites
+  favorites: state.favorites,
+  user: state.user
 })
 
 export default connect(mapStateToProps, null)(Dashboard);

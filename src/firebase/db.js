@@ -52,3 +52,30 @@ export const getFavorites = async (userId) => {
   const value = await snapshot.val();
   return value[userId].favorites;
 }
+
+export const getFriendsFavorites = async (userId) => {
+  const friends = await getFriends(userId);
+  const snapshot = await onceGetUsers();
+  const value = await snapshot.val();
+  return friends.reduce( (accu, friendId) => {
+    if(value[friendId].lastFavorited) {
+      accu[value[friendId].user.firstName] = value[friendId].lastFavorited
+    }
+    return accu
+  }, {} )
+}
+
+// YRrtMzWo0jNquYjLCQGT8ftqz703
+// :
+// favorites
+// :
+// {Arkham Horror: The Card Game: {…}, Captain Sonar: {…}, Codenames: {…}, Meeple Circus: {…}, Munchkin: {…}, …}
+// friends
+// :
+// (2) ["YRrtMzWo0jNquYjLCQGT8ftqz703", "GZZGrEW9aYXzbxrdphXuq04ng6E3"]
+// lastFavorited
+// :
+// {description: "In the 1920s, Mr. MacDowell, a gifted astrologist,…not, well, perhaps you can try again...&#10;&#10;", id: "181304", image: "https://cf.geekdo-images.com/images/pic2601683.jpg", name: "Mysterium", thumbnail: "https://cf.geekdo-images.com/images/pic2601683_t.jpg"}
+// user
+// :
+// {email: "wren@wren.com", firstName: "wrenom", id: "YRrtMzWo0jNquYjLCQGT8ftqz703", lastName: "little"}
