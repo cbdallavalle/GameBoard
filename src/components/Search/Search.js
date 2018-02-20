@@ -58,8 +58,8 @@ export class Search extends Component {
   displayGame = () => {
     return this.state.game.thumbnail 
     ?  <article className="game-description">
-        <button id="add-game" onClick={this.addGameToFavorites}><i className="fas fa-plus"></i>game</button>
-        <Card favorite={this.state.game}/>
+        <button id="add-game" onClick={this.addGameToFavorites}><i className="fas fa-plus"></i></button>
+        <Card favorite={this.state.game} display={"hide"}/>
       </article>
     : <div></div>
   }

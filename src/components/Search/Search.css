@@ -6,12 +6,12 @@
 
 .game-description {
   position: relative;
-  height: 265px;
-  border: 2px solid #313131;
+  height: fit-content;
   width: 600px;
   margin: 50px auto;
   overflow-y: scroll;
   background-color: #f4f4f4a6;
+  padding: 8px 16px;
 }
 
 .Search form {
@@ -38,13 +38,14 @@
   font-size: 58px;
 }
 
-.Search h3 {
+.search-results h3 {
   padding: 25px 10px;
   cursor: pointer;
   text-align: left;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.Search h3:hover {
+.search-results h3:hover {
   background-color: #8080804a;
 }
 
@@ -54,4 +55,13 @@
   margin: auto;
   overflow-y: scroll;
   background-color: #ffffffcf;
+}
+
+#add-game {
+  position: absolute;
+  top: 11;
+  right: 25px;
+  border: none;
+  border-radius: 120px;
+  width: 43px;
 }
