@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { db } from '../../firebase';
 import * as api from '../../helper/bg-api-cleaner';
-import { Card } from '../Card/Card';
+import Card from '../Card/Card';
 import { updateFavorites } from '../../actions';
 import './Search.css';
 
