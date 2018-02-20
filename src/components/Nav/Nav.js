@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import './Nav.css';
-
+import './Nav.css';
 
 export const Nav = () => {
   return (
@@ -25,8 +24,3 @@ export const Nav = () => {
     </nav>
   )
 }
-
-    // <nav>
-    //   <h1>BG</h1>
-    //   <NavLink to='/'>Dashboard</NavLink>
-    // </nav>

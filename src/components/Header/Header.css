@@ -1,0 +1,35 @@
+header {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 180px;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Righteous', cursive;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffffe3;
+  border-radius: 5px;
+}
+
+header:hover {
+  cursor: pointer;
+}
+
+header button {
+  height: 25px;
+  border: none;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: unset;
+  border-left: 2px solid #9b9a9a;
+  font-weight: bold;
+}
+
+header button:hover {
+  cursor: pointer;
+}
+
+header h4 {
+  padding: 0 10px;
+}

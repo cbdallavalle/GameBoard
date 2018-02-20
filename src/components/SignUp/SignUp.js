@@ -1,12 +1,12 @@
 import React from 'react';
+import './SignUp.css';
 
 export const SignUp = (props) => {
   const { handleChange, email, passwordOne, firstName, lastName, passwordTwo } = props;
   return (
-    <div>
+    <div className="SignUp">
       <input 
         type="text"
-        className="login-input"
         placeholder="first name"
         name="firstName"
         value={ firstName }
@@ -14,7 +14,6 @@ export const SignUp = (props) => {
       />      
       <input 
         type="text"
-        className="login-input"
         placeholder="last name"
         name="lastName"
         value={ lastName }
@@ -22,7 +21,6 @@ export const SignUp = (props) => {
       />
       <input 
         type="email"
-        className="login-input"
         placeholder="email"
         name="email"
         onChange={ (event) => handleChange(event) }
@@ -30,16 +28,14 @@ export const SignUp = (props) => {
       />
       <input 
         type="password"
-        className="login-input"
-        placeholder="Password"
+        placeholder="password"
         name="passwordOne"
         onChange={ (event) => handleChange(event) }
         value={ passwordOne }
       />
       <input 
         type="password"
-        className="login-input"
-        placeholder="Retype password"
+        placeholder="retype password"
         name="passwordTwo"
         onChange={ (event) => handleChange(event) }
         value={ passwordTwo }

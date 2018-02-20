@@ -1,11 +1,11 @@
 import React from 'react';
+import './SignIn.css';
 
 export const SignIn = ({ handleChange, email, passwordOne }) => {
   return (
-    <div>
+    <div className="SignIn">
       <input 
         type="email"
-        className="login-input"
         placeholder="email"
         name="email"
         onChange={ (event) => handleChange(event) }
@@ -13,7 +13,6 @@ export const SignIn = ({ handleChange, email, passwordOne }) => {
       />
       <input 
         type="password"
-        className="login-input"
         placeholder="Password"
         name="passwordOne"
         onChange={ (event) => handleChange(event) }

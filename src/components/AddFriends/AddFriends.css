@@ -1,0 +1,23 @@
+.AddFriends {
+  margin-top: 25px;
+}
+
+.AddFriends article {
+  width: 600px;
+  height: 400px;
+  background-color: #ffffffcf;
+  overflow-y: scroll;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: auto;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.display-friends {
+  display: flex;
+  justify-content: center;
+  width: 635px;
+  height: 441px;
+  background-color: #f4f4f4a6;
+  margin-top: 50px;
+}

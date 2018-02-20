@@ -77,9 +77,11 @@ export class Search extends Component {
           />
           <button type="submit">Search</button>
         </form>
-        <section className='search-results'>
-          { this.displayAllGames() }
-        </section>
+        <div className="display-friends">
+          <section className='search-results'>
+            { this.displayAllGames() }
+          </section>
+        </div>
         { this.displayGame() }
       </section>
     )

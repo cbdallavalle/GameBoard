@@ -1,8 +1,9 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import { auth } from '../../firebase';
+import './Header.css';
 
-export const SignOutBtn = () => {
+export const Header = () => {
 
   const checkSignOut = () => {
     try {
@@ -14,8 +15,11 @@ export const SignOutBtn = () => {
   }
 
   return (
-    <button type="button" onClick={checkSignOut}>
-      Sign out
-    </button>
+    <header>
+      <h4>GameBoard</h4>
+      <button type="button" onClick={checkSignOut}>
+        Sign out
+      </button>
+    </header>
   )
 }
