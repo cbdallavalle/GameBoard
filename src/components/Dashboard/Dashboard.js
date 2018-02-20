@@ -61,8 +61,6 @@ export class Dashboard extends Component {
   }
 
   render() {
-    console.log(this.props.favorites)
-    console.log(this.state.friendsFavorites)
     return (
       <section className="Dashboard">
         <Header />
