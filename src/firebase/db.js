@@ -27,7 +27,8 @@ export const doWriteLastFavoritedData = async (userId, favorite) => {
 
 export const checkFavoriteDuplication = (existingFavorites, favorite) => {
   const { name, id, description, image, thumbnail } = favorite;
-  const favoriteToAdd = { [name]: { id, description, image, thumbnail, name } }
+  const review = "No review - click to add one";
+  const favoriteToAdd = { [name]: { id, description, image, thumbnail, name, review } }
   return existingFavorites[favorite.name] ? {} : favoriteToAdd
 }
 
@@ -63,6 +64,13 @@ export const getFriendsFavorites = async (userId) => {
     }
     return accu
   }, {} )
+}
+
+export const doWriteReviewData = async (userId, favorite, review) => {
+  const { name } = favorite;
+  const reviewedGame = {...favorite, review}
+  db.ref('users/' + userId + '/favorites/' + name).set(reviewedGame);
+  await doWriteLastFavoritedData(userId, reviewedGame)
 }
 
 // YRrtMzWo0jNquYjLCQGT8ftqz703
