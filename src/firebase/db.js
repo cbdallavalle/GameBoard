@@ -14,19 +14,29 @@ export const onceGetUsers = () =>
   db.ref('users').once('value');
 
 export const doWriteFavoriteData = async (userId, favorite) => {
-  const { name, id, description, image, thumbnail } = favorite;
   const existingFavorites = await getFavorites(userId);
-  const favoriteToAdd = { [name]: { id, description, image, thumbnail, name } }
+  const favoriteToAdd = checkFavoriteDuplication(existingFavorites, favorite)
   const newFavorites = {...existingFavorites, ...favoriteToAdd }
+  doWriteLastFavoritedData(userId, favorite)
   db.ref('users/' + userId + '/favorites').set(newFavorites);
+}
+
+export const doWriteLastFavoritedData = async (userId, favorite) => {
+  db.ref('users/' + userId + '/lastFavorited').set(favorite);
+}
+
+export const checkFavoriteDuplication = (existingFavorites, favorite) => {
+  const { name, id, description, image, thumbnail } = favorite;
+  const favoriteToAdd = { [name]: { id, description, image, thumbnail, name } }
+  return existingFavorites[favorite.name] ? {} : favoriteToAdd
 }
 
 export const doWriteFriendsData = async (userId, friendId) => {
   const friends = await getFriends(userId);
-  if(friends) {
+  if (friends && !friends.includes(friendId)) {
     friends.push(friendId);
     db.ref('users/' + userId + '/friends').set(friends); 
-  } else {
+  } else if (!friends) {
     db.ref('users/' + userId + '/friends').set([friendId]); 
   }
 }

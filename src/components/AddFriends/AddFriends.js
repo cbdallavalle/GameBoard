@@ -21,7 +21,8 @@ export class AddFriends extends Component {
   getAllUsers = async() => {
     const snapshot = await db.onceGetUsers();
     const value = await snapshot.val();
-    const allUsers = Object.keys(value).map( key =>{ return {...value[key].user, key}} );
+    const excludeCurrentUser = Object.keys(value).filter( key => key !== this.props.user.uid);
+    const allUsers = excludeCurrentUser.map( key =>{ return {...value[key].user, key}} );
     this.setState({ allUsers });
   }
 
