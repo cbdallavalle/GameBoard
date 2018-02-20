@@ -2,12 +2,14 @@ import React from 'react';
 import { Card } from '../Card/Card';
 import './CardContainer.css';
 
-export const CardContainer = (props) => {
-  const favoritesToRender = Object.keys(props.favorites).map( (key, index) => {
+export const CardContainer = ({favorites, type}) => {
+  const favoritesToRender = Object.keys(favorites).map( (key, index) => {
     return (
       <Card 
         key={ index }
-        favorite={ props.favorites[key] }
+        favorite={ favorites[key] }
+        friendName={ key }
+        type={ type }
       />
     )
   })
