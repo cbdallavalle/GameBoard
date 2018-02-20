@@ -103,7 +103,7 @@ export class Login extends Component {
     }
   }
 
-  determineInvalid = () => {
+  determineInvalid = (e) => {
     if(this.state.displayCreate === 'login') {
       return (this.state.email === '' || this.state.passwordOne === '');
     } else {
@@ -124,11 +124,12 @@ export class Login extends Component {
         <h1>Game Board</h1>
         { this.determineDisplay() }
         <button 
+          type="submit"
           disabled={this.determineInvalid()} 
           className="LogIn" 
           id="submit-btn"
         >
-          Log In!
+          Submit
         </button>
         { this.state.error && <p>{this.state.error}</p> }
       </form>

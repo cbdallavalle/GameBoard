@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Nav } from '../Nav/Nav';
 import Search from '../Search/Search';
 import AddFriends from '../AddFriends/AddFriends';
-import { SignOutBtn } from '../SignOutBtn/SignOutBtn';
+import { Header } from '../Header/Header';
 import './Dashboard.css';
 
 export class Dashboard extends Component {
@@ -44,7 +44,7 @@ export class Dashboard extends Component {
   render() {
     return (
       <section className="Dashboard">
-        <SignOutBtn />
+        <Header />
         <nav>
           <button name='your-games' onClick={this.handleClick}>
             <i className="fas fa-user"></i> Your Games

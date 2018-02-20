@@ -26,21 +26,22 @@ form {
   align-items: center;
 }
 
+input {
+  padding-left: 15px;
+  min-width: 290px;
+  width: 83%;
+  max-width: 332px;
+  height: 36.4px;
+  margin-top: 14px;
+  border: 2px solid #313131;
+}
+
 .create-account {
   width: 100%;
 }
 
 .create-account input {
   margin: 15px 0 0 0;
-}
-
-.login-input {
-  padding-left: 15px;
-  min-width: 290px;
-  width: 83%;
-  max-width: 332px;;
-  height: 35px;
-  margin-top: 15px;
 }
 
 .login-input::placeholder {
