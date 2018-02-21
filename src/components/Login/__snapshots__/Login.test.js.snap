@@ -50,8 +50,9 @@ ShallowWrapper {
           className="LogIn"
           disabled={true}
           id="submit-btn"
+          type="submit"
 >
-          Log In!
+          Submit
 </button>,
         null,
       ],
@@ -162,13 +163,14 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Log In!",
+          "children": "Submit",
           "className": "LogIn",
           "disabled": true,
           "id": "submit-btn",
+          "type": "submit",
         },
         "ref": null,
-        "rendered": "Log In!",
+        "rendered": "Submit",
         "type": "button",
       },
       null,
@@ -212,8 +214,9 @@ ShallowWrapper {
             className="LogIn"
             disabled={true}
             id="submit-btn"
+            type="submit"
 >
-            Log In!
+            Submit
 </button>,
           null,
         ],
@@ -324,13 +327,14 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Log In!",
+            "children": "Submit",
             "className": "LogIn",
             "disabled": true,
             "id": "submit-btn",
+            "type": "submit",
           },
           "ref": null,
-          "rendered": "Log In!",
+          "rendered": "Submit",
           "type": "button",
         },
         null,
@@ -380,8 +384,9 @@ ShallowWrapper {
         <div>
           <Unknown
                     email=""
+                    firstName=""
                     handleChange={[Function]}
-                    name=""
+                    lastName=""
                     passwordOne=""
                     passwordTwo=""
           />
@@ -400,8 +405,9 @@ ShallowWrapper {
           className="LogIn"
           disabled={true}
           id="submit-btn"
+          type="submit"
 >
-          Log In!
+          Submit
 </button>,
         null,
       ],
@@ -441,8 +447,9 @@ ShallowWrapper {
           "children": Array [
             <Unknown
               email=""
+              firstName=""
               handleChange={[Function]}
-              name=""
+              lastName=""
               passwordOne=""
               passwordTwo=""
 />,
@@ -466,8 +473,9 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "email": "",
+              "firstName": "",
               "handleChange": [Function],
-              "name": "",
+              "lastName": "",
               "passwordOne": "",
               "passwordTwo": "",
             },
@@ -516,13 +524,14 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Log In!",
+          "children": "Submit",
           "className": "LogIn",
           "disabled": true,
           "id": "submit-btn",
+          "type": "submit",
         },
         "ref": null,
-        "rendered": "Log In!",
+        "rendered": "Submit",
         "type": "button",
       },
       null,
@@ -548,8 +557,9 @@ ShallowWrapper {
           <div>
             <Unknown
                         email=""
+                        firstName=""
                         handleChange={[Function]}
-                        name=""
+                        lastName=""
                         passwordOne=""
                         passwordTwo=""
             />
@@ -568,8 +578,9 @@ ShallowWrapper {
             className="LogIn"
             disabled={true}
             id="submit-btn"
+            type="submit"
 >
-            Log In!
+            Submit
 </button>,
           null,
         ],
@@ -609,8 +620,9 @@ ShallowWrapper {
             "children": Array [
               <Unknown
                 email=""
+                firstName=""
                 handleChange={[Function]}
-                name=""
+                lastName=""
                 passwordOne=""
                 passwordTwo=""
 />,
@@ -634,8 +646,9 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "email": "",
+                "firstName": "",
                 "handleChange": [Function],
-                "name": "",
+                "lastName": "",
                 "passwordOne": "",
                 "passwordTwo": "",
               },
@@ -684,13 +697,14 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Log In!",
+            "children": "Submit",
             "className": "LogIn",
             "disabled": true,
             "id": "submit-btn",
+            "type": "submit",
           },
           "ref": null,
-          "rendered": "Log In!",
+          "rendered": "Submit",
           "type": "button",
         },
         null,

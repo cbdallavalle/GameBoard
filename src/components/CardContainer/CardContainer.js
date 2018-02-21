@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 import './CardContainer.css';
 
 export const CardContainer = ({favorites, type}) => {
@@ -20,3 +21,8 @@ export const CardContainer = ({favorites, type}) => {
     </section>
   )
 }
+
+CardContainer.propTypes = {
+  favorites: PropTypes.object.isRequired,
+  type: PropTypes.string.isRequired
+};

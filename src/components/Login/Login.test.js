@@ -5,7 +5,8 @@ import { auth, db } from '../../firebase';
 
 describe("Login", () => {
   const initialState = {
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     passwordOne: '',
     passwordTwo: '',
@@ -17,7 +18,8 @@ describe("Login", () => {
     "displayCreate": "login", 
     "email": "", 
     "error": "signInWithEmailAndPassword failed: First argument \"email\" must be a valid string.", 
-    "name": "", 
+    "firstName": "", 
+    "lastName": "",
     "passwordOne": "", 
     "passwordTwo": ""
   }
@@ -26,7 +28,8 @@ describe("Login", () => {
     "displayCreate": "login", 
     "email": "", 
     "error": "createUserWithEmailAndPassword failed: First argument \"email\" must be a valid string.", 
-    "name": "", 
+    "firstName": "", 
+    "lastName": "",
     "passwordOne": "", 
     "passwordTwo": ""
   }
@@ -62,20 +65,20 @@ describe("Login", () => {
     expect(wrapper.state().displayCreate).toEqual('login');
   })
 
-  it('should call signUp when state has name', () => {
+  it('should call signUp when state has name', async() => {
     const wrapper = shallow(<Login user={{}} />)
     const mockEvent = {preventDefault: () => {}}
     wrapper.instance().signUp = jest.fn();
-    wrapper.setState({ name: 'name', email: 'email', passwordOne: 'passwordOne' })
+    await wrapper.setState({ firstName: 'first', email: 'email', passwordOne: 'passwordOne' })
     wrapper.instance().handleSubmit(mockEvent);
     expect(wrapper.instance().signUp).toHaveBeenCalledWith('email', 'passwordOne');
   })
 
-  it('should call logIn when state does not have name', () => {
+  it('should call logIn when state does not have name', async() => {
     const wrapper = shallow(<Login user={{}} />)
     const mockEvent = {preventDefault: () => {}}
     wrapper.instance().logIn = jest.fn();
-    wrapper.setState({ email: 'email', passwordOne: 'passwordOne' })
+    await wrapper.setState({ email: 'email', passwordOne: 'passwordOne' })
     wrapper.instance().handleSubmit(mockEvent);
     expect(wrapper.instance().logIn).toHaveBeenCalledWith('email', 'passwordOne');
   })
@@ -120,7 +123,7 @@ describe("Login", () => {
 
   it('determineInvalid should return false if state is signup and requirements are met', () => {
     const wrapper = shallow(<Login user={{}} />)
-    wrapper.setState({ displayCreate: 'signup', passwordOne: 'pass', passwordTwo: 'pass', email: 'email', name: 'name' })
+    wrapper.setState({ displayCreate: 'signup', passwordOne: 'pass', passwordTwo: 'pass', email: 'email', firstName: 'name', lastName: 'name' })
     expect(wrapper.instance().determineInvalid()).toEqual(false)
 
   })

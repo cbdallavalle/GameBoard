@@ -7,16 +7,14 @@ export const cleanSearch = (searches) => {
 }
 
 export const cleanGameDetails = game => {
-  return game.elements[0].elements.map( gameObj => {
-    const gameDetails =  gameObj.elements.reduce( (cleanedGame, gameDetail) => {
+  const gameDetails = game.elements[0].elements[0].elements.reduce( (cleanedGame, gameDetail) => {
       if (gameDetail.name === 'thumbnail' || gameDetail.name === 'image' || gameDetail.name === 'description') {
         cleanedGame[gameDetail.name] = gameDetail.elements[0].text
       }
       return cleanedGame
     }, {} )
-    const id = gameObj.attributes.id;
-    return {...gameDetails, id}
-  })
+  const id = game.elements[0].elements[0].attributes.id;
+  return {...gameDetails, id}
 }
 
 //try catch block

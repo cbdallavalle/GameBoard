@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { db } from '../../firebase';
 import * as api from '../../helper/bg-api-cleaner';
 import Card from '../Card/Card';
@@ -39,7 +41,8 @@ export class Search extends Component {
   handleChooseGame = async (gameSelected) => {
     const { id, name } = gameSelected;
     const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/https://www.boardgamegeek.com/xmlapi2/thing?id=${id}`);
-    const game = {...api.cleanGameDetails(result)[0], name};
+    const details = await api.cleanGameDetails(result);
+    const game = {...api.cleanGameDetails(result), name};
     this.setState({game})
   }
 
@@ -87,6 +90,11 @@ export class Search extends Component {
     )
   }
 }
+
+Search.propTypes = {
+  user: PropTypes.object.isRequired,
+  updateFavorites: PropTypes.func.isRequired
+};
 
 export const mapStateToProps = state => ({
   user: state.user

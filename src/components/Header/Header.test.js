@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SignOutBtn } from './SignOutBtn';
 import { auth } from '../../firebase';
+import { Header } from './Header';
 
-describe("SignOutBtn", () => {
-  const wrapper = shallow( <SignOutBtn /> )
+describe("Header", () => {
+  const wrapper = shallow( <Header /> )
   auth.doSignOut = jest.fn()
 
   it('should match the snapshot', () => {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { db } from '../../firebase';
 import { updateFriends } from '../../actions';
+import PropTypes from 'prop-types';
 import './AddFriends.css';
 
 export class AddFriends extends Component {
@@ -19,8 +20,7 @@ export class AddFriends extends Component {
   }
 
   getAllUsers = async() => {
-    const snapshot = await db.onceGetUsers();
-    const value = await snapshot.val();
+    const value = await db.onceGetUsers();
     const excludeCurrentUser = Object.keys(value).filter( key => key !== this.props.user.uid);
     const allUsers = excludeCurrentUser.map( key =>{ return {...value[key].user, key}} );
     this.setState({ allUsers });
@@ -29,8 +29,7 @@ export class AddFriends extends Component {
   handleChange = e => {
     const search = e.target.value.toLowerCase();
     const users = this.state.allUsers;
-    const matches = Object.keys(users).filter(id => (users[id].email.toLowerCase().includes(search) || users[id].firstName.toLowerCase().includes(search) || users[id].lastName.toLowerCase().includes(search)));
-    const usersSearched = matches.map(id => users[id]);
+    const usersSearched = users.filter(users => (users.email.toLowerCase().includes(search) || users.firstName.toLowerCase().includes(search) || users.lastName.toLowerCase().includes(search)));
     this.setState({usersSearched})
   }
 
@@ -63,6 +62,11 @@ export class AddFriends extends Component {
     )
   }
 }
+
+AddFriends.propTypes = {
+  user: PropTypes.object.isRequired,
+  updateFriends: PropTypes.func.isRequired
+};
 
 export const mapStateToProps = state => ({
   user: state.user

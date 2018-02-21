@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import './Nav.css';
 
 export const Nav = ({handleClick}) => {
@@ -20,3 +21,7 @@ export const Nav = ({handleClick}) => {
     </nav>
   )
 }
+
+Nav.propTypes = {
+  handleClick: PropTypes.func.isRequired
+};

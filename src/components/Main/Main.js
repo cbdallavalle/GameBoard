@@ -1,10 +1,12 @@
 import React from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'; 
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 import Dashboard from '../Dashboard/Dashboard';
 import Login from '../Login/Login';
 import Search from '../Search/Search';
 import { AddFriends } from '../AddFriends/AddFriends';
-import { connect } from 'react-redux';
 
 export const Main = (props) => {
   return (
@@ -23,9 +25,13 @@ export const Main = (props) => {
           render={() => (!props.user ? <Login /> : <Redirect to="/dashboard" />)} />
 
       </Switch>
-    </main>
+    </main> 
   )
 }
+
+Main.propTypes = {
+  user: PropTypes.object
+};
 
 export const mapStateToProps = state => ({
   user: state.user

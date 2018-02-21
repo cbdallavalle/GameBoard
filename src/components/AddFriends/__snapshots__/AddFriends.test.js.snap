@@ -1,0 +1,515 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddFriends displayFriends should match the snapshot if usersSearched has length 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AddFriends
+    updateFriends={[Function]}
+    user={
+        Object {
+            "uid": "GZZGrEW9aYXzbxrdphXuq04ng6E3",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <input
+          onChange={[Function]}
+          placeholder="enter name or email"
+          type="text"
+/>,
+        <div
+          className="display-friends"
+>
+          <article>
+                    <h4
+                              onClick={[Function]}
+                    >
+                               
+                              , 
+                    </h4>
+                    <h4
+                              onClick={[Function]}
+                    >
+                               
+                              , 
+                    </h4>
+          </article>
+</div>,
+      ],
+      "className": "AddFriends",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "onChange": [Function],
+          "placeholder": "enter name or email",
+          "type": "text",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <article>
+            <h4
+                        onClick={[Function]}
+            >
+                         
+                        , 
+            </h4>
+            <h4
+                        onClick={[Function]}
+            >
+                         
+                        , 
+            </h4>
+</article>,
+          "className": "display-friends",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h4
+                onClick={[Function]}
+>
+                 
+                , 
+</h4>,
+              <h4
+                onClick={[Function]}
+>
+                 
+                , 
+</h4>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  undefined,
+                  " ",
+                  undefined,
+                  ", ",
+                  undefined,
+                ],
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                undefined,
+                " ",
+                undefined,
+                ", ",
+                undefined,
+              ],
+              "type": "h4",
+            },
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  undefined,
+                  " ",
+                  undefined,
+                  ", ",
+                  undefined,
+                ],
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                undefined,
+                " ",
+                undefined,
+                ", ",
+                undefined,
+              ],
+              "type": "h4",
+            },
+          ],
+          "type": "article",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <input
+            onChange={[Function]}
+            placeholder="enter name or email"
+            type="text"
+/>,
+          <div
+            className="display-friends"
+>
+            <article>
+                        <h4
+                                    onClick={[Function]}
+                        >
+                                     
+                                    , 
+                        </h4>
+                        <h4
+                                    onClick={[Function]}
+                        >
+                                     
+                                    , 
+                        </h4>
+            </article>
+</div>,
+        ],
+        "className": "AddFriends",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "onChange": [Function],
+            "placeholder": "enter name or email",
+            "type": "text",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <article>
+              <h4
+                            onClick={[Function]}
+              >
+                             
+                            , 
+              </h4>
+              <h4
+                            onClick={[Function]}
+              >
+                             
+                            , 
+              </h4>
+</article>,
+            "className": "display-friends",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h4
+                  onClick={[Function]}
+>
+                   
+                  , 
+</h4>,
+                <h4
+                  onClick={[Function]}
+>
+                   
+                  , 
+</h4>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "0",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    undefined,
+                    " ",
+                    undefined,
+                    ", ",
+                    undefined,
+                  ],
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  undefined,
+                  " ",
+                  undefined,
+                  ", ",
+                  undefined,
+                ],
+                "type": "h4",
+              },
+              Object {
+                "instance": null,
+                "key": "1",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    undefined,
+                    " ",
+                    undefined,
+                    ", ",
+                    undefined,
+                  ],
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  undefined,
+                  " ",
+                  undefined,
+                  ", ",
+                  undefined,
+                ],
+                "type": "h4",
+              },
+            ],
+            "type": "article",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`AddFriends displayFriends should match the snpashot if usersSearched does not have length 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AddFriends
+    updateFriends={[Function]}
+    user={
+        Object {
+            "uid": "GZZGrEW9aYXzbxrdphXuq04ng6E3",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <input
+          onChange={[Function]}
+          placeholder="enter name or email"
+          type="text"
+/>,
+        <div
+          className="display-friends"
+>
+          <article>
+                    <div>
+                              No friends found :(
+                    </div>
+          </article>
+</div>,
+      ],
+      "className": "AddFriends",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "onChange": [Function],
+          "placeholder": "enter name or email",
+          "type": "text",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <article>
+            <div>
+                        No friends found :(
+            </div>
+</article>,
+          "className": "display-friends",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div>
+              No friends found :(
+</div>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "No friends found :(",
+            },
+            "ref": null,
+            "rendered": "No friends found :(",
+            "type": "div",
+          },
+          "type": "article",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <input
+            onChange={[Function]}
+            placeholder="enter name or email"
+            type="text"
+/>,
+          <div
+            className="display-friends"
+>
+            <article>
+                        <div>
+                                    No friends found :(
+                        </div>
+            </article>
+</div>,
+        ],
+        "className": "AddFriends",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "onChange": [Function],
+            "placeholder": "enter name or email",
+            "type": "text",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <article>
+              <div>
+                            No friends found :(
+              </div>
+</article>,
+            "className": "display-friends",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div>
+                No friends found :(
+</div>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "No friends found :(",
+              },
+              "ref": null,
+              "rendered": "No friends found :(",
+              "type": "div",
+            },
+            "type": "article",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

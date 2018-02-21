@@ -4,7 +4,12 @@ import { Dashboard } from './Dashboard';
 
 describe('Dashboard', () => {
   it('should match the snapshot', () => {
-    const wrapper = shallow(<Dashboard />)
+    const wrapper = shallow(
+      <Dashboard 
+        favorites={[]}
+        user={{}}
+      />
+    )
     expect(wrapper).toMatchSnapshot();
   })
 
