@@ -1,4 +1,4 @@
-export const gameReducer = (state = [], action) => {
+export const gameReducer = (state = {}, action) => {
   switch (action.type) {
     case 'UPDATE_FAVORITES' :
       return action.favorites

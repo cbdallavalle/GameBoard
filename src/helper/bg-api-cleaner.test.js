@@ -18,7 +18,7 @@ describe("cleanGameDetails", () => {
       {type: "element", name: "description", elements: [{type: "text", text: "At the bottom of the ocean, no one will hear you scream"}]}
     ]
     const mockRawGameXML = {elements: [{elements: [{attributes: {id: '123'}, elements: gameDetails}]}]}
-    const cleanGame = [{ id: '123', thumbnail: 'https://cf.geekdo-images.com/images/pic3013621_t.png', image: 'https://cf.geekdo-images.com/images/pic3013621.png', description: 'At the bottom of the ocean, no one will hear you scream' }];
+    const cleanGame = { id: '123', thumbnail: 'https://cf.geekdo-images.com/images/pic3013621_t.png', image: 'https://cf.geekdo-images.com/images/pic3013621.png', description: 'At the bottom of the ocean, no one will hear you scream' };
     expect(api.cleanGameDetails(mockRawGameXML)).toEqual(cleanGame)
   })
 })

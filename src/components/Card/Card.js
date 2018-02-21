@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import { db } from '../../firebase';
 import './Card.css';
@@ -49,6 +51,13 @@ export class Card extends Component {
     ) 
   }
 }
+
+Card.propTypes = {
+  user: PropTypes.object.isRequired,
+  favorite: PropTypes.object.isRequired,
+  friendName: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
+};
 
 export const mapStateToProps = state => ({
   user: state.user,

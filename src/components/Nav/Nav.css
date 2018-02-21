@@ -24,6 +24,6 @@ nav button:focus {
   background-color: #BD9B89;
 }
 
-h1 {
+nav h1 {
   border-right: 1px solid grey;
 }

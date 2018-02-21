@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import Main from '../Main/Main';
@@ -24,15 +24,20 @@ export class App extends Component {
   }
 
   loginUser = async(authUser) => {
-    this.props.loginUser(authUser);
-    const favorites = await db.getFavorites(authUser.uid);
-    const friends = await db.getFriends(authUser.uid)
-    if(favorites) {
-      this.props.updateFavorites(favorites)
-    }
-    if(friends) {
-      this.props.updateFriends(friends)
-    }
+    const user = {uid: authUser.uid};
+    this.props.loginUser(user);
+    this.updateFriends(user.uid);
+    this.updateFavorites(user.uid);
+  }
+
+  updateFriends = async(userId) => {
+    const friends = await db.getFriends(userId);
+    friends && this.props.updateFriends(friends);
+  }
+
+  updateFavorites = async(userId) => {
+    const favorites = await db.getFavorites(userId);
+    favorites && this.props.updateFavorites(favorites);
   }
   
   render() {
@@ -43,6 +48,12 @@ export class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  updateFavorites: PropTypes.func.isRequired,
+  updateFriends: PropTypes.func.isRequired
+};
 
 export const mapDispatchToProps = dispatch => ({
   loginUser: user => dispatch(loginUser(user)),

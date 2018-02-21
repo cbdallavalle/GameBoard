@@ -23,7 +23,6 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <input
-          className="login-input"
           name="email"
           onChange={[Function]}
           placeholder="email"
@@ -31,7 +30,6 @@ ShallowWrapper {
           value="email"
 />,
         <input
-          className="login-input"
           name="passwordOne"
           onChange={[Function]}
           placeholder="Password"
@@ -39,6 +37,7 @@ ShallowWrapper {
           value="password"
 />,
       ],
+      "className": "SignIn",
     },
     "ref": null,
     "rendered": Array [
@@ -47,7 +46,6 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "className": "login-input",
           "name": "email",
           "onChange": [Function],
           "placeholder": "email",
@@ -63,7 +61,6 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "className": "login-input",
           "name": "passwordOne",
           "onChange": [Function],
           "placeholder": "Password",
@@ -85,7 +82,6 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <input
-            className="login-input"
             name="email"
             onChange={[Function]}
             placeholder="email"
@@ -93,7 +89,6 @@ ShallowWrapper {
             value="email"
 />,
           <input
-            className="login-input"
             name="passwordOne"
             onChange={[Function]}
             placeholder="Password"
@@ -101,6 +96,7 @@ ShallowWrapper {
             value="password"
 />,
         ],
+        "className": "SignIn",
       },
       "ref": null,
       "rendered": Array [
@@ -109,7 +105,6 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "className": "login-input",
             "name": "email",
             "onChange": [Function],
             "placeholder": "email",
@@ -125,7 +120,6 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "className": "login-input",
             "name": "passwordOne",
             "onChange": [Function],
             "placeholder": "Password",

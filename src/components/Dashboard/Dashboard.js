@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { searchGames } from '../../actions';
 import { auth, db } from '../../firebase';
+import PropTypes from 'prop-types';
 
 import AddFriends from '../AddFriends/AddFriends';
 import Search from '../Search/Search';
@@ -70,6 +71,11 @@ export class Dashboard extends Component {
     )
   }
 }
+
+Dashboard.propTypes = {
+  favorites: PropTypes.object.isRequired,
+  user: PropTypes.object
+};
 
 export const mapStateToProps = state => ({
   favorites: state.favorites,

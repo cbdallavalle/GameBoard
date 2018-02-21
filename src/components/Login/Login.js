@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import dice from '../../assets/dice.gif';
+import PropTypes from 'prop-types';
 import { auth, db } from '../../firebase';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -136,6 +137,10 @@ export class Login extends Component {
     )
   }
 }
+
+Login.propTypes = {
+  user: PropTypes.object
+};
 
 const mapStateToProps = state => ({
   user: state.user
