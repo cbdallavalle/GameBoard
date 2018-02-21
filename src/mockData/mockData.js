@@ -46,5 +46,7 @@ export const mockData = {
       id: "GZZGrEW9aYXzbxrdphXuq04ng6E3",
       lastName: "little" 
     }
-  ]
+  ],
+  mockFriends: ['123', '456', '778'],
+  mockFavorites: { 'Race for the Galaxy': {game: 'info'} }
 }
