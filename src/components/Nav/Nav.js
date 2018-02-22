@@ -1,27 +1,31 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import './Nav.css';
 
-export const Nav = ({handleClick}) => {
+export const Nav = () => {
   return (
     <nav>
-      <button name='your-games' onClick={(e) => handleClick(e)}>
-        <i className="fas fa-user"></i> Your Games
-      </button>
-      <button name='friends-games' onClick={(e) => handleClick(e)}>
-        <i className="fas fa-users"></i> Your friend's games
-      </button>
-      <button name='search-games' onClick={(e) => handleClick(e)}>
-        Search for games 
-      </button>
-      <button name="search-friends" onClick={(e) => handleClick(e)}>
-        Search for friends
-      </button>
+      <NavLink to='/dashboard/your-games'>
+        <button name='your-games'>
+          <i className="fas fa-user"></i> Your Games
+        </button>
+      </NavLink>
+      <NavLink to='/dashboard/friends-games'>
+        <button name='friends-games' >
+          <i className="fas fa-users"></i> Your friend's games
+        </button>
+      </NavLink>
+      <NavLink to='/dashboard/search-games'>
+        <button name='search-games'>
+          Search for games 
+        </button>
+      </NavLink>
+      <NavLink to='/dashboard/search-users'>
+        <button name="search-friends">
+          Search for friends
+        </button>
+      </NavLink>
     </nav>
   )
 }
-
-Nav.propTypes = {
-  handleClick: PropTypes.func.isRequired
-};

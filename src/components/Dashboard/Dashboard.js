@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { searchGames } from '../../actions';
-import { auth, db } from '../../firebase';
+import { db } from '../../firebase';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import AddFriends from '../AddFriends/AddFriends';
@@ -16,48 +16,19 @@ export class Dashboard extends Component {
   constructor() {
     super()
     this.state = {
-      display: 'your-games',
       friendsFavorites: {}
     }
   }
 
-  determineDisplay = () => {
-    if(this.state.display === 'your-games') {
-      return (
-        <CardContainer 
-          favorites={this.props.favorites}
-          type={"games"}
-        />
-      )  
-    } else if (this.state.display === 'friends-games') {
-      return (
-        <CardContainer 
-          favorites={this.state.friendsFavorites}
-          type={"friends"}
-        />
-      )
-    } else if (this.state.display === 'search-games') {
-      return (
-        <Search />
-      )
-    } else if (this.state.display === 'search-friends') {
-      return (
-        <AddFriends />
-      )
-    }
+  componentWillReceiveProps = () => {
+    this.updateFavorites();
   }
 
-  getFriendsGames = async () => {
-    return await db.getFriendsFavorites(this.props.user.uid);
-  }
-
-  handleClick = async e => {
-    const name = e.target.name
-    if(name === 'friends-games') {
-      const friendsFavorites = await this.getFriendsGames();
-      this.setState({ display: name, friendsFavorites })
-    } else {
-      this.setState({ display: name})
+  updateFavorites = async() => {
+    if(this.props.user.uid) {
+      const friendsFavorites = await db.getFriendsFavorites(this.props.user.uid);
+      console.log(friendsFavorites)
+      this.setState({ friendsFavorites })
     }
   }
 
@@ -66,7 +37,24 @@ export class Dashboard extends Component {
       <section className="Dashboard">
         <Header />
         <Nav handleClick={this.handleClick}/>
-        {this.determineDisplay()}
+        <Switch>
+          <Route
+            exact path="/dashboard/your-games"
+            render={ () => <CardContainer favorites={this.props.favorites} type={"games"} /> }
+          />
+          <Route 
+            exact path="/dashboard/friends-games" 
+            render={ () => <CardContainer favorites={this.state.friendsFavorites} type={"friends"} /> }
+          />
+          <Route 
+            exact path="/dashboard/search-games" 
+            component={ Search }
+          />
+          <Route 
+            exact path="/dashboard/search-users" 
+            component={ AddFriends }
+          />
+        </Switch>
       </section>
     )
   }
@@ -82,4 +70,4 @@ export const mapStateToProps = state => ({
   user: state.user
 })
 
-export default connect(mapStateToProps, null)(Dashboard);
+export default withRouter(connect(mapStateToProps, null)(Dashboard));

@@ -48,5 +48,9 @@ export const mockData = {
     }
   ],
   mockFriends: ['123', '456', '778'],
-  mockFavorites: { 'Race for the Galaxy': {game: 'info'} }
+  mockFavorites: { 'Race for the Galaxy': {game: 'info'} },
+  mockFriendsFavorites: {
+    kubla: { 'Race for the Galaxy': {game: 'info'} },
+    wren: { 'Captain Sonar': {game: 'info'} }
+  }
 }

@@ -5,7 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Dashboard
-    favorites={Array []}
+    favorites={Object {}}
     user={Object {}}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -23,12 +23,30 @@ ShallowWrapper {
       "children": Array [
         <Unknown />,
         <Unknown
-          handleClick={[Function]}
+          handleClick={undefined}
 />,
-        <Unknown
-          favorites={Array []}
-          type="games"
-/>,
+        <Switch>
+          <Route
+                    exact={true}
+                    path="/dashboard/your-games"
+                    render={[Function]}
+          />
+          <Route
+                    exact={true}
+                    path="/dashboard/friends-games"
+                    render={[Function]}
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/dashboard/search-games"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/dashboard/search-users"
+          />
+</Switch>,
       ],
       "className": "Dashboard",
     },
@@ -48,7 +66,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "handleClick": [Function],
+          "handleClick": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -57,13 +75,86 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
-          "favorites": Array [],
-          "type": "games",
+          "children": Array [
+            <Route
+              exact={true}
+              path="/dashboard/your-games"
+              render={[Function]}
+/>,
+            <Route
+              exact={true}
+              path="/dashboard/friends-games"
+              render={[Function]}
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/dashboard/search-games"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/dashboard/search-users"
+/>,
+          ],
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/dashboard/your-games",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/dashboard/friends-games",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/dashboard/search-games",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/dashboard/search-users",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
         "type": [Function],
       },
     ],
@@ -78,12 +169,30 @@ ShallowWrapper {
         "children": Array [
           <Unknown />,
           <Unknown
-            handleClick={[Function]}
+            handleClick={undefined}
 />,
-          <Unknown
-            favorites={Array []}
-            type="games"
-/>,
+          <Switch>
+            <Route
+                        exact={true}
+                        path="/dashboard/your-games"
+                        render={[Function]}
+            />
+            <Route
+                        exact={true}
+                        path="/dashboard/friends-games"
+                        render={[Function]}
+            />
+            <Route
+                        component={[Function]}
+                        exact={true}
+                        path="/dashboard/search-games"
+            />
+            <Route
+                        component={[Function]}
+                        exact={true}
+                        path="/dashboard/search-users"
+            />
+</Switch>,
         ],
         "className": "Dashboard",
       },
@@ -103,7 +212,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "handleClick": [Function],
+            "handleClick": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -112,13 +221,86 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
-            "favorites": Array [],
-            "type": "games",
+            "children": Array [
+              <Route
+                exact={true}
+                path="/dashboard/your-games"
+                render={[Function]}
+/>,
+              <Route
+                exact={true}
+                path="/dashboard/friends-games"
+                render={[Function]}
+/>,
+              <Route
+                component={[Function]}
+                exact={true}
+                path="/dashboard/search-games"
+/>,
+              <Route
+                component={[Function]}
+                exact={true}
+                path="/dashboard/search-users"
+/>,
+            ],
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "exact": true,
+                "path": "/dashboard/your-games",
+                "render": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "exact": true,
+                "path": "/dashboard/friends-games",
+                "render": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "exact": true,
+                "path": "/dashboard/search-games",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "exact": true,
+                "path": "/dashboard/search-users",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
           "type": [Function],
         },
       ],
