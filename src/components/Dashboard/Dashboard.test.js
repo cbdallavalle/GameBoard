@@ -1,36 +1,40 @@
 import React from 'react';
 import { shallow } from "enzyme";
 import { Dashboard } from './Dashboard';
+import { db } from '../../firebase';
+import { mockData } from '../../mockData/mockData';
 
 describe('Dashboard', () => {
   it('should match the snapshot', () => {
     const wrapper = shallow(
       <Dashboard 
-        favorites={[]}
+        favorites={{}}
         user={{}}
       />
     )
     expect(wrapper).toMatchSnapshot();
   })
 
-  // it('should have a default state of empty strings for gameSearch, friendSearch', () => {
-  //   const wrapper = shallow(<Dashboard />)
-  //   expect(wrapper.state()).toEqual({ gameSearch: '', friendSearch: ''})
-  // })
+  it('should have a default state of an empty object for friendsFavorites', () => {
+    const wrapper = shallow(
+      <Dashboard         
+        favorites={{}}
+        user={{}}
+      />
+    )
+    expect(wrapper.state()).toEqual({ friendsFavorites: {} })
+  })
 
-  // it('should change state when handleChange has been called', () => {
-  //   const wrapper = shallow(<Dashboard />)
-  //   const mockEvent = { target: {name: "gameSearch", target: "Captain Sonar"}}
-  //   wrapper.instance().handleChange(mockEvent)
-  // })
+  //updateFavorites
+  it('updateFavorites will set friendsFavorites to an array of friends', async() => {
+    const wrapper = shallow(
+      <Dashboard         
+        favorites={{}}
+        user={{ uid: '123' }}
+      />
+    )
+    db.getFriendsFavorites = () => mockData.mockFriendsFavorites;
+    await wrapper.instance().updateFavorites();
+    expect(wrapper.state().friendsFavorites).toEqual(mockData.mockFriendsFavorites )
+  })
 })
-
-// describe('mapDispatchToProps', () => {
-//   it('should map addSearch to props', () => {
-//       const mockDispatch = jest.fn();
-//       const mapped = mapDispatchToProps(mockDispatch);
-
-//       mapped.addSearch("Evolution");
-//       expect(mockDispatch).toHaveBeenCalled();
-//   })
-// })

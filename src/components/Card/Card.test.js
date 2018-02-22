@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Card } from './Card';
+import { Card, mapStateToProps } from './Card';
 import { shallow } from 'enzyme';
 
-describe("Card", () => {
-  it("should match the snapshot", () => {
+
+//come back to after change the UI
+describe('Card', () => {
+  it('should match the snapshot', () => {
     const wrapper = shallow(
       <Card 
         user={{}}
         key={ 0 }
         favorite={ {} }
-        friendName={ "friend" }
-        type={ "games" }
+        friendName={ 'friend' }
+        type={ 'games' }
       />
     )
     expect(wrapper).toMatchSnapshot();
