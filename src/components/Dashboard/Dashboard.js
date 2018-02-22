@@ -27,7 +27,6 @@ export class Dashboard extends Component {
   updateFavorites = async() => {
     if(this.props.user.uid) {
       const friendsFavorites = await db.getFriendsFavorites(this.props.user.uid);
-      console.log(friendsFavorites)
       this.setState({ friendsFavorites })
     }
   }

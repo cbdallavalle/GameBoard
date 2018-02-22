@@ -1,134 +1,94 @@
 import React from 'react';
-import { Search } from './Search';
+import { Search, mapStateToProps, mapDispatchToProps } from './Search';
 import { shallow } from 'enzyme';
 import { db } from '../../firebase';
 import * as api from '../../helper/bg-api-cleaner';
+import { mockData } from '../../mockData/mockData'
 
 describe('triggerSearch', () => {
-  const defaultState = {
-    games: [],
-    search: '',
-    game: {}
-  }
-  const mockEvent = {
-    preventDefault: () => {},
-    target: {
-      name: 'search',
-      value: 'Meeple Circus'
-    }
-  }
-  const mockSearch = [{id: '123', name: 'Mysterium'}]
-  const mockGame = { id: '123', name: 'Mysterium', thumbnail: 'src', image: 'src', description: 'A mystery game with pictures' };
+  let wrapper;
   const mockUpdateFavorites = jest.fn();
 
-  it('should start with default state', () => {
-    const wrapper = shallow(
+  beforeEach(() => {
+    wrapper = shallow(
       <Search 
         user={{}}
         updateFavorites={mockUpdateFavorites}
       />);
-    expect(wrapper.state()).toEqual(defaultState);
+  })
+
+  it('should start with default state', () => {
+    expect(wrapper.state()).toEqual(mockData.mockDefaultSearchState);
   })
 
   //handleChange
   it('handleChange should set state from a mockEvent', () => {
-    const wrapper = shallow(
-      <Search 
-        user={{}}
-        updateFavorites={mockUpdateFavorites}
-      />);
-    wrapper.instance().handleChange(mockEvent);
+    wrapper.instance().handleChange(mockData.mockSearchEvent);
     expect(wrapper.state().search).toEqual('Meeple Circus');
   })
 
   //handleSubmit
   it('handleSubmit should set state to an empty string', () => {
-    const wrapper = shallow(
-      <Search 
-        user={{}}
-        updateFavorites={mockUpdateFavorites}
-      />);
     wrapper.instance().triggerSearch = jest.fn();
-    wrapper.instance().handleSubmit(mockEvent);
-    expect(wrapper.state()).toEqual(defaultState)
+    wrapper.instance().handleSubmit(mockData.mockSearchEvent);
+    expect(wrapper.state()).toEqual(mockData.mockDefaultSearchState)
   })
 
   //triggerSearch
   it('Trigger search should set state with an array of games', async() => {
-    const wrapper = shallow(
-      <Search 
-        user={{}}
-        updateFavorites={mockUpdateFavorites}
-      />);
     
     api.fetchBoardGames = jest.fn();
-    api.cleanSearch = (result) => mockSearch;
+    api.cleanSearch = (result) => mockData.mockSearch;
     await wrapper.instance().triggerSearch('Mysterium');
-    expect(wrapper.state().games).toEqual(mockSearch)
+    expect(wrapper.state().games).toEqual(mockData.mockSearch)
   });
 
   //handleChooseGame
   it('handleChooseGame should set state with a game', async () => {
-    const wrapper = shallow(
-      <Search 
-        user={{}}
-        updateFavorites={mockUpdateFavorites}
-      />);
 
     api.fetchBoardGames = jest.fn();
-    api.cleanGameDetails = (result) => (mockGame);
-    await wrapper.instance().handleChooseGame(mockSearch[0])
-    expect(wrapper.state().game).toEqual(mockGame)
-  })
-
-  //getGamesFromDB
-  it('getGamesFromDB should return favorites', () => {
-    // db.onceGetUsers() = jest.fn();
-    
+    api.cleanGameDetails = (result) => (mockData.mockSearchGame);
+    await wrapper.instance().handleChooseGame(mockData.mockSearch[0])
+    expect(wrapper.state().game).toEqual(mockData.mockSearchGame)
   })
 
   //addGameToFavorites
+  it('addGameToFavorites should call updateFavorites', async() => {
+
+    db.doWriteFavoriteData = jest.fn();
+    db.getFavorites = (userId) => mockData.mockFavorites;
+    await wrapper.instance().addGameToFavorites();
+    expect(mockUpdateFavorites).toHaveBeenCalledWith(mockData.mockFavorites)
+  })
 
   //displayAllGames
   it('displayAllGames and displayGame should match the snapshot if games in state has length', () => {
-    const wrapper = shallow(
-      <Search 
-        user={{}}
-        updateFavorites={mockUpdateFavorites}
-      />);
-    wrapper.setState({games: mockSearch})
+    wrapper.setState({games: mockData.mockSearch})
     expect(wrapper).toMatchSnapshot();
   })
 
   it('displayAllGames should match the snapshot if games in state has no length', () => {
-    const wrapper = shallow(
-      <Search 
-        user={{}}
-        updateFavorites={mockUpdateFavorites}
-      />);
     expect(wrapper).toMatchSnapshot();
   })
 
   //displayGame
   it('displayGame should match the snapshot if game in state exists', () => {
-    const wrapper = shallow(
-      <Search 
-        user={{}}
-        updateFavorites={mockUpdateFavorites}
-      />);
-    wrapper.setState({game: mockGame});
+    wrapper.setState({game: mockData.mockSearchGame});
     expect(wrapper).toMatchSnapshot();
   })
 })
 
+describe('mapStateToProps', () => {
+  it('should take in state and return a user object', () => {
+    expect(mapStateToProps(mockData.mockMSTPUserState)).toEqual(mockData.mockMSTPUser)
+  })
+})
 
-
-
-
-// describe('mapStateToProps', () => {
-//   it('should map search to props', () => {
-//     const mapped = mapStateToProps({ search: "Onirim"});
-
-//     expect(mapped.search).toEqual("Onirim")
-//   })
-// })
+describe('mapDispatchToProps', () => {
+  it('should call dispatch when updateFavorites is called', () => {
+    const mockDispatch = jest.fn();
+    const mapped = mapDispatchToProps(mockDispatch);
+    mapped.updateFavorites();
+    expect(mockDispatch).toHaveBeenCalled();
+  })
+})
