@@ -29,6 +29,7 @@ export class Login extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  //put into router
   determineDisplay = () => {
     return this.state.displayCreate === 'signup' ?
     <div>
@@ -142,7 +143,7 @@ Login.propTypes = {
   user: PropTypes.object
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   user: state.user
 })
 

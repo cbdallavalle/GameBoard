@@ -52,5 +52,59 @@ export const mockData = {
   mockFriendsFavorites: {
     kubla: { 'Race for the Galaxy': {game: 'info'} },
     wren: { 'Captain Sonar': {game: 'info'} }
+  },
+  initialState: {
+    firstName: '',
+    lastName: '',
+    email: '',
+    passwordOne: '',
+    passwordTwo: '',
+    error: null,
+    displayCreate: 'login',
+  },
+  mockLogInEvent: {
+    target: {
+      name: 'email', 
+      value: 'coda@gmail.com'
+    }, 
+    preventDefault: () => {}
+  },
+  mockDefaultSearchState: {
+    games: [],
+    search: '',
+    game: {}
+  },
+  mockSearchEvent: {
+    target: {
+      name: 'search',
+      value: 'Meeple Circus'
+    },
+    preventDefault: () => {}
+  }, 
+  mockSearch: [{ 
+    id: '123', 
+    name: 'Mysterium' 
+  }],
+  mockSearchGame: { 
+    id: '123', 
+    name: 'Mysterium', 
+    thumbnail: 'src', 
+    image: 'src', 
+    description: 'A mystery game with pictures' 
+  },
+  mockMSTPUserState: {
+    user: {
+      uid: 'GZZGrEW9aYXzbxrdphXuq04ng6E3'
+    }
+  },
+  mockMSTPUser: {
+    user: {
+      uid: 'GZZGrEW9aYXzbxrdphXuq04ng6E3'
+    }
   }
 }
+
+
+
+
+

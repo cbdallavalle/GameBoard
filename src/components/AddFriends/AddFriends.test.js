@@ -95,10 +95,8 @@ describe("AddFriends", () => {
 })
 
 describe("mapStateToProps", () => {
-  it('should return a user object', () => {
-    const mockState = {user:{uid: 'GZZGrEW9aYXzbxrdphXuq04ng6E3'}}
-    const mockUser = {user:{uid: 'GZZGrEW9aYXzbxrdphXuq04ng6E3'}}
-    expect(mapStateToProps(mockState)).toEqual(mockUser)
+  it('should take in state and return a user object', () => {
+    expect(mapStateToProps(mockData.mockMSTPUserState)).toEqual(mockData.mockMSTPUser)
   })
 })
 
