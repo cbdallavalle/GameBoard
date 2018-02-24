@@ -18,10 +18,22 @@ export const cleanGameDetails = game => {
 }
 
 //try catch block
+// `https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=${search}`
 export const fetchBoardGames = async url => {
-  const response = await fetch(url);
-  const responseText = await response.text();
+  try {
+    const response = await fetch(url);
+    if(response.status < 300) {
+      const responseText = await response.text();
+      return convertXMLToJSON(responseText)
+    } else {
+      throw new Error('unable to load game data :(')
+    }
+  } catch (error) {
+    throw new Error('unable to load game data :(')
+  }
+}
 
+export const convertXMLToJSON = (responseText) => {
   const convert = require('xml-js');
   const options = {ignoreComment: true, alwaysChildren: true };
   const result = convert.xml2js(responseText, options);

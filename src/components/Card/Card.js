@@ -14,7 +14,6 @@ export class Card extends Component {
   }
 
   componentDidMount = async () => {
-    console.log('mounted')
     this.props.type === 'games' && await this.setState({contenteditable: "true"})
   }
 
@@ -55,8 +54,8 @@ export class Card extends Component {
 Card.propTypes = {
   user: PropTypes.object.isRequired,
   favorite: PropTypes.object.isRequired,
-  friendName: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired
+  friendName: PropTypes.string,
+  type: PropTypes.string
 };
 
 export const mapStateToProps = state => ({

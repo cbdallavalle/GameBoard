@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from "enzyme";
-import { Dashboard } from './Dashboard';
+import { Dashboard, mapStateToProps } from './Dashboard';
 import { db } from '../../firebase';
 import { mockData } from '../../mockData/mockData';
 
@@ -36,5 +36,21 @@ describe('Dashboard', () => {
     db.getFriendsFavorites = () => mockData.mockFriendsFavorites;
     await wrapper.instance().updateFavorites();
     expect(wrapper.state().friendsFavorites).toEqual(mockData.mockFriendsFavorites )
+  })
+})
+
+describe("mapStateToProps", () => {
+  const initialState = {
+    favorites: mockData.mockFavorites,
+    user: mockData.mockMSTPUser.user
+  }
+
+  const expected = {
+    favorites: mockData.mockFavorites,
+    user: mockData.mockMSTPUser.user
+  }
+
+  it('mapStateToProps should take in state and return an object', () => {
+    expect(mapStateToProps(initialState)).toEqual(expected);
   })
 })
