@@ -6,6 +6,7 @@ import { db } from '../../firebase';
 import * as api from '../../helper/bg-api-cleaner';
 import Card from '../Card/Card';
 import { updateFavorites } from '../../actions';
+import loading from '../../assets/loading.gif';
 import './Search.css';
 
 export class Search extends Component {
@@ -15,7 +16,8 @@ export class Search extends Component {
       games: [],
       search: '',
       game: {},
-      error: ''
+      error: '',
+      loading: false
     }
   }
 
@@ -29,7 +31,7 @@ export class Search extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.triggerSearch(this.state.search);
-    this.setState({search: ''})
+    this.setState({search: '', loading: true})
   }
 
 
@@ -38,21 +40,22 @@ export class Search extends Component {
     try {
       const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=${search}`)
       const games = api.cleanSearch(result);
-      this.setState({ games, error: '' });  
+      this.setState({ games, error: '', loading: false });  
     } catch (error) {
       this.setState({ error: error.message })
     }
   }
 
   handleChooseGame = async (gameSelected) => {
+    this.setState({loading: true})
     const { id, name } = gameSelected;
     try {
       const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/https://www.boardgamegeek.com/xmlapi2/thing?id=${id}`);
       const details = await api.cleanGameDetails(result);
       const game = {...api.cleanGameDetails(result), name};
-      this.setState({game, error: ''})
+      this.setState({game, error: '', loading: false})
     } catch (error) {
-      this.setState({ error: error.message })
+      this.setState({ error: error.message, loading: false })
     }
   }
 
@@ -63,9 +66,11 @@ export class Search extends Component {
   }
 
   displayAllGames = () => {
-    return this.state.games.length 
-      ? this.state.games.map((game, index) => <h3 key={index} onClick={() => this.handleChooseGame(game)}>{game.name}</h3> )
-      : <h4> No search results currently </h4>
+    if(this.state.games.length)  {
+      return this.state.games.map((game, index) => <h3 key={index} onClick={() => this.handleChooseGame(game)}>{game.name}</h3> )
+    } else {
+      return <h4> No search results currently </h4>
+    }
   }
 
   displayGame = () => {
@@ -79,6 +84,10 @@ export class Search extends Component {
 
   displayError = () => {
     return this.state.error !== '' && <p>{this.state.error}</p>
+  }
+
+  displayLoadingGif = () => {
+    return this.state.loading && <div id="loading-cont"><img src={loading} alt="loading" id="loading" /></div>
   }
 
   render() {
@@ -97,6 +106,7 @@ export class Search extends Component {
         </form>
         <div className="display-friends">
           <section className='search-results'>
+            { this.displayLoadingGif() }
             { this.displayAllGames() }
           </section>
         </div>
