@@ -7,9 +7,10 @@ export const cleanSearch = (searches) => {
 }
 
 export const cleanGameDetails = game => {
+  const he = require('he');
   const gameDetails = game.elements[0].elements[0].elements.reduce( (cleanedGame, gameDetail) => {
       if (gameDetail.name === 'thumbnail' || gameDetail.name === 'image' || gameDetail.name === 'description') {
-        cleanedGame[gameDetail.name] = gameDetail.elements[0].text
+        cleanedGame[gameDetail.name] = he.decode(gameDetail.elements[0].text)
       }
       return cleanedGame
     }, {} )
@@ -18,7 +19,6 @@ export const cleanGameDetails = game => {
 }
 
 //try catch block
-// `https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=${search}`
 export const fetchBoardGames = async url => {
   try {
     const response = await fetch(url);
