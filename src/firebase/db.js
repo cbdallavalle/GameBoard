@@ -19,7 +19,7 @@ export const onceGetUsers = async () => {
 
 export const doWriteFavoriteData = async (userId, favorite) => {
   const existingFavorites = await getFavorites(userId);
-  const favoriteToAdd = checkFavoriteDuplication(existingFavorites, favorite)
+  const favoriteToAdd = checkFavoriteDuplication(existingFavorites, favorite);
   const newFavorites = {...existingFavorites, ...favoriteToAdd }
   doWriteLastFavoritedData(userId, favorite)
   db.ref('users/' + userId + '/favorites').set(newFavorites);
@@ -33,7 +33,7 @@ export const checkFavoriteDuplication = (existingFavorites, favorite) => {
   const { name, id, description, image, thumbnail } = favorite;
   const review = "No review - click to add one";
   const favoriteToAdd = { [name]: { id, description, image, thumbnail, name, review } }
-  return existingFavorites[favorite.name] ? {} : favoriteToAdd
+  return existingFavorites && existingFavorites[favorite.name] ? {} : favoriteToAdd
 }
 
 export const doWriteFriendsData = async (userId, friendId) => {
@@ -60,13 +60,16 @@ export const getFavorites = async (userId) => {
 export const getFriendsFavorites = async (userId) => {
   const friends = await getFriends(userId);
   const value = await onceGetUsers();
-  // const value = await snapshot.val();
-  return friends.reduce( (accu, friendId) => {
-    if(value[friendId].lastFavorited) {
-      accu[value[friendId].user.firstName] = value[friendId].lastFavorited
-    }
-    return accu
-  }, {} )
+  if(friends) {
+    return friends.reduce( (accu, friendId) => {
+      if(value[friendId].lastFavorited) {
+        accu[value[friendId].user.firstName] = value[friendId].lastFavorited
+      }
+      return accu
+    }, {} )  
+  } else {
+    return {}
+  }
 }
 
 export const doWriteReviewData = async (userId, favorite, review) => {
