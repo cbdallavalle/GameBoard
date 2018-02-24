@@ -21,6 +21,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        false,
         <form
           onSubmit={[Function]}
 >
@@ -56,6 +57,7 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -178,6 +180,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          false,
           <form
             onSubmit={[Function]}
 >
@@ -213,6 +216,7 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -360,6 +364,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        false,
         <form
           onSubmit={[Function]}
 >
@@ -393,6 +398,7 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -506,6 +512,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          false,
           <form
             onSubmit={[Function]}
 >
@@ -539,6 +546,7 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -677,6 +685,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        false,
         <form
           onSubmit={[Function]}
 >
@@ -733,6 +742,7 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -914,6 +924,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          false,
           <form
             onSubmit={[Function]}
 >
@@ -970,6 +981,7 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        false,
         Object {
           "instance": null,
           "key": undefined,

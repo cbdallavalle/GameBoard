@@ -72,7 +72,8 @@ export const mockData = {
   mockDefaultSearchState: {
     games: [],
     search: '',
-    game: {}
+    game: {},
+    error: ''
   },
   mockSearchEvent: {
     target: {

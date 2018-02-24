@@ -14,7 +14,8 @@ export class Search extends Component {
     this.state = {
       games: [],
       search: '',
-      game: {}
+      game: {},
+      error: ''
     }
   }
 
@@ -31,19 +32,28 @@ export class Search extends Component {
     this.setState({search: ''})
   }
 
+
   triggerSearch = async (string) => {
     const search = string.toLowerCase().split(' ').join('+');
-    const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=${search}`)
-    const games = api.cleanSearch(result);
-    this.setState({ games });  
+    try {
+      const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=${search}`)
+      const games = api.cleanSearch(result);
+      this.setState({ games, error: '' });  
+    } catch (error) {
+      this.setState({ error: error.message })
+    }
   }
 
   handleChooseGame = async (gameSelected) => {
     const { id, name } = gameSelected;
-    const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/https://www.boardgamegeek.com/xmlapi2/thing?id=${id}`);
-    const details = await api.cleanGameDetails(result);
-    const game = {...api.cleanGameDetails(result), name};
-    this.setState({game})
+    try {
+      const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/https://www.boardgamegeek.com/xmlapi2/thing?id=${id}`);
+      const details = await api.cleanGameDetails(result);
+      const game = {...api.cleanGameDetails(result), name};
+      this.setState({game, error: ''})
+    } catch (error) {
+      this.setState({ error: error.message })
+    }
   }
 
   addGameToFavorites = async() => {
@@ -67,9 +77,14 @@ export class Search extends Component {
     : <div></div>
   }
 
+  displayError = () => {
+    return this.state.error !== '' && <p>{this.state.error}</p>
+  }
+
   render() {
     return (
       <section className='Search'>
+        { this.displayError() }
         <form onSubmit={this.handleSubmit}>
           <input 
             type="text"
