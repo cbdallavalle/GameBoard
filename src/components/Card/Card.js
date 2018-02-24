@@ -28,7 +28,7 @@ export class Card extends Component {
   render() {
     const { description, id, image, name, thumbnail, review } = this.props.favorite;
     return (
-      <article className="Card">
+      <article className={`Card ${this.props.display}`}>
         <div className="game-info" id="game-title">
           <h3>{ this.friendsName() }</h3>
           <h3>{ name }</h3>
@@ -37,7 +37,7 @@ export class Card extends Component {
         <div className="game-info" id="game-description">
           <p>{ description }</p>
         </div>
-        <div className={`game-info ${this.props.display}`} id="review-cont">
+        <div className={`game-info`} id="review-cont">
           <h3><span>0</span>/5</h3>
           <p 
             contenteditable={this.state.contenteditable}

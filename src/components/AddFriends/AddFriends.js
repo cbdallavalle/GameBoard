@@ -35,8 +35,10 @@ export class AddFriends extends Component {
 
   displayFriends = () => {
     return this.state.usersSearched.length ?
-    this.state.usersSearched.map( (friend, index) => <h4 key={index} onClick={() => this.addFriendsToDB(friend.id)}>{friend.firstName} {friend.lastName}, {friend.email}</h4>)
-    : <div>No friends found :(</div>
+    this.state.usersSearched.map( (friend, index) => <h4 key={index} onClick={
+      () => this.addFriendsToDB(friend.id)}><i className="fas fa-plus-circle fa-add"></i>
+      {friend.firstName} {friend.lastName}, {friend.email}</h4>)
+    : <div className="no-results">No friends found :(</div>
   }
 
   addFriendsToDB = async (id) => {

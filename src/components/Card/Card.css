@@ -7,6 +7,7 @@
   background-color: #ffffffcf;
   box-sizing: border-box;
   padding: 15px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .Card h3 {
@@ -27,9 +28,19 @@
 
 .game-info {
   width: 30%;
+  line-height: 20px;
 }
 
-.hide {
+.hide #game-title {
+  width: 30%;
+}
+
+.hide #game-description {
+  width: 60%;
+  padding: 0 20px;
+}
+
+.hide #review-cont {
   display: none;
 }
 

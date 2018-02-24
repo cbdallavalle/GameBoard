@@ -14,6 +14,18 @@
   padding: 8px 16px;
 }
 
+.fa-add {
+  color: #0da50d;
+  margin-right: 10px;
+}
+
+.no-results {
+  font-size: 27px;  
+  font-weight: bold;
+  color: #525252;
+  margin-top: 150px;
+}
+
 .Search form {
   display: flex;
   flex-direction: row;
@@ -64,6 +76,12 @@
   border: none;
   border-radius: 120px;
   width: 43px;
+  color: white;
+  background-color: #0da50d;
+}
+
+#add-game:hover {
+  cursor: pointer;
 }
 
 #loading {
@@ -75,11 +93,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
+  width: 600px;
   height: 400px;
   position: absolute;
-  top: 21;
-  left: 0;
-  background-color: #bfbfbfcf;
+  top: 21px;
+  left: 17px;
+  background-color: #bfbfbf91;
   z-index: 100;
 }
