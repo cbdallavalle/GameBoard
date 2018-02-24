@@ -69,7 +69,7 @@ export class Search extends Component {
     if(this.state.games.length)  {
       return this.state.games.map((game, index) => <h3 key={index} onClick={() => this.handleChooseGame(game)}>{game.name}</h3> )
     } else {
-      return <h4> No search results currently </h4>
+      return <h4 className="no-results"> No search results currently </h4>
     }
   }
 

@@ -13,6 +13,13 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.AddFriends h4 {
+  padding: 25px 10px;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .display-friends {
   position: relative;
   display: flex;
