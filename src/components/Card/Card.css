@@ -26,21 +26,23 @@
   background-color: magenta;
 }
 
-.game-info {
+.friends .game-info,
+.games .game-info {
   width: 30%;
   line-height: 20px;
 }
 
-.hide #game-title {
+.search #game-title {
   width: 30%;
 }
 
-.hide #game-description {
+.search #game-description {
   width: 60%;
-  padding: 0 20px;
+  line-height: 20px;
+  padding: 0 40px 0 0;
 }
 
-.hide #review-cont {
+.search #review-cont {
   display: none;
 }
 
@@ -49,4 +51,29 @@
   width: 40%;
   height: 240px;
   overflow-y: scroll;
+}
+
+#game-title {
+  position: relative;
+}
+
+#delete, #add {
+  width: 20px;
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+}
+
+#delete, #add {
+  cursor: pointer;
+}
+
+.search #delete,
+.friends #delete {
+  display: none;
+}
+
+.games #add,
+.search #add {
+  display: none;
 }

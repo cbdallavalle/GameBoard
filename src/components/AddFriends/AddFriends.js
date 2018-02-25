@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { db } from '../../firebase';
 import { updateFriends } from '../../actions';
+import addIcon from '../../assets/plus.svg';
 import PropTypes from 'prop-types';
 import './AddFriends.css';
 
@@ -36,7 +37,8 @@ export class AddFriends extends Component {
   displayFriends = () => {
     return this.state.usersSearched.length ?
     this.state.usersSearched.map( (friend, index) => <h4 key={index} onClick={
-      () => this.addFriendsToDB(friend.id)}><i className="fas fa-plus-circle fa-add"></i>
+      () => this.addFriendsToDB(friend.id)}>
+      <img id="add-friends" src={ addIcon } alt="add-game" />
       {friend.firstName} {friend.lastName}, {friend.email}</h4>)
     : <div className="no-results">No friends found :(</div>
   }

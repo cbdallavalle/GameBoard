@@ -17,7 +17,8 @@ export class Search extends Component {
       search: '',
       game: {},
       error: '',
-      loading: false
+      loading: false,
+      gameAdded: 'not-added',
     }
   }
 
@@ -40,9 +41,9 @@ export class Search extends Component {
     try {
       const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=${search}`)
       const games = api.cleanSearch(result);
-      this.setState({ games, error: '', loading: false });  
+      this.setState({ games, error: '', loading: false, gameAdded: 'not-added' });  
     } catch (error) {
-      this.setState({ error: error.message })
+      this.setState({ error: error.message, loading: false, gameAdded: 'not-added' })
     }
   }
 
@@ -53,16 +54,21 @@ export class Search extends Component {
       const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/https://www.boardgamegeek.com/xmlapi2/thing?id=${id}`);
       const details = await api.cleanGameDetails(result);
       const game = {...api.cleanGameDetails(result), name};
-      this.setState({game, error: '', loading: false})
+      this.setState({game, error: '', loading: false, gameAdded: 'not-added'})
     } catch (error) {
-      this.setState({ error: error.message, loading: false })
+      this.setState({ error: error.message, loading: false, gameAdded: 'not-added' })
     }
   }
 
   addGameToFavorites = async() => {
-    await db.doWriteFavoriteData(this.props.user.uid, this.state.game);
-    const favorites = await db.getFavorites(this.props.user.uid);
-    this.props.updateFavorites(favorites)
+    try {
+      await db.doWriteFavoriteData(this.props.user.uid, this.state.game);
+      this.setState({gameAdded: 'added'})
+      const favorites = await db.getFavorites(this.props.user.uid);
+      this.props.updateFavorites(favorites)
+    } catch(error) {
+      this.setState({ error: error.message })
+    }
   }
 
   displayAllGames = () => {
@@ -76,8 +82,8 @@ export class Search extends Component {
   displayGame = () => {
     return this.state.game.thumbnail 
     ?  <article className="game-description">
-        <button id="add-game" onClick={this.addGameToFavorites}><i className="fas fa-plus"></i></button>
-        <Card favorite={this.state.game} display={"hide"}/>
+        <button id={this.state.gameAdded} onClick={this.addGameToFavorites}></button>
+        <Card favorite={this.state.game} type={"search"}/>
       </article>
     : <div></div>
   }
