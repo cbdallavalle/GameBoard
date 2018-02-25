@@ -22,7 +22,7 @@ describe('Dashboard', () => {
         user={{}}
       />
     )
-    expect(wrapper.state()).toEqual({ friendsFavorites: {} })
+    expect(wrapper.state()).toEqual({ friendsFavorites: {}, error: '' })
   })
 
   //updateFavorites

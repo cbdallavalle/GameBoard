@@ -37,12 +37,22 @@ ShallowWrapper {
                     <h4
                               onClick={[Function]}
                     >
+                              <img
+                                        alt="add-game"
+                                        id="add-friends"
+                                        src="plus.svg"
+                              />
                                
                               , 
                     </h4>
                     <h4
                               onClick={[Function]}
                     >
+                              <img
+                                        alt="add-game"
+                                        id="add-friends"
+                                        src="plus.svg"
+                              />
                                
                               , 
                     </h4>
@@ -75,12 +85,22 @@ ShallowWrapper {
             <h4
                         onClick={[Function]}
             >
+                        <img
+                                    alt="add-game"
+                                    id="add-friends"
+                                    src="plus.svg"
+                        />
                          
                         , 
             </h4>
             <h4
                         onClick={[Function]}
             >
+                        <img
+                                    alt="add-game"
+                                    id="add-friends"
+                                    src="plus.svg"
+                        />
                          
                         , 
             </h4>
@@ -97,12 +117,22 @@ ShallowWrapper {
               <h4
                 onClick={[Function]}
 >
+                <img
+                                alt="add-game"
+                                id="add-friends"
+                                src="plus.svg"
+                />
                  
                 , 
 </h4>,
               <h4
                 onClick={[Function]}
 >
+                <img
+                                alt="add-game"
+                                id="add-friends"
+                                src="plus.svg"
+                />
                  
                 , 
 </h4>,
@@ -116,6 +146,11 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
+                  <img
+                    alt="add-game"
+                    id="add-friends"
+                    src="plus.svg"
+/>,
                   undefined,
                   " ",
                   undefined,
@@ -126,6 +161,19 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "add-game",
+                    "id": "add-friends",
+                    "src": "plus.svg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
                 undefined,
                 " ",
                 undefined,
@@ -140,6 +188,11 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
+                  <img
+                    alt="add-game"
+                    id="add-friends"
+                    src="plus.svg"
+/>,
                   undefined,
                   " ",
                   undefined,
@@ -150,6 +203,19 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "add-game",
+                    "id": "add-friends",
+                    "src": "plus.svg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
                 undefined,
                 " ",
                 undefined,
@@ -185,12 +251,22 @@ ShallowWrapper {
                         <h4
                                     onClick={[Function]}
                         >
+                                    <img
+                                                alt="add-game"
+                                                id="add-friends"
+                                                src="plus.svg"
+                                    />
                                      
                                     , 
                         </h4>
                         <h4
                                     onClick={[Function]}
                         >
+                                    <img
+                                                alt="add-game"
+                                                id="add-friends"
+                                                src="plus.svg"
+                                    />
                                      
                                     , 
                         </h4>
@@ -223,12 +299,22 @@ ShallowWrapper {
               <h4
                             onClick={[Function]}
               >
+                            <img
+                                          alt="add-game"
+                                          id="add-friends"
+                                          src="plus.svg"
+                            />
                              
                             , 
               </h4>
               <h4
                             onClick={[Function]}
               >
+                            <img
+                                          alt="add-game"
+                                          id="add-friends"
+                                          src="plus.svg"
+                            />
                              
                             , 
               </h4>
@@ -245,12 +331,22 @@ ShallowWrapper {
                 <h4
                   onClick={[Function]}
 >
+                  <img
+                                    alt="add-game"
+                                    id="add-friends"
+                                    src="plus.svg"
+                  />
                    
                   , 
 </h4>,
                 <h4
                   onClick={[Function]}
 >
+                  <img
+                                    alt="add-game"
+                                    id="add-friends"
+                                    src="plus.svg"
+                  />
                    
                   , 
 </h4>,
@@ -264,6 +360,11 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
+                    <img
+                      alt="add-game"
+                      id="add-friends"
+                      src="plus.svg"
+/>,
                     undefined,
                     " ",
                     undefined,
@@ -274,6 +375,19 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "add-game",
+                      "id": "add-friends",
+                      "src": "plus.svg",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
                   undefined,
                   " ",
                   undefined,
@@ -288,6 +402,11 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
+                    <img
+                      alt="add-game"
+                      id="add-friends"
+                      src="plus.svg"
+/>,
                     undefined,
                     " ",
                     undefined,
@@ -298,6 +417,19 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "add-game",
+                      "id": "add-friends",
+                      "src": "plus.svg",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
                   undefined,
                   " ",
                   undefined,
@@ -359,7 +491,9 @@ ShallowWrapper {
           className="display-friends"
 >
           <article>
-                    <div>
+                    <div
+                              className="no-results"
+                    >
                               No friends found :(
                     </div>
           </article>
@@ -388,7 +522,9 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <article>
-            <div>
+            <div
+                        className="no-results"
+            >
                         No friends found :(
             </div>
 </article>,
@@ -400,7 +536,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <div>
+            "children": <div
+              className="no-results"
+>
               No friends found :(
 </div>,
           },
@@ -411,6 +549,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "No friends found :(",
+              "className": "no-results",
             },
             "ref": null,
             "rendered": "No friends found :(",
@@ -439,7 +578,9 @@ ShallowWrapper {
             className="display-friends"
 >
             <article>
-                        <div>
+                        <div
+                                    className="no-results"
+                        >
                                     No friends found :(
                         </div>
             </article>
@@ -468,7 +609,9 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <article>
-              <div>
+              <div
+                            className="no-results"
+              >
                             No friends found :(
               </div>
 </article>,
@@ -480,7 +623,9 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <div>
+              "children": <div
+                className="no-results"
+>
                 No friends found :(
 </div>,
             },
@@ -491,6 +636,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "No friends found :(",
+                "className": "no-results",
               },
               "ref": null,
               "rendered": "No friends found :(",

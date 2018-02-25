@@ -11,9 +11,17 @@ export const doCreateUser = (id, firstName, lastName, email) =>
   });
 
 export const onceGetUsers = async () => {
-  const snapshot = await db.ref('users').once('value');
-  const value = await snapshot.val();
-  return value
+  try {
+    const snapshot = await db.ref('users').once('value');
+    if (snapshot.status < 300) {
+      const value = await snapshot.val();
+      return value
+    } else {
+      throw new Error('unable to fetch users')
+    }
+  } catch (error) {
+    throw new Error('unable to fetch users')
+  }
 }
 
 export const doWriteFavoriteData = async (userId, newFavorites) => {
@@ -46,12 +54,16 @@ export const checkFavoriteDuplication = (existingFavorites, favorite) => {
 }
 
 export const doWriteFriendsData = async (userId, friendId) => {
-  const friends = await getFriends(userId);
-  if (friends && !friends.includes(friendId)) {
-    friends.push(friendId);
-    db.ref('users/' + userId + '/friends').set(friends); 
-  } else if (!friends) {
-    db.ref('users/' + userId + '/friends').set([friendId]); 
+  try {
+    const friends = await getFriends(userId);
+    if (friends && !friends.includes(friendId)) {
+      friends.push(friendId);
+      db.ref('users/' + userId + '/friends').set(friends); 
+    } else if (!friends) {
+      db.ref('users/' + userId + '/friends').set([friendId]); 
+    }
+  } catch (error) {
+    throw new Error ('unable to add friend')
   }
 }
 

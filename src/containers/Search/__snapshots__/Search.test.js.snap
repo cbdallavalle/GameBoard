@@ -134,16 +134,20 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <h3
-                onClick={[Function]}
+              false,
+              Array [
+                <h3
+                  onClick={[Function]}
 >
-                Mysterium
+                  Mysterium
 </h3>,
+              ],
             ],
             "className": "search-results",
           },
           "ref": null,
           "rendered": Array [
+            false,
             Object {
               "instance": null,
               "key": "0",
@@ -293,16 +297,20 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <h3
-                  onClick={[Function]}
+                false,
+                Array [
+                  <h3
+                    onClick={[Function]}
 >
-                  Mysterium
+                    Mysterium
 </h3>,
+                ],
               ],
               "className": "search-results",
             },
             "ref": null,
             "rendered": Array [
+              false,
               Object {
                 "instance": null,
                 "key": "0",
@@ -387,7 +395,9 @@ ShallowWrapper {
           <section
                     className="search-results"
           >
-                    <h4>
+                    <h4
+                              className="no-results"
+                    >
                                No search results currently 
                     </h4>
           </section>
@@ -460,7 +470,9 @@ ShallowWrapper {
           "children": <section
             className="search-results"
 >
-            <h4>
+            <h4
+                        className="no-results"
+            >
                          No search results currently 
             </h4>
 </section>,
@@ -472,23 +484,32 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <h4>
-               No search results currently 
+            "children": Array [
+              false,
+              <h4
+                className="no-results"
+>
+                 No search results currently 
 </h4>,
+            ],
             "className": "search-results",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": " No search results currently ",
+          "rendered": Array [
+            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": " No search results currently ",
+                "className": "no-results",
+              },
+              "ref": null,
+              "rendered": " No search results currently ",
+              "type": "h4",
             },
-            "ref": null,
-            "rendered": " No search results currently ",
-            "type": "h4",
-          },
+          ],
           "type": "section",
         },
         "type": "div",
@@ -535,7 +556,9 @@ ShallowWrapper {
             <section
                         className="search-results"
             >
-                        <h4>
+                        <h4
+                                    className="no-results"
+                        >
                                      No search results currently 
                         </h4>
             </section>
@@ -608,7 +631,9 @@ ShallowWrapper {
             "children": <section
               className="search-results"
 >
-              <h4>
+              <h4
+                            className="no-results"
+              >
                              No search results currently 
               </h4>
 </section>,
@@ -620,23 +645,32 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <h4>
-                 No search results currently 
+              "children": Array [
+                false,
+                <h4
+                  className="no-results"
+>
+                   No search results currently 
 </h4>,
+              ],
               "className": "search-results",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": " No search results currently ",
+            "rendered": Array [
+              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": " No search results currently ",
+                  "className": "no-results",
+                },
+                "ref": null,
+                "rendered": " No search results currently ",
+                "type": "h4",
               },
-              "ref": null,
-              "rendered": " No search results currently ",
-              "type": "h4",
-            },
+            ],
             "type": "section",
           },
           "type": "div",
@@ -708,7 +742,9 @@ ShallowWrapper {
           <section
                     className="search-results"
           >
-                    <h4>
+                    <h4
+                              className="no-results"
+                    >
                                No search results currently 
                     </h4>
           </section>
@@ -717,15 +753,10 @@ ShallowWrapper {
           className="game-description"
 >
           <button
-                    id="add-game"
+                    id="not-added"
                     onClick={[Function]}
-          >
-                    <i
-                              className="fas fa-plus"
-                    />
-          </button>
+          />
           <Connect(Card)
-                    display="hide"
                     favorite={
                               Object {
                                         "description": "A mystery game with pictures",
@@ -735,6 +766,7 @@ ShallowWrapper {
                                         "thumbnail": "src",
                                       }
                     }
+                    type="search"
           />
 </article>,
       ],
@@ -804,7 +836,9 @@ ShallowWrapper {
           "children": <section
             className="search-results"
 >
-            <h4>
+            <h4
+                        className="no-results"
+            >
                          No search results currently 
             </h4>
 </section>,
@@ -816,23 +850,32 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <h4>
-               No search results currently 
+            "children": Array [
+              false,
+              <h4
+                className="no-results"
+>
+                 No search results currently 
 </h4>,
+            ],
             "className": "search-results",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": " No search results currently ",
+          "rendered": Array [
+            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": " No search results currently ",
+                "className": "no-results",
+              },
+              "ref": null,
+              "rendered": " No search results currently ",
+              "type": "h4",
             },
-            "ref": null,
-            "rendered": " No search results currently ",
-            "type": "h4",
-          },
+          ],
           "type": "section",
         },
         "type": "div",
@@ -844,15 +887,10 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <button
-              id="add-game"
+              id="not-added"
               onClick={[Function]}
->
-              <i
-                            className="fas fa-plus"
-              />
-</button>,
+/>,
             <Connect(Card)
-              display="hide"
               favorite={
                             Object {
                                           "description": "A mystery game with pictures",
@@ -862,6 +900,7 @@ ShallowWrapper {
                                           "thumbnail": "src",
                                         }
               }
+              type="search"
 />,
           ],
           "className": "game-description",
@@ -873,24 +912,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <i
-                className="fas fa-plus"
-/>,
-              "id": "add-game",
+              "id": "not-added",
               "onClick": [Function],
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "className": "fas fa-plus",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "i",
-            },
+            "rendered": null,
             "type": "button",
           },
           Object {
@@ -898,7 +924,6 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "display": "hide",
               "favorite": Object {
                 "description": "A mystery game with pictures",
                 "id": "123",
@@ -906,6 +931,7 @@ ShallowWrapper {
                 "name": "Mysterium",
                 "thumbnail": "src",
               },
+              "type": "search",
             },
             "ref": null,
             "rendered": null,
@@ -947,7 +973,9 @@ ShallowWrapper {
             <section
                         className="search-results"
             >
-                        <h4>
+                        <h4
+                                    className="no-results"
+                        >
                                      No search results currently 
                         </h4>
             </section>
@@ -956,15 +984,10 @@ ShallowWrapper {
             className="game-description"
 >
             <button
-                        id="add-game"
+                        id="not-added"
                         onClick={[Function]}
-            >
-                        <i
-                                    className="fas fa-plus"
-                        />
-            </button>
+            />
             <Connect(Card)
-                        display="hide"
                         favorite={
                                     Object {
                                                 "description": "A mystery game with pictures",
@@ -974,6 +997,7 @@ ShallowWrapper {
                                                 "thumbnail": "src",
                                               }
                         }
+                        type="search"
             />
 </article>,
         ],
@@ -1043,7 +1067,9 @@ ShallowWrapper {
             "children": <section
               className="search-results"
 >
-              <h4>
+              <h4
+                            className="no-results"
+              >
                              No search results currently 
               </h4>
 </section>,
@@ -1055,23 +1081,32 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <h4>
-                 No search results currently 
+              "children": Array [
+                false,
+                <h4
+                  className="no-results"
+>
+                   No search results currently 
 </h4>,
+              ],
               "className": "search-results",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": " No search results currently ",
+            "rendered": Array [
+              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": " No search results currently ",
+                  "className": "no-results",
+                },
+                "ref": null,
+                "rendered": " No search results currently ",
+                "type": "h4",
               },
-              "ref": null,
-              "rendered": " No search results currently ",
-              "type": "h4",
-            },
+            ],
             "type": "section",
           },
           "type": "div",
@@ -1083,15 +1118,10 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <button
-                id="add-game"
+                id="not-added"
                 onClick={[Function]}
->
-                <i
-                                className="fas fa-plus"
-                />
-</button>,
+/>,
               <Connect(Card)
-                display="hide"
                 favorite={
                                 Object {
                                                 "description": "A mystery game with pictures",
@@ -1101,6 +1131,7 @@ ShallowWrapper {
                                                 "thumbnail": "src",
                                               }
                 }
+                type="search"
 />,
             ],
             "className": "game-description",
@@ -1112,24 +1143,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <i
-                  className="fas fa-plus"
-/>,
-                "id": "add-game",
+                "id": "not-added",
                 "onClick": [Function],
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "fas fa-plus",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "i",
-              },
+              "rendered": null,
               "type": "button",
             },
             Object {
@@ -1137,7 +1155,6 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "display": "hide",
                 "favorite": Object {
                   "description": "A mystery game with pictures",
                   "id": "123",
@@ -1145,6 +1162,7 @@ ShallowWrapper {
                   "name": "Mysterium",
                   "thumbnail": "src",
                 },
+                "type": "search",
               },
               "ref": null,
               "rendered": null,

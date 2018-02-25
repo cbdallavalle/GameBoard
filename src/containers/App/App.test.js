@@ -29,7 +29,7 @@ describe("App", () => {
         updateFriends={mockUpdateFriends}
       />
     , { disableLifecycleMethods: true })
-    expect(wrapper.state()).toEqual({ authUser: null })
+    expect(wrapper.state()).toEqual({ authUser: null, error: '' })
   })
 
   it('should run loginUser on component did mount', () => {

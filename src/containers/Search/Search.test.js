@@ -28,10 +28,11 @@ describe('triggerSearch', () => {
   })
 
   //handleSubmit
-  it('handleSubmit should set state to an empty string', () => {
+  it('handleSubmit should set state to an empty string and loading to true', () => {
     wrapper.instance().triggerSearch = jest.fn();
     wrapper.instance().handleSubmit(mockData.mockSearchEvent);
-    expect(wrapper.state()).toEqual(mockData.mockDefaultSearchState)
+    expect(wrapper.state().search).toEqual('');
+    expect(wrapper.state().loading).toEqual(true);
   })
 
   //triggerSearch
@@ -55,7 +56,7 @@ describe('triggerSearch', () => {
   //addGameToFavorites
   it('addGameToFavorites should call updateFavorites', async() => {
 
-    db.doWriteFavoriteData = jest.fn();
+    db.doAddFavoriteData = jest.fn();
     db.getFavorites = (userId) => mockData.mockFavorites;
     await wrapper.instance().addGameToFavorites();
     expect(mockUpdateFavorites).toHaveBeenCalledWith(mockData.mockFavorites)

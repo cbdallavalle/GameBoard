@@ -73,7 +73,9 @@ export const mockData = {
     games: [],
     search: '',
     game: {},
-    error: ''
+    error: '',
+    loading: false,
+    gameAdded: 'not-added'
   },
   mockSearchEvent: {
     target: {
