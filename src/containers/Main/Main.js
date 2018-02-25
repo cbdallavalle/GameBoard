@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 
 import Dashboard from '../Dashboard/Dashboard';
 import Login from '../Login/Login';
-import Search from '../Search/Search';
-import { AddFriends } from '../AddFriends/AddFriends';
 
 export const Main = (props) => {
   return (

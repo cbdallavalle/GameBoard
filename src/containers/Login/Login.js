@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { auth, db } from '../../firebase';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { SignIn } from '../SignIn/SignIn';
-import { SignUp } from '../SignUp/SignUp';
+import { SignIn } from '../../components/SignIn/SignIn';
+import { SignUp } from '../../components/SignUp/SignUp';
 import './Login.css'
 
 const initialState = {

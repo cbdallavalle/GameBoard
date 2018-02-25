@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { db } from '../../firebase';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { db } from '../../firebase';
 
 import AddFriends from '../AddFriends/AddFriends';
 import Search from '../Search/Search';
-import { CardContainer } from '../CardContainer/CardContainer';
-import { Header } from '../Header/Header';
-import { Nav } from '../Nav/Nav';
+import { CardContainer } from '../../components/CardContainer/CardContainer';
+import { Header } from '../../components/Header/Header';
+import { Nav } from '../../components/Nav/Nav';
 
 import './Dashboard.css';
 
