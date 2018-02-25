@@ -69,19 +69,37 @@
   background-color: #ffffffcf;
 }
 
-#add-game {
+#not-added {
+  position: absolute;
+  top: 11px;
+  right: 25px;
+  border: none;
+  border-radius: 120px;
+  width: 43px;
+  background-color: #ffffff00;
+  background-image: url('../../assets/plus.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#not-added:hover {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+}
+
+#added {
   position: absolute;
   top: 11;
   right: 25px;
   border: none;
   border-radius: 120px;
   width: 43px;
-  color: white;
-  background-color: #0da50d;
-}
-
-#add-game:hover {
-  cursor: pointer;
+  transition: background .3s linear;
+  background-image: url('../../assets/success.svg');
+  background-position: center;
+  background-size: cover;
+  background-color: #ffffff00;
 }
 
 #loading {

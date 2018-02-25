@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import deleteIcon from '../../assets/error.svg';
+import addIcon from '../../assets/plus.svg';
 
 import { connect } from 'react-redux';
 import { db } from '../../firebase';
@@ -28,11 +30,13 @@ export class Card extends Component {
   render() {
     const { description, id, image, name, thumbnail, review } = this.props.favorite;
     return (
-      <article className={`Card ${this.props.display}`}>
+      <article className={`Card ${this.props.type}`}>
         <div className="game-info" id="game-title">
           <h3>{ this.friendsName() }</h3>
           <h3>{ name }</h3>
-          <img src={thumbnail} alt="game-icon"/>
+          <img src={ thumbnail } alt="game-icon" />
+          <img id="delete" src={ deleteIcon } alt="delete-game" />
+          <img id="add" src={ addIcon } alt="add-game" />
         </div>
         <div className="game-info" id="game-description">
           <p>{ description }</p>
@@ -55,7 +59,8 @@ Card.propTypes = {
   user: PropTypes.object.isRequired,
   favorite: PropTypes.object.isRequired,
   friendName: PropTypes.string,
-  type: PropTypes.string
+  type: PropTypes.string,
+  display: PropTypes.string
 };
 
 export const mapStateToProps = state => ({

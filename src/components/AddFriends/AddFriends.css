@@ -20,6 +20,16 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.AddFriends h4:hover {
+  background-color: #8080804a;
+}
+
+#add-friends {
+  width: 15px;
+  display: inline-block;
+  padding-right: 15px;
+}
+
 .display-friends {
   position: relative;
   display: flex;
