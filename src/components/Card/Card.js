@@ -43,6 +43,16 @@ export class Card extends Component {
     }
   }
 
+  handleAdd = async (e) => {
+    try {
+      await db.doAddFavoriteData(this.props.user.uid, this.props.favorite);
+      const favorites = await db.getFavorites(this.props.user.uid);
+      this.props.updateFavorites(favorites)
+    } catch(error) {
+      this.setState({ error: error.message })
+    }
+  }
+
   render() {
     const { description, id, image, name, thumbnail, review } = this.props.favorite;
     return (
@@ -52,7 +62,7 @@ export class Card extends Component {
           <h3>{ name }</h3>
           <img src={ thumbnail } alt="game-icon" />
           <img id="delete" src={ deleteIcon } alt="delete-game" onClick={this.handleDelete} />
-          <img id="add" src={ addIcon } alt="add-game" />
+          <img id="add" src={ addIcon } alt="add-game" onClick={this.handleAdd} />
         </div>
         <div className="game-info" id="game-description">
           <p>{ description }</p>
