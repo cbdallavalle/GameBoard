@@ -17,12 +17,23 @@ export const onceGetUsers = async () => {
 }
 
 
-export const doWriteFavoriteData = async (userId, favorite) => {
+export const doWriteFavoriteData = async (userId, newFavorites) => {
+  db.ref('users/' + userId + '/favorites').set(newFavorites);
+}
+
+export const doAddFavoriteData = async (userId, favorite) => {
   const existingFavorites = await getFavorites(userId);
   const favoriteToAdd = checkFavoriteDuplication(existingFavorites, favorite);
-  const newFavorites = {...existingFavorites, ...favoriteToAdd }
   doWriteLastFavoritedData(userId, favorite)
-  db.ref('users/' + userId + '/favorites').set(newFavorites);
+  const newFavorites = {...existingFavorites, ...favoriteToAdd }
+  this.doWriteFavoriteData(userId, newFavorites)
+}
+
+export const doDeleteFavoriteData = async (userId, favorite) => {
+  const existingFavorites = await getFavorites(userId);
+  delete existingFavorites[favorite.name]
+  this.doWriteFavoriteData(userId, existingFavorites)
+
 }
 
 export const doWriteLastFavoritedData = async (userId, favorite) => {

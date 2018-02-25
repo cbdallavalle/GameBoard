@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import deleteIcon from '../../assets/error.svg';
 import addIcon from '../../assets/plus.svg';
+import { updateFavorites } from '../../actions';
 
 import { connect } from 'react-redux';
 import { db } from '../../firebase';
@@ -11,20 +12,35 @@ export class Card extends Component {
   constructor() {
     super();
     this.state = {
-      contenteditable: "false"
+      contenteditable: 'false',
+      error: ''
     }
   }
 
   componentDidMount = async () => {
-    this.props.type === 'games' && await this.setState({contenteditable: "true"})
+    this.props.type === 'games' && await this.setState({contenteditable: 'true'})
   }
 
   friendsName = () => {
-    return this.props.type === 'friends' ? this.props.friendName + " played:" : null
+    return this.props.type === 'friends' ? this.props.friendName + ' played:' : null
   }
 
   handleBlur = (e) => {
-    db.doWriteReviewData(this.props.user.uid, this.props.favorite, e.target.innerHTML)
+    try {
+      db.doWriteReviewData(this.props.user.uid, this.props.favorite, e.target.innerHTML)
+    } catch (error) {
+      this.setState({ error: error.message })
+    }
+  }
+
+  handleDelete = async () => {
+    try {
+      await db.doDeleteFavoriteData(this.props.user.uid, this.props.favorite)
+      const favorites = await db.getFavorites(this.props.user.uid);
+      this.props.updateFavorites(favorites)
+    } catch (error) {
+      this.setState({ error: error.message })
+    }
   }
 
   render() {
@@ -35,7 +51,7 @@ export class Card extends Component {
           <h3>{ this.friendsName() }</h3>
           <h3>{ name }</h3>
           <img src={ thumbnail } alt="game-icon" />
-          <img id="delete" src={ deleteIcon } alt="delete-game" />
+          <img id="delete" src={ deleteIcon } alt="delete-game" onClick={this.handleDelete} />
           <img id="add" src={ addIcon } alt="add-game" />
         </div>
         <div className="game-info" id="game-description">
@@ -67,4 +83,8 @@ export const mapStateToProps = state => ({
   user: state.user,
 })
 
-export default connect(mapStateToProps, null)(Card)
+export const mapDispatchToProps = dispatch => ({
+  updateFavorites: favorites => dispatch(updateFavorites(favorites)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card)
