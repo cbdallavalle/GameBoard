@@ -8,7 +8,7 @@ describe('Dashboard', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(f
+    wrapper = shallow(
       <Dashboard 
         favorites={{}}
         user={{ uid: '123' }}
