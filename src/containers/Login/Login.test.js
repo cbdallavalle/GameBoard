@@ -45,6 +45,21 @@ describe("Login", () => {
     expect(wrapper.state().displayCreate).toEqual('login');
   })
 
+  //handleSubmit
+  it('handleSubmit should call signUp when state has first name', () => {
+    wrapper.instance().signUp = jest.fn();
+    wrapper.setState({ email: 'email', passwordOne: 'passwordOne', firstName: 'kubla'})
+    wrapper.instance().handleSubmit(mockData.mockLogInEvent);
+    expect(wrapper.instance().signUp).toHaveBeenCalledWith('email', 'passwordOne')
+  })
+
+  it('handleSubmit should call logIn when state does not have first name', () => {
+    wrapper.instance().logIn = jest.fn();
+    wrapper.setState({ email: 'email', passwordOne: 'passwordOne' })
+    wrapper.instance().handleSubmit(mockData.mockLogInEvent);
+    expect(wrapper.instance().logIn).toHaveBeenCalledWith('email', 'passwordOne')
+  })
+
   //signUp
   it('signUp should call signUp when state has name', async() => {
     wrapper.instance().signUp = jest.fn();
@@ -61,7 +76,6 @@ describe("Login", () => {
   it('when signUp called it should set state with initial state when succesful', () => {
     auth.doCreateUserWithEmailAndPassword = jest.fn();
     db.doCreateUser = jest.fn();
-    // const wrapper = shallow(<Login user={{}} />)
     wrapper.instance().signUp({email: 'email'}, {passwordOne: 'passwordOne'});
     expect(wrapper.state()).toEqual(mockData.initialState)
   })
