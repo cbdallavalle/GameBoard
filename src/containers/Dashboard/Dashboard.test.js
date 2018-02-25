@@ -5,34 +5,36 @@ import { db } from '../../firebase';
 import { mockData } from '../../mockData/mockData';
 
 describe('Dashboard', () => {
-  it('should match the snapshot', () => {
-    const wrapper = shallow(
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(
       <Dashboard 
-        favorites={{}}
-        user={{}}
-      />
-    )
-    expect(wrapper).toMatchSnapshot();
-  })
-
-  it('should have a default state of an empty object for friendsFavorites', () => {
-    const wrapper = shallow(
-      <Dashboard         
-        favorites={{}}
-        user={{}}
-      />
-    )
-    expect(wrapper.state()).toEqual({ friendsFavorites: {}, error: '' })
-  })
-
-  //updateFavorites
-  it('updateFavorites will set friendsFavorites to an array of friends', async() => {
-    const wrapper = shallow(
-      <Dashboard         
         favorites={{}}
         user={{ uid: '123' }}
       />
     )
+  })
+
+  it('should match the snapshot', () => {
+
+    expect(wrapper).toMatchSnapshot();
+  })
+
+  it('should have a default state of an empty object for friendsFavorites and error as an empty string', () => {
+
+    expect(wrapper.state()).toEqual({ friendsFavorites: {}, error: '' })
+  })
+
+  //updateFavorites
+  it('updateFavorites should set state with an error if an error is caught', async() => {
+
+    await wrapper.instance().updateFavorites();
+    expect(wrapper.state().error).toEqual('unable to load friends data')
+  })
+
+  it('updateFavorites will set friendsFavorites to an array of friends', async() => {
+
     db.getFriendsFavorites = () => mockData.mockFriendsFavorites;
     await wrapper.instance().updateFavorites();
     expect(wrapper.state().friendsFavorites).toEqual(mockData.mockFriendsFavorites )

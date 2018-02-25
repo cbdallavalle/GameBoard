@@ -116,7 +116,7 @@ export const doWriteReviewData = async (userId, favorite, review) => {
   try {
     const { name } = favorite;
     const reviewedGame = {...favorite, review}
-    const repsonse = await db.ref('users/' + userId + '/favorites/' + name).set(reviewedGame);
+    const response = await db.ref('users/' + userId + '/favorites/' + name).set(reviewedGame);
     if(response.status < 300) {
       await doWriteLastFavoritedData(userId, reviewedGame)
     } else {
