@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Card, mapStateToProps } from './Card';
+import { Card, mapStateToProps, mapDispatchToProps } from './Card';
 import { shallow } from 'enzyme';
 import { db } from '../../firebase';
 import { mockData } from '../../mockData/mockData';
@@ -112,5 +112,21 @@ describe('Card', () => {
     await wrapper.instance().props.updateFavorites.mockClear();
     await wrapper.instance().handleAdd(mockCardEvent);
     expect(mockUpdateFavorites).toHaveBeenCalledWith(mockData.mockFavorites)
+  })
+})
+
+describe('mapStateToProps', () => {
+  it('should take in state and return a user object', () => {
+    expect(mapStateToProps(mockData.mockMSTPUserState)).toEqual(mockData.mockMSTPUser)
+  })
+})
+
+describe('mapDispatchToProps', () => {
+  it('should call mockDispatch on updateFavorites', () => {
+    const mockDispatch = jest.fn();
+    const mapped = mapDispatchToProps(mockDispatch);
+
+    mapped.updateFavorites();
+    expect(mockDispatch).toHaveBeenCalled();
   })
 })
