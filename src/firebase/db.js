@@ -25,21 +25,33 @@ export const onceGetUsers = async () => {
 }
 
 export const doWriteFavoriteData = async (userId, newFavorites) => {
-  db.ref('users/' + userId + '/favorites').set(newFavorites);
+  try {
+    db.ref('users/' + userId + '/favorites').set(newFavorites);
+  } catch (error) {
+    throw new Error('unable to write favorite data')
+  }
 }
 
 export const doAddFavoriteData = async (userId, favorite) => {
-  const existingFavorites = await getFavorites(userId);
-  const favoriteToAdd = checkFavoriteDuplication(existingFavorites, favorite);
-  doWriteLastFavoritedData(userId, favorite)
-  const newFavorites = {...existingFavorites, ...favoriteToAdd }
-  this.doWriteFavoriteData(userId, newFavorites)
+  try {
+    const existingFavorites = await getFavorites(userId);
+    const favoriteToAdd = checkFavoriteDuplication(existingFavorites, favorite);
+    doWriteLastFavoritedData(userId, favorite)
+    const newFavorites = {...existingFavorites, ...favoriteToAdd }
+    doWriteFavoriteData(userId, newFavorites)
+  } catch (error) {
+    throw new Error('unable to add favorite data')
+  }
 }
 
 export const doDeleteFavoriteData = async (userId, favorite) => {
-  const existingFavorites = await getFavorites(userId);
-  delete existingFavorites[favorite.name]
-  this.doWriteFavoriteData(userId, existingFavorites)
+  try {
+    const existingFavorites = await getFavorites(userId);
+    delete existingFavorites[favorite.name]
+    doWriteFavoriteData(userId, existingFavorites)
+  } catch (error) {
+    throw new Error('unable to delete')
+  }
 }
 
 export const doWriteLastFavoritedData = async (userId, favorite) => {
@@ -101,8 +113,16 @@ export const getFriendsFavorites = async (userId) => {
 }
 
 export const doWriteReviewData = async (userId, favorite, review) => {
-  const { name } = favorite;
-  const reviewedGame = {...favorite, review}
-  db.ref('users/' + userId + '/favorites/' + name).set(reviewedGame);
-  await doWriteLastFavoritedData(userId, reviewedGame)
+  try {
+    const { name } = favorite;
+    const reviewedGame = {...favorite, review}
+    const repsonse = await db.ref('users/' + userId + '/favorites/' + name).set(reviewedGame);
+    if(response.status < 300) {
+      await doWriteLastFavoritedData(userId, reviewedGame)
+    } else {
+      throw new Error('unable to process review')
+    }
+  } catch (error) {
+    throw new Error('unable to process review')
+  }
 }

@@ -21,7 +21,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <NavLink
-          activeClassName="active"
+          activeClassName="selected"
           ariaCurrent="true"
           to="/dashboard/your-games"
 >
@@ -35,7 +35,7 @@ ShallowWrapper {
           </button>
 </NavLink>,
         <NavLink
-          activeClassName="active"
+          activeClassName="selected"
           ariaCurrent="true"
           to="/dashboard/friends-games"
 >
@@ -49,7 +49,7 @@ ShallowWrapper {
           </button>
 </NavLink>,
         <NavLink
-          activeClassName="active"
+          activeClassName="selected"
           ariaCurrent="true"
           to="/dashboard/search-games"
 >
@@ -60,7 +60,7 @@ ShallowWrapper {
           </button>
 </NavLink>,
         <NavLink
-          activeClassName="active"
+          activeClassName="selected"
           ariaCurrent="true"
           to="/dashboard/search-users"
 >
@@ -79,7 +79,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "activeClassName": "active",
+          "activeClassName": "selected",
           "ariaCurrent": "true",
           "children": <button
             name="your-games"
@@ -129,7 +129,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "activeClassName": "active",
+          "activeClassName": "selected",
           "ariaCurrent": "true",
           "children": <button
             name="friends-games"
@@ -179,7 +179,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "activeClassName": "active",
+          "activeClassName": "selected",
           "ariaCurrent": "true",
           "children": <button
             name="search-games"
@@ -208,7 +208,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "activeClassName": "active",
+          "activeClassName": "selected",
           "ariaCurrent": "true",
           "children": <button
             name="search-friends"
@@ -243,7 +243,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <NavLink
-            activeClassName="active"
+            activeClassName="selected"
             ariaCurrent="true"
             to="/dashboard/your-games"
 >
@@ -257,7 +257,7 @@ ShallowWrapper {
             </button>
 </NavLink>,
           <NavLink
-            activeClassName="active"
+            activeClassName="selected"
             ariaCurrent="true"
             to="/dashboard/friends-games"
 >
@@ -271,7 +271,7 @@ ShallowWrapper {
             </button>
 </NavLink>,
           <NavLink
-            activeClassName="active"
+            activeClassName="selected"
             ariaCurrent="true"
             to="/dashboard/search-games"
 >
@@ -282,7 +282,7 @@ ShallowWrapper {
             </button>
 </NavLink>,
           <NavLink
-            activeClassName="active"
+            activeClassName="selected"
             ariaCurrent="true"
             to="/dashboard/search-users"
 >
@@ -301,7 +301,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "activeClassName": "active",
+            "activeClassName": "selected",
             "ariaCurrent": "true",
             "children": <button
               name="your-games"
@@ -351,7 +351,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "activeClassName": "active",
+            "activeClassName": "selected",
             "ariaCurrent": "true",
             "children": <button
               name="friends-games"
@@ -401,7 +401,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "activeClassName": "active",
+            "activeClassName": "selected",
             "ariaCurrent": "true",
             "children": <button
               name="search-games"
@@ -430,7 +430,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "activeClassName": "active",
+            "activeClassName": "selected",
             "ariaCurrent": "true",
             "children": <button
               name="search-friends"

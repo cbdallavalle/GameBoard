@@ -86,7 +86,8 @@ Card.propTypes = {
   favorite: PropTypes.object.isRequired,
   friendName: PropTypes.string,
   type: PropTypes.string,
-  display: PropTypes.string
+  display: PropTypes.string,
+  updateFavorites: PropTypes.func.isRequired
 };
 
 export const mapStateToProps = state => ({
