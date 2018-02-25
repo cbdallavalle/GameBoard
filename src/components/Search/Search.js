@@ -62,7 +62,7 @@ export class Search extends Component {
 
   addGameToFavorites = async() => {
     try {
-      await db.doWriteFavoriteData(this.props.user.uid, this.state.game);
+      await db.doAddFavoriteData(this.props.user.uid, this.state.game);
       this.setState({gameAdded: 'added'})
       const favorites = await db.getFavorites(this.props.user.uid);
       this.props.updateFavorites(favorites)
