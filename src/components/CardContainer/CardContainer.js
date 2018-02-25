@@ -3,7 +3,7 @@ import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 import './CardContainer.css';
 
-export const CardContainer = ({favorites, type}) => {
+export const CardContainer = ({favorites, type}) => {  
   const favoritesToRender = Object.keys(favorites).map( (key, index) => {
     return (
       <Card 

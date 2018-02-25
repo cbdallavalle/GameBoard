@@ -15,15 +15,10 @@ nav button {
   padding: 10px;
 }
 
-nav button:hover {
-  background-color: #dfbaa7;
-}
-
-nav button:focus {
-  cursor: pointer;
-  background-color: #BD9B89;
-}
-
 nav h1 {
   border-right: 1px solid grey;
+}
+
+.selected {
+  background-color: #d04e00;
 }

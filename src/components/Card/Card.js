@@ -54,6 +54,7 @@ export class Card extends Component {
   }
 
   render() {
+    console.log('CARRDS')
     const { description, id, image, name, thumbnail, review } = this.props.favorite;
     return (
       <article className={`Card ${this.props.type}`}>

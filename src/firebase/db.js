@@ -16,7 +16,6 @@ export const onceGetUsers = async () => {
   return value
 }
 
-
 export const doWriteFavoriteData = async (userId, newFavorites) => {
   db.ref('users/' + userId + '/favorites').set(newFavorites);
 }
@@ -33,7 +32,6 @@ export const doDeleteFavoriteData = async (userId, favorite) => {
   const existingFavorites = await getFavorites(userId);
   delete existingFavorites[favorite.name]
   this.doWriteFavoriteData(userId, existingFavorites)
-
 }
 
 export const doWriteLastFavoritedData = async (userId, favorite) => {
