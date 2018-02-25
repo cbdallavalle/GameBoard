@@ -68,14 +68,21 @@ export const doWriteFriendsData = async (userId, friendId) => {
 }
 
 export const getFriends = async (userId) => {
-  const snapshot = await db.ref('users').once('value');
-  const value = await snapshot.val();
-  return value[userId].friends
+  try {
+    const value = await onceGetUsers();
+    return value[userId].friends
+  } catch (error) {
+    throw new Error('unable to load friends data')
+  }
 }
 
 export const getFavorites = async (userId) => {
-  const value = await onceGetUsers();
-  return value[userId].favorites;
+  try {
+    const value = await onceGetUsers();
+    return value[userId].favorites;
+  } catch (error) {
+    throw new Error ('unable to load favorites data')
+  }
 }
 
 export const getFriendsFavorites = async (userId) => {

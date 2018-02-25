@@ -25,14 +25,10 @@ export class App extends Component {
   }
 
   loginUser = async(authUser) => {
-    try {
-      const user = {uid: authUser.uid};
-      this.props.loginUser(user);
-      this.updateFriends(user.uid);
-      this.updateFavorites(user.uid);
-    } catch (error) {
-      this.setState({ error: error.message })
-    }
+    const user = {uid: authUser.uid};
+    this.props.loginUser(user);
+    this.updateFriends(user.uid);
+    this.updateFavorites(user.uid);
   }
 
   updateFriends = async(userId) => {

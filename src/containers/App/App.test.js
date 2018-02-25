@@ -61,6 +61,24 @@ describe("App", () => {
   })
 
   //updateFriends
+  it('should set state with an error if error is caught', async() => {
+    const wrapper = shallow(
+      <App 
+        loginUser={mockLoginUser}
+        updateFavorites={mockUpdateFavorites}
+        updateFriends={mockUpdateFriends}
+      />
+    )
+
+    window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
+      status: 500,
+      error: new Error('unable to load friends')
+    }))
+
+    await wrapper.instance().updateFriends();
+    expect(wrapper.state().error).toEqual('unable to load friends data')
+  })
+
   it('updateFriends should call mockUpdateFriends if friends exist', async() => {
     const wrapper = shallow(
       <App 
@@ -89,6 +107,24 @@ describe("App", () => {
   })
 
   //updateFavorites
+  it('updateFavorites should set state with an error if error is caught', async() => {
+    const wrapper = shallow(
+      <App 
+        loginUser={mockLoginUser}
+        updateFavorites={mockUpdateFavorites}
+        updateFriends={mockUpdateFriends}
+      />
+    )
+
+    window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
+      status: 500,
+      error: new Error('unable to load favorites data')
+    }))
+
+    await wrapper.instance().updateFavorites();
+    expect(wrapper.state().error).toEqual('unable to load favorites data')
+  })
+
   it('updateFavorites should call mockUpdateFavorites if favorites exist', async() => {
     const wrapper = shallow(
       <App 
