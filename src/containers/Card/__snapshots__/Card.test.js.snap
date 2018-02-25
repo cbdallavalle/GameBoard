@@ -33,6 +33,18 @@ ShallowWrapper {
                     alt="game-icon"
                     src={undefined}
           />
+          <img
+                    alt="delete-game"
+                    id="delete"
+                    onClick={[Function]}
+                    src="error.svg"
+          />
+          <img
+                    alt="add-game"
+                    id="add"
+                    onClick={[Function]}
+                    src="plus.svg"
+          />
 </div>,
         <div
           className="game-info"
@@ -41,7 +53,7 @@ ShallowWrapper {
           <p />
 </div>,
         <div
-          className="game-info undefined"
+          className="game-info"
           id="review-cont"
 >
           <h3>
@@ -56,7 +68,7 @@ ShallowWrapper {
           />
 </div>,
       ],
-      "className": "Card",
+      "className": "Card games",
     },
     "ref": null,
     "rendered": Array [
@@ -71,6 +83,18 @@ ShallowWrapper {
             <img
               alt="game-icon"
               src={undefined}
+/>,
+            <img
+              alt="delete-game"
+              id="delete"
+              onClick={[Function]}
+              src="error.svg"
+/>,
+            <img
+              alt="add-game"
+              id="add"
+              onClick={[Function]}
+              src="plus.svg"
 />,
           ],
           "className": "game-info",
@@ -107,6 +131,34 @@ ShallowWrapper {
             "props": Object {
               "alt": "game-icon",
               "src": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "delete-game",
+              "id": "delete",
+              "onClick": [Function],
+              "src": "error.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "add-game",
+              "id": "add",
+              "onClick": [Function],
+              "src": "plus.svg",
             },
             "ref": null,
             "rendered": null,
@@ -155,7 +207,7 @@ ShallowWrapper {
               onBlur={[Function]}
 />,
           ],
-          "className": "game-info undefined",
+          "className": "game-info",
           "id": "review-cont",
         },
         "ref": null,
@@ -225,6 +277,18 @@ ShallowWrapper {
                         alt="game-icon"
                         src={undefined}
             />
+            <img
+                        alt="delete-game"
+                        id="delete"
+                        onClick={[Function]}
+                        src="error.svg"
+            />
+            <img
+                        alt="add-game"
+                        id="add"
+                        onClick={[Function]}
+                        src="plus.svg"
+            />
 </div>,
           <div
             className="game-info"
@@ -233,7 +297,7 @@ ShallowWrapper {
             <p />
 </div>,
           <div
-            className="game-info undefined"
+            className="game-info"
             id="review-cont"
 >
             <h3>
@@ -248,7 +312,7 @@ ShallowWrapper {
             />
 </div>,
         ],
-        "className": "Card",
+        "className": "Card games",
       },
       "ref": null,
       "rendered": Array [
@@ -263,6 +327,18 @@ ShallowWrapper {
               <img
                 alt="game-icon"
                 src={undefined}
+/>,
+              <img
+                alt="delete-game"
+                id="delete"
+                onClick={[Function]}
+                src="error.svg"
+/>,
+              <img
+                alt="add-game"
+                id="add"
+                onClick={[Function]}
+                src="plus.svg"
 />,
             ],
             "className": "game-info",
@@ -299,6 +375,34 @@ ShallowWrapper {
               "props": Object {
                 "alt": "game-icon",
                 "src": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "delete-game",
+                "id": "delete",
+                "onClick": [Function],
+                "src": "error.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "add-game",
+                "id": "add",
+                "onClick": [Function],
+                "src": "plus.svg",
               },
               "ref": null,
               "rendered": null,
@@ -347,7 +451,7 @@ ShallowWrapper {
                 onBlur={[Function]}
 />,
             ],
-            "className": "game-info undefined",
+            "className": "game-info",
             "id": "review-cont",
           },
           "ref": null,

@@ -9,7 +9,8 @@ describe("AddFriends", () => {
   const initialState = {      
     search: '',
     usersSearched: [],
-    allUsers: []
+    allUsers: [],
+    error: ''
   }
 
   it('should start with a default state', () => {
@@ -21,8 +22,25 @@ describe("AddFriends", () => {
     expect(wrapper.state()).toEqual(initialState);
   })
 
-  //getAllUsers which is called on componentDidMount
-  it('should update state to have all users', async() => {
+  //getAllUsers
+  it('getAllUsers should update state with an error message if an error is caught', async() => {
+    const wrapper = await shallow(
+      <AddFriends 
+        user={{uid: 'GZZGrEW9aYXzbxrdphXuq04ng6E3'}} 
+        updateFriends={mockUpdateFriends}
+      /> )
+
+    window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
+      status: 500,
+      error: new Error('unable to fetch users')
+    }))
+
+    await wrapper.instance().getAllUsers();
+
+    expect(wrapper.state().error).toEqual('unable to fetch users')
+  })
+
+  it('getAllUsers should update state to have all users', async() => {
     const wrapper = await shallow(
       <AddFriends 
         user={{uid: 'GZZGrEW9aYXzbxrdphXuq04ng6E3'}} 
@@ -33,6 +51,8 @@ describe("AddFriends", () => {
     await wrapper.instance().getAllUsers();
     expect(wrapper.state().allUsers).toEqual(mockData.mockAllUsersWithoutSearcher)
   })
+
+
 
   //handleChange
   it('handleChange should find the users that match the search', async() => {
@@ -80,6 +100,18 @@ describe("AddFriends", () => {
   })
 
   //addFriendsToDB
+  it('addFriendsToDB should set state with an error if an error is caught', async() => {
+    const wrapper = await shallow(
+      <AddFriends 
+        user={{uid: 'GZZGrEW9aYXzbxrdphXuq04ng6E3'}} 
+        updateFriends={mockUpdateFriends}
+      /> )
+
+    await wrapper.instance().addFriendsToDB();
+
+    expect(wrapper.state().error).toEqual('unable to add friend')
+  })
+
   it('addFriendsToDB should call updateFriends with friends', async() => {
     const wrapper = await shallow(
       <AddFriends 
