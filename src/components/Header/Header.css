@@ -1,4 +1,4 @@
-header {
+header div {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -12,11 +12,11 @@ header {
   border-radius: 5px;
 }
 
-header:hover {
+header div:hover {
   cursor: pointer;
 }
 
-header button {
+header div button {
   height: 25px;
   border: none;
   font-size: 14px;
@@ -26,10 +26,16 @@ header button {
   font-weight: bold;
 }
 
-header button:hover {
+header button div:hover {
   cursor: pointer;
 }
 
-header h4 {
+header div h4 {
   padding: 0 10px;
+}
+
+header p {
+  position: absolute;
+  top: 10px;
+  right: 200px;
 }

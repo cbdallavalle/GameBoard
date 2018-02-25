@@ -1,24 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { auth } from '../../firebase';
 import './Header.css';
 
-export const Header = () => {
-
-  const checkSignOut = () => {
-    try {
-      auth.doSignOut();
-    } catch(error) {
-      return error
-      console.log(error)
+export class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      error: ''
     }
   }
 
-  return (
-    <header>
-      <h4>GameBoard</h4>
-      <button type="button" onClick={checkSignOut}>
-        Sign out
-      </button>
-    </header>
-  )
+  checkSignOut = () => {
+    try {
+      auth.doSignOut();
+    } catch(error) {
+      this.setState({ error: error.message })
+    }
+  }
+
+  render() {
+    return (
+      <header>
+        <div>
+          <h4>GameBoard</h4>
+          <button type="button" onClick={this.checkSignOut}>
+            Sign out
+          </button>
+        </div>
+        <p>{ this.state.error }</p>
+      </header>
+    )
+  }
 }
