@@ -11,7 +11,8 @@ export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      authUser: null
+      authUser: null,
+      error: ''
     };
   }
 
@@ -24,25 +25,38 @@ export class App extends Component {
   }
 
   loginUser = async(authUser) => {
-    const user = {uid: authUser.uid};
-    this.props.loginUser(user);
-    this.updateFriends(user.uid);
-    this.updateFavorites(user.uid);
+    try {
+      const user = {uid: authUser.uid};
+      this.props.loginUser(user);
+      this.updateFriends(user.uid);
+      this.updateFavorites(user.uid);
+    } catch (error) {
+      this.setState({ error: error.message })
+    }
   }
 
   updateFriends = async(userId) => {
-    const friends = await db.getFriends(userId);
-    friends && this.props.updateFriends(friends);
+    try {
+      const friends = await db.getFriends(userId);
+      friends && this.props.updateFriends(friends);
+    } catch (error) {
+      this.setState({ error: error.message })
+    }
   }
 
   updateFavorites = async(userId) => {
-    const favorites = await db.getFavorites(userId);
-    favorites && this.props.updateFavorites(favorites);
+    try {
+      const favorites = await db.getFavorites(userId);
+      favorites && this.props.updateFavorites(favorites);
+    } catch (error) {
+      this.setState({ error: error.message })
+    }
   }
   
   render() {
     return (
       <div className="App">
+        <p>{ this.state.error }</p>
         <Main />
       </div>
     );

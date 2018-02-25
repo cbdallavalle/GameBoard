@@ -16,7 +16,8 @@ export class Dashboard extends Component {
   constructor() {
     super()
     this.state = {
-      friendsFavorites: {}
+      friendsFavorites: {},
+      error: ''
     }
   }
 
@@ -25,9 +26,13 @@ export class Dashboard extends Component {
   }
 
   updateFavorites = async() => {
-    if(this.props.user.uid) {
-      const friendsFavorites = await db.getFriendsFavorites(this.props.user.uid);
-      this.setState({ friendsFavorites })
+    try {
+      if(this.props.user.uid) {
+        const friendsFavorites = await db.getFriendsFavorites(this.props.user.uid);
+        this.setState({ friendsFavorites })
+      }
+    } catch (error) {
+      this.setState({ error: error.message })
     }
   }
 

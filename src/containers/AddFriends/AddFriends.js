@@ -12,7 +12,8 @@ export class AddFriends extends Component {
     this.state = {
       search: '',
       usersSearched: [],
-      allUsers: []
+      allUsers: [],
+      error: ''
     }
   }
 
@@ -21,10 +22,14 @@ export class AddFriends extends Component {
   }
 
   getAllUsers = async() => {
-    const value = await db.onceGetUsers();
-    const excludeCurrentUser = Object.keys(value).filter( key => key !== this.props.user.uid);
-    const allUsers = excludeCurrentUser.map( key =>{ return {...value[key].user, key}} );
-    this.setState({ allUsers });
+    try {
+      const value = await db.onceGetUsers();
+      const excludeCurrentUser = Object.keys(value).filter( key => key !== this.props.user.uid);
+      const allUsers = excludeCurrentUser.map( key =>{ return {...value[key].user, key}} );
+      this.setState({ allUsers });
+    } catch (error) {
+      this.setState({ error: error.message })
+    }
   }
 
   handleChange = e => {
@@ -44,9 +49,13 @@ export class AddFriends extends Component {
   }
 
   addFriendsToDB = async (id) => {
-    await db.doWriteFriendsData(this.props.user.uid, id);
-    const friends = await db.getFriends(this.props.user.uid)
-    this.props.updateFriends(friends);
+    try {
+      await db.doWriteFriendsData(this.props.user.uid, id);
+      const friends = await db.getFriends(this.props.user.uid)
+      this.props.updateFriends(friends);
+    } catch (error) {
+      this.setState({ error: error.message })
+    }
   }
 
   render() {
