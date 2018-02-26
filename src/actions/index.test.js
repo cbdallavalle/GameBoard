@@ -1,3 +1,4 @@
+/* eslint-disable */
 import * as actions from './index';
 
 describe("LOGIN_USER", () => {

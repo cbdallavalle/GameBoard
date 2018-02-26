@@ -1,8 +1,9 @@
 nav {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  width: 627px;
+  width: 619px;
   height: fit-content;
   border: 2px solid #313131;
 }

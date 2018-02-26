@@ -20,7 +20,7 @@ export class App extends Component {
     await auth.onAuthStateChanged(authUser => {
       authUser
         ? this.loginUser(authUser)
-        : this.props.loginUser(null)
+        : this.props.loginUser(null);
     });
   }
 
@@ -36,7 +36,7 @@ export class App extends Component {
       const friends = await db.getFriends(userId);
       friends && this.props.updateFriends(friends);
     } catch (error) {
-      this.setState({ error: error.message })
+      this.setState({ error: error.message });
     }
   }
 
@@ -45,14 +45,14 @@ export class App extends Component {
       const favorites = await db.getFavorites(userId);
       favorites && this.props.updateFavorites(favorites);
     } catch (error) {
-      this.setState({ error: error.message })
+      this.setState({ error: error.message });
     }
   }
   
   render() {
     return (
       <div className="App">
-        <p>{ this.state.error }</p>
+        <p id="app-error">{ this.state.error }</p>
         <Main />
       </div>
     );
@@ -69,6 +69,6 @@ export const mapDispatchToProps = dispatch => ({
   loginUser: user => dispatch(loginUser(user)),
   updateFavorites: favorites => dispatch(updateFavorites(favorites)),
   updateFriends: friends => dispatch(updateFriends(friends))
-})
+});
 
 export default withRouter(connect(null, mapDispatchToProps)(App));

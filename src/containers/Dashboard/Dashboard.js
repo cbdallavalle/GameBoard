@@ -14,11 +14,11 @@ import './Dashboard.css';
 
 export class Dashboard extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       friendsFavorites: {},
       error: ''
-    }
+    };
   }
 
   componentWillReceiveProps = () => {
@@ -27,12 +27,13 @@ export class Dashboard extends Component {
 
   updateFavorites = async() => {
     try {
-      if(this.props.user.uid) {
-        const friendsFavorites = await db.getFriendsFavorites(this.props.user.uid);
-        this.setState({ friendsFavorites })
+      if (this.props.user.uid) {
+        const friendsFavorites = await 
+          db.getFriendsFavorites(this.props.user.uid);
+        this.setState({ friendsFavorites });
       }
     } catch (error) {
-      this.setState({ error: error.message })
+      this.setState({ error: error.message });
     }
   }
 
@@ -44,11 +45,21 @@ export class Dashboard extends Component {
         <Switch>
           <Route
             exact path="/dashboard/your-games"
-            render={ () => <CardContainer favorites={this.props.favorites} type={"games"} /> }
+            render={ () => 
+              <CardContainer 
+                favorites={this.props.favorites} 
+                type={"games"} 
+              /> 
+            }
           />
           <Route 
             exact path="/dashboard/friends-games" 
-            render={ () => <CardContainer favorites={this.state.friendsFavorites} type={"friends"} /> }
+            render={ () => 
+              <CardContainer 
+                favorites={this.state.friendsFavorites} 
+                type={"friends"} 
+              /> 
+            }
           />
           <Route 
             exact path="/dashboard/search-games" 
@@ -60,7 +71,7 @@ export class Dashboard extends Component {
           />
         </Switch>
       </section>
-    )
+    );
   }
 }
 
@@ -72,6 +83,6 @@ Dashboard.propTypes = {
 export const mapStateToProps = state => ({
   favorites: state.favorites,
   user: state.user
-})
+});
 
 export default withRouter(connect(mapStateToProps, null)(Dashboard));

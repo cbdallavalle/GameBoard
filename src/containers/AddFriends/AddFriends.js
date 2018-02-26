@@ -8,13 +8,13 @@ import './AddFriends.css';
 
 export class AddFriends extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       search: '',
       usersSearched: [],
       allUsers: [],
       error: ''
-    }
+    };
   }
 
   componentDidMount = async() => {
@@ -24,37 +24,44 @@ export class AddFriends extends Component {
   getAllUsers = async() => {
     try {
       const value = await db.onceGetUsers();
-      const excludeCurrentUser = Object.keys(value).filter( key => key !== this.props.user.uid);
-      const allUsers = excludeCurrentUser.map( key =>{ return {...value[key].user, key}} );
+      const excludeCurrentUser = Object.keys(value)
+        .filter( key => key !== this.props.user.uid);
+      const allUsers = excludeCurrentUser
+        .map( key =>{ return { ...value[key].user, key }; } );
       this.setState({ allUsers });
     } catch (error) {
-      this.setState({ error: error.message })
+      this.setState({ error: error.message });
     }
   }
 
-  handleChange = e => {
-    const search = e.target.value.toLowerCase();
+  handleChange = event => {
+    const search = event.target.value.toLowerCase();
     const users = this.state.allUsers;
-    const usersSearched = users.filter(users => (users.email.toLowerCase().includes(search) || users.firstName.toLowerCase().includes(search) || users.lastName.toLowerCase().includes(search)));
-    this.setState({usersSearched})
+    const usersSearched = users.filter(users => 
+      (users.email.toLowerCase().includes(search) 
+        || users.firstName.toLowerCase().includes(search) 
+        || users.lastName.toLowerCase().includes(search)
+      )
+    );
+    this.setState({ usersSearched });
   }
 
   displayFriends = () => {
     return this.state.usersSearched.length ?
-    this.state.usersSearched.map( (friend, index) => <h4 key={index} onClick={
-      () => this.addFriendsToDB(friend.id)}>
-      <img id="add-friends" src={ addIcon } alt="add-game" />
-      {friend.firstName} {friend.lastName}, {friend.email}</h4>)
-    : <div className="no-results">No friends found :(</div>
+      this.state.usersSearched.map( (friend, index) => <h4 key={index} onClick={
+        () => this.addFriendsToDB(friend.id)}>
+        <img id="add-friends" src={ addIcon } alt="add-game" />
+        {friend.firstName} {friend.lastName}, {friend.email}</h4>)
+      : <div className="no-results">No friends found :(</div>;
   }
 
   addFriendsToDB = async (id) => {
     try {
       await db.doWriteFriendsData(this.props.user.uid, id);
-      const friends = await db.getFriends(this.props.user.uid)
+      const friends = await db.getFriends(this.props.user.uid);
       this.props.updateFriends(friends);
     } catch (error) {
-      this.setState({ error: error.message })
+      this.setState({ error: error.message });
     }
   }
 
@@ -72,7 +79,7 @@ export class AddFriends extends Component {
           </article>
         </div>
       </section>
-    )
+    );
   }
 }
 
@@ -83,10 +90,10 @@ AddFriends.propTypes = {
 
 export const mapStateToProps = state => ({
   user: state.user
-})
+});
 
 export const mapDispatchToProps = dispatch => ({
   updateFriends: friends => dispatch(updateFriends(friends))
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddFriends)
+export default connect(mapStateToProps, mapDispatchToProps)(AddFriends);

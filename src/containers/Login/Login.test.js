@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { Login, mapStateToProps } from './Login';
 import { shallow } from 'enzyme';

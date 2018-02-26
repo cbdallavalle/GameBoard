@@ -60,7 +60,7 @@ export const mockData = {
     passwordOne: '',
     passwordTwo: '',
     error: null,
-    displayCreate: 'login',
+    displayCreate: 'login'
   },
   mockLogInEvent: {
     target: {
@@ -105,9 +105,4 @@ export const mockData = {
       uid: 'GZZGrEW9aYXzbxrdphXuq04ng6E3'
     }
   }
-}
-
-
-
-
-
+};

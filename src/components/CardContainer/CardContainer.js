@@ -12,15 +12,15 @@ export const CardContainer = ({favorites, type}) => {
         friendName={ key }
         type={ type }
       />
-    )
-  })
+    );
+  });
 
   return (
     <section className="CardContainer">
       { favoritesToRender }
     </section>
-  )
-}
+  );
+};
 
 CardContainer.propTypes = {
   favorites: PropTypes.object.isRequired,

@@ -26,6 +26,13 @@
   font-size: large;
 }
 
+#app-error {
+  background-color: #ff38389c;
+  width: 400px;
+  color: #5f0404;
+  margin: auto;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
