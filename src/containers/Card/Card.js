@@ -44,7 +44,9 @@ export class Card extends Component {
     try {
       await db.doDeleteFavoriteData(this.props.user.uid, this.props.favorite);
       const favorites = await db.getFavorites(this.props.user.uid);
-      this.props.updateFavorites(favorites);
+      favorites 
+      ? this.props.updateFavorites(favorites) 
+      : this.props.updateFavorites({});
     } catch (error) {
       this.setState({ error: error.message });
     }
