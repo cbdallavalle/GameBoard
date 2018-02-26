@@ -1,3 +1,53 @@
+## Synopsis
+
+This website allows users to keep track of the board games they own, rate them, and see what their friends are playing! The most popular website that lets people find board games, add them to a collection, rate them and friend other users is (BoardGameGeek.com)[https://boardgamegeek.com/], which is not user friendly and intimidating to new board game users. My app seeks to let new board game users come and start building a community with other board game users, so users can see what games are highly rated and what games their friends own that they can play together. 
+
+## Implementation
+
+The project is built in React.js with Google Firebase as a backend for user authentification and database storage. The create-react-app was used as the starter, which documentation can be found (here)[https://github.com/facebook/create-react-app]. 
+
+## API Reference
+
+The board game api is taken from (BoardGameGeek)[https://boardgamegeek.com/wiki/page/BGG_XML_API2]. Users can search for the name of a game and the api will return the names of the board games that match that searched name. Then users can click on the game they want to see 
+
+## Tests
+
+Describe and show how to run the tests with code examples.
+
+## Contributors
+
+Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+
+## License
+
+A short snippet describing the license (MIT, Apache, etc.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
