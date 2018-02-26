@@ -13,12 +13,8 @@ export const doCreateUser = (id, firstName, lastName, email) =>
 export const onceGetUsers = async () => {
   try {
     const snapshot = await db.ref('users').once('value');
-    if (snapshot.status < 300) {
-      const value = await snapshot.val();
-      return value;
-    } else {
-      throw new Error('unable to fetch users');
-    }
+    const value = await snapshot.val();
+    return value;
   } catch (error) {
     throw new Error('unable to fetch users');
   }
@@ -87,7 +83,7 @@ export const doWriteFriendsData = async (userId, friendId) => {
 export const getFriends = async (userId) => {
   try {
     const value = await onceGetUsers();
-    return value[userId].friends;
+    return value ? value[userId].friends : [];
   } catch (error) {
     throw new Error('unable to load friends data');
   }
@@ -96,7 +92,7 @@ export const getFriends = async (userId) => {
 export const getFavorites = async (userId) => {
   try {
     const value = await onceGetUsers();
-    return value[userId].favorites;
+    return value ? value[userId].favorites : {};
   } catch (error) {
     throw new Error('unable to load favorites data');
   }
@@ -121,13 +117,8 @@ export const doWriteReviewData = async (userId, favorite, review) => {
   try {
     const { name } = favorite;
     const reviewedGame = { ...favorite, review };
-    const response = await 
-      db.ref('users/' + userId + '/favorites/' + name).set(reviewedGame);
-    if (response.status < 300) {
-      await doWriteLastFavoritedData(userId, reviewedGame);
-    } else {
-      throw new Error('unable to process review');
-    }
+    db.ref('users/' + userId + '/favorites/' + name).set(reviewedGame);
+    await doWriteLastFavoritedData(userId, reviewedGame);
   } catch (error) {
     throw new Error('unable to process review');
   }
