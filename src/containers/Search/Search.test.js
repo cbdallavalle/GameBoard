@@ -55,11 +55,10 @@ describe('triggerSearch', () => {
   });
 
   //handleChooseGame
-  it.skip('handleChooseGame should set state with an error if an error is caught', async() => {
-    window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
-      status: 500,
-      error: new Error('unable to load')
-    }))
+  it('handleChooseGame should set state with an error if an error is caught', async() => {
+    api.fetchBoardGames = jest.fn().mockImplementation( () => {
+      throw new Error('unable to load game data :(')
+    })
     
     await wrapper.instance().handleChooseGame({id: '', name: ''});
     expect(wrapper.state().error).toEqual('unable to load game data :(')
@@ -68,21 +67,28 @@ describe('triggerSearch', () => {
   it('handleChooseGame should set state with a game', async () => {
     api.fetchBoardGames = jest.fn();
     api.cleanGameDetails = (result) => (mockData.mockSearchGame);
+    
     await wrapper.instance().handleChooseGame(mockData.mockSearch[0])
     expect(wrapper.state().game).toEqual(mockData.mockSearchGame)
   })
 
   //addGameToFavorites
   it('addGameToFavorites should set state to have an error if it catches an error', async() => {
+    db.doAddFavoriteData = jest.fn().mockImplementation( () => {
+      throw new Error('unable to add favorite data')
+    })
+    db.getFavorites = jest.fn().mockImplementation( () => {
+      throw new Error('unable to add favorite data')
+    })
 
     await wrapper.instance().addGameToFavorites()
     expect(wrapper.state().error).toEqual('unable to add favorite data')
   })
 
   it('addGameToFavorites should call updateFavorites', async() => {
-
     db.doAddFavoriteData = jest.fn();
     db.getFavorites = (userId) => mockData.mockFavorites;
+    
     await wrapper.instance().addGameToFavorites();
     expect(mockUpdateFavorites).toHaveBeenCalledWith(mockData.mockFavorites)
   })

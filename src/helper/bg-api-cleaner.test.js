@@ -29,7 +29,7 @@ describe.skip("fetchBoardGames", () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: false,
-        status: 400,
+        status: 500,
       })
     })
     api.convertXMLToJSON = jest.fn();

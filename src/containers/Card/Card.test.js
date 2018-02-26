@@ -64,17 +64,15 @@ describe('Card', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  it.skip('handleBlur should set state to have an error if error is caught', async() => {
-
-    window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
-      status: 500,
-      error: new Error('unable to load friends')
-    }))
+  it('handleBlur should set state to have an error if error is caught', async() => {
+    db.doWriteReviewData = jest.fn().mockImplementation(() => {
+      throw new Error('unable to write review data')
+    })
 
     const mockCardEvent = {target: {innerHTML: 'blahh'}}
 
     await wrapper.instance().handleBlur(mockCardEvent);
-    expect(wrapper.state().error).toEqual('error')
+    expect(wrapper.state().error).toEqual('unable to write review data')
   })
 
   it('handleBlur should call doWriteReviewData', () => {
@@ -86,9 +84,12 @@ describe('Card', () => {
   })
 
   it('handleDelete should set state with an error if an error is caught', async() => {
+    db.doDeleteFavoriteData = jest.fn().mockImplementation(() => {
+      throw new Error('unable to delete favorite')
+    })
 
     await wrapper.instance().handleDelete();
-    expect(wrapper.state().error).toEqual('unable to delete')
+    expect(wrapper.state().error).toEqual('unable to delete favorite')
   })
 
   it('handleDelete should call two db functions and updateFavorites', async() => {
@@ -100,8 +101,12 @@ describe('Card', () => {
   })
 
   it('handleAdd should call set state with an error if error is caught', async() => {
+    db.doAddFavoriteData = jest.fn().mockImplementation(() => {
+      throw new Error('unable to add favorite')
+    })
+
     await wrapper.instance().handleAdd();
-    expect(wrapper.state().error).toEqual('unable to add favorite data')
+    expect(wrapper.state().error).toEqual('unable to add favorite')
   })
 
   it('handleAdd should call two db functions and updateFavorites', async() => {
