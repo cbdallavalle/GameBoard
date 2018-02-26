@@ -18,13 +18,12 @@ export const cleanGameDetails = game => {
   return {...gameDetails, id}
 }
 
-//try catch block
 export const fetchBoardGames = async url => {
   try {
     const response = await fetch(url);
     if(response.status < 300) {
-      const responseText = await response.text();
-      return convertXMLToJSON(responseText)
+      console.log(convertXMLToJSON)
+      return convertXMLToJSON(response)
     } else {
       throw new Error('unable to load game data :(')
     }
@@ -33,7 +32,8 @@ export const fetchBoardGames = async url => {
   }
 }
 
-export const convertXMLToJSON = (responseText) => {
+export const convertXMLToJSON = async(response) => {
+  const responseText = await response.text();
   const convert = require('xml-js');
   const options = {ignoreComment: true, alwaysChildren: true };
   const result = convert.xml2js(responseText, options);

@@ -24,13 +24,38 @@ describe("cleanGameDetails", () => {
 })
 
 describe.skip("fetchBoardGames", () => {
-  it('should take in a url, return a fetch of XML and return JSON', () => {
+  it('should take in a url and throw an error if it is a bad call', async () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
-        ok: true,
-        status: 200,
-        json: {response: {}}
+        ok: false,
+        status: 400,
       })
     })
+    api.convertXMLToJSON = jest.fn();
+
+    expect(await api.fetchBoardGames('url')).toEqual('unable to load game data :(');
+
   })
+
+  it('should take in a url, and call fetch', async() => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        type: "cors", 
+        url: "https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=pandemic", 
+        redirected: false,
+        status: 200, 
+        ok: true
+      });
+    })
+
+    console.log(api.convertXMLToJSON)
+    api.convertXMLToJSON = jest.fn();
+    await api.fetchBoardGames('https://cors-anywhere.herokuapp.com/www.boardgamegeek.com/xmlapi2/search?query=Mysterium')
+    // expect(window.fetch).toHaveBeenCalled();
+    expect(api.convertXMLToJSON).toHaveBeenCalled();
+  })
+})
+
+describe('convertXMLToJSON', () => {
+
 })

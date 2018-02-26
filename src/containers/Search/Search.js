@@ -52,9 +52,11 @@ export class Search extends Component {
     const { id, name } = gameSelected;
     try {
       const result = await api.fetchBoardGames(`https://cors-anywhere.herokuapp.com/https://www.boardgamegeek.com/xmlapi2/thing?id=${id}`);
+      console.log(result)
       const game = {...api.cleanGameDetails(result), name};
       this.setState({game, error: '', loading: false, gameAdded: 'not-added'})
     } catch (error) {
+      console.log('errrss')
       this.setState({ error: error.message, loading: false, gameAdded: 'not-added' })
     }
   }
