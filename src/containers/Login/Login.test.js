@@ -69,9 +69,16 @@ describe("Login", () => {
     expect(wrapper.instance().signUp).toHaveBeenCalledWith('email', 'passwordOne');
   })
 
-  it('when signUp called it should set state with error message when call fails', () => {
+  it.only('when signUp called it should set state with error message when call fails', () => {
+    auth.doCreateUserWithEmailAndPassword = jest.fn().mockImplementation(() => {
+      throw new Error('unable to create user')
+    })
+    db.doCreateUser = jest.fn().mockImplementation(() => {
+      throw new Error('unable to create user')
+    })
+
     wrapper.instance().signUp();
-    expect(wrapper.state().error).toEqual("createUserWithEmailAndPassword failed: First argument \"email\" must be a valid string.")
+    expect(wrapper.state().error).toEqual("unable to create user")
   })
 
   it('when signUp called it should set state with initial state when succesful', () => {
@@ -89,9 +96,13 @@ describe("Login", () => {
     expect(wrapper.instance().logIn).toHaveBeenCalledWith('email', 'passwordOne');
   })
 
-  it('when logIn called it should set state with error message when call fails', () => {
+  it.only('when logIn called it should set state with error message when call fails', () => {
+    auth.doSignInWithEmailAndPassword = jest.fn().mockImplementation(() => {
+      throw new Error('unable to sign in')
+    })
+
     wrapper.instance().logIn();
-    expect(wrapper.state().error).toEqual("signInWithEmailAndPassword failed: First argument \"email\" must be a valid string.")
+    expect(wrapper.state().error).toEqual("unable to sign in")
   })
 
   it('when logIn should should set state with initial state when successful', async() => {

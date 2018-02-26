@@ -17,8 +17,12 @@ describe("Header", () => {
     expect(auth.doSignOut).toHaveBeenCalled()
   })
 
-  it.skip('checkSignOut should catch an error', () => {
-    auth.doSignOut = Promise.reject();
-    wrapper.find('button').simulate('click');
+  it('checkSignOut should catch an error', () => {
+    auth.doSignOut = jest.fn().mockImplementation( () => {
+      throw new Error('unable to log out')
+    })
+    wrapper.instance().checkSignOut();
+
+    expect(wrapper.state().error).toEqual('unable to log out');
   })
 })

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import deleteIcon from '../../assets/error.svg';
 import addIcon from '../../assets/plus.svg';
 import { updateFavorites } from '../../actions';
+import { withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { db } from '../../firebase';

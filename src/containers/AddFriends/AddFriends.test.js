@@ -31,10 +31,9 @@ describe("AddFriends", () => {
         updateFriends={mockUpdateFriends}
       /> )
 
-    window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
-      status: 500,
-      error: new Error('unable to fetch users')
-    }))
+    db.onceGetUsers = jest.fn().mockImplementation(() => {
+      throw new Error('unable to fetch users')
+    })
 
     await wrapper.instance().getAllUsers();
 
@@ -52,8 +51,6 @@ describe("AddFriends", () => {
     await wrapper.instance().getAllUsers();
     expect(wrapper.state().allUsers).toEqual(mockData.mockAllUsersWithoutSearcher)
   })
-
-
 
   //handleChange
   it('handleChange should find the users that match the search', async() => {
@@ -108,9 +105,15 @@ describe("AddFriends", () => {
         updateFriends={mockUpdateFriends}
       /> )
 
+    db.doWriteFriendsData = jest.fn().mockImplementation(() => {
+      throw new Error('unable to fetch users')
+    })
+
+    db.getFriends = () => {}
+
     await wrapper.instance().addFriendsToDB();
 
-    expect(wrapper.state().error).toEqual('unable to add friend')
+    expect(wrapper.state().error).toEqual('unable to fetch users')
   })
 
   it('addFriendsToDB should call updateFriends with friends', async() => {

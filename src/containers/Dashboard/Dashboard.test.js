@@ -29,9 +29,12 @@ describe('Dashboard', () => {
 
   //updateFavorites
   it('updateFavorites should set state with an error if an error is caught', async() => {
+    db.getFriendsFavorites = jest.fn().mockImplementation(() => {
+      throw new Error('unable to get friend favorites')
+    })
 
     await wrapper.instance().updateFavorites();
-    expect(wrapper.state().error).toEqual('unable to load friends data')
+    expect(wrapper.state().error).toEqual('unable to get friend favorites')
   })
 
   it('updateFavorites will set friendsFavorites to an array of friends', async() => {
