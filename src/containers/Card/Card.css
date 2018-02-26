@@ -37,9 +37,9 @@
 }
 
 .search #game-description {
-  width: 60%;
+  width: 55%;
   line-height: 20px;
-  padding: 0 40px 0 0;
+  padding: 0 40px 0 15px;
 }
 
 .search #review-cont {

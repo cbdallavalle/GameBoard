@@ -39,7 +39,7 @@ ShallowWrapper {
                     id="toggle-account"
                     onClick={[Function]}
           >
-                    Don't have an account? Create one!
+                     Don't have an account? Create one!
                     <i
                               className="fas fa-mouse-pointer"
                               id="pointer"
@@ -99,7 +99,7 @@ ShallowWrapper {
               id="toggle-account"
               onClick={[Function]}
 >
-              Don't have an account? Create one!
+               Don't have an account? Create one!
               <i
                             className="fas fa-mouse-pointer"
                             id="pointer"
@@ -128,7 +128,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "Don't have an account? Create one!",
+                " Don't have an account? Create one!",
                 <i
                   className="fas fa-mouse-pointer"
                   id="pointer"
@@ -139,7 +139,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "Don't have an account? Create one!",
+              " Don't have an account? Create one!",
               Object {
                 "instance": null,
                 "key": undefined,
@@ -203,7 +203,7 @@ ShallowWrapper {
                         id="toggle-account"
                         onClick={[Function]}
             >
-                        Don't have an account? Create one!
+                         Don't have an account? Create one!
                         <i
                                     className="fas fa-mouse-pointer"
                                     id="pointer"
@@ -263,7 +263,7 @@ ShallowWrapper {
                 id="toggle-account"
                 onClick={[Function]}
 >
-                Don't have an account? Create one!
+                 Don't have an account? Create one!
                 <i
                                 className="fas fa-mouse-pointer"
                                 id="pointer"
@@ -292,7 +292,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "Don't have an account? Create one!",
+                  " Don't have an account? Create one!",
                   <i
                     className="fas fa-mouse-pointer"
                     id="pointer"
@@ -303,7 +303,7 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
-                "Don't have an account? Create one!",
+                " Don't have an account? Create one!",
                 Object {
                   "instance": null,
                   "key": undefined,

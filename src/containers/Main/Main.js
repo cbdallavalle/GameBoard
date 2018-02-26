@@ -12,20 +12,32 @@ export const Main = (props) => {
       <Switch>
         <Route
           exact path="/"
-          render={() => (!props.user ? <Redirect to="/login" /> : <Redirect to="/dashboard" />)}
+          render={() => (
+            !props.user 
+              ? <Redirect to="/login" /> 
+              : <Redirect to="/dashboard" />
+          )}
         />
         <Route 
           path="/dashboard" 
-          render={() => (!props.user ? <Redirect to="/login" /> : <Dashboard />)}
+          render={() => (
+            !props.user 
+              ? <Redirect to="/login" /> 
+              : <Dashboard />
+          )}
         />
         <Route 
           path="/login" 
-          render={() => (!props.user ? <Login /> : <Redirect to="/dashboard/your-games" />)} 
+          render={() => (
+            !props.user 
+              ? <Login /> 
+              : <Redirect to="/dashboard/your-games" />
+          )} 
         />
       </Switch>
     </main> 
-  )
-}
+  );
+};
 
 Main.propTypes = {
   user: PropTypes.object
@@ -33,6 +45,6 @@ Main.propTypes = {
 
 export const mapStateToProps = state => ({
   user: state.user
-})
+});
 
 export default withRouter(connect(mapStateToProps, null)(Main));

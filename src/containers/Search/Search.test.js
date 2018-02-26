@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { Search, mapStateToProps, mapDispatchToProps } from './Search';
 import { shallow } from 'enzyme';

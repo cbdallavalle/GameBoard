@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 import './SignUp.css';
 
 export const SignUp = (props) => {
-  const { handleChange, email, passwordOne, firstName, lastName, passwordTwo } = props;
+  const { 
+    handleChange, 
+    email, 
+    passwordOne, 
+    firstName, 
+    lastName, 
+    passwordTwo 
+  } = props;
+
   return (
     <div className="SignUp">
       <input 
@@ -42,8 +50,8 @@ export const SignUp = (props) => {
         value={ passwordTwo }
       />
     </div>
-  )
-}
+  );
+};
 
 SignUp.propTypes = {
   handleChange: PropTypes.func.isRequired,

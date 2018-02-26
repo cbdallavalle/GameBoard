@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { SignIn } from '../../components/SignIn/SignIn';
 import { SignUp } from '../../components/SignUp/SignUp';
-import './Login.css'
+import './Login.css';
 
 const initialState = {
   firstName: '',
@@ -15,81 +15,91 @@ const initialState = {
   passwordOne: '',
   passwordTwo: '',
   error: null,
-  displayCreate: 'login',
-}
+  displayCreate: 'login'
+};
 
 export class Login extends Component {
   constructor() {
     super();
-    this.state = {  ...initialState }
+    this.state = {  ...initialState };
   }
 
-  handleChange = e => {
-    e.preventDefault();
-    this.setState({ [e.target.name]: e.target.value })
+  handleChange = event => {
+    event.preventDefault();
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   //put into router
   determineDisplay = () => {
     return this.state.displayCreate === 'signup' ?
-    <div>
-      <SignUp 
-        handleChange={ this.handleChange }
-        firstName={ this.state.firstName }
-        lastName={ this.state.lastName }
-        email={ this.state.email }
-        passwordOne={ this.state.passwordOne }
-        passwordTwo={ this.state.passwordTwo }
-      />
-      <p 
-        id="toggle-account"
-        onClick={ this.toggleDisplay }
-      >
-        Already have an account? Log in!      
-        <i className="fas fa-mouse-pointer" id="pointer"></i>
-      </p>
-    </div>
-    :
-    <div>
-      <SignIn 
-        handleChange={ this.handleChange }
-        email={ this.state.email }
-        passwordOne={ this.state.passwordOne }
-      />
-      <p 
-        id="toggle-account"
-        onClick={ this.toggleDisplay }
-      >
-        Don't have an account? Create one! 
-        <i className="fas fa-mouse-pointer" id="pointer"></i>
-      </p>
-    </div>
+      <div>
+        <SignUp 
+          handleChange={ this.handleChange }
+          firstName={ this.state.firstName }
+          lastName={ this.state.lastName }
+          email={ this.state.email }
+          passwordOne={ this.state.passwordOne }
+          passwordTwo={ this.state.passwordTwo }
+        />
+        <p 
+          id="toggle-account"
+          onClick={ this.toggleDisplay }
+        >
+          Already have an account? Log in!      
+          <i className="fas fa-mouse-pointer" id="pointer"></i>
+        </p>
+      </div>
+      :
+      <div>
+        <SignIn 
+          handleChange={ this.handleChange }
+          email={ this.state.email }
+          passwordOne={ this.state.passwordOne }
+        />
+        <p 
+          id="toggle-account"
+          onClick={ this.toggleDisplay }
+        > Don't have an account? Create one! 
+          <i className="fas fa-mouse-pointer" id="pointer"></i>
+        </p>
+      </div>;
   }
 
   toggleDisplay = () => {
-    const displayCreate = this.state.displayCreate === 'login' ? 'signup' : 'login';
-    this.setState({ displayCreate, name: '' })
+    const displayCreate = this.state.displayCreate === 'login' 
+      ? 'signup' : 'login';
+    this.setState({ displayCreate, name: '' });
   }
 
   handleSubmit = event => {
     event.preventDefault();
     const {
       email,
-      passwordOne,
+      passwordOne
     } = this.state;
-    this.state.firstName ? this.signUp(email, passwordOne) : this.logIn(email, passwordOne);
+    this.state.firstName 
+      ? this.signUp(email, passwordOne) 
+      : this.logIn(email, passwordOne);
   }
 
   signUp = async (email, passwordOne) => {
     const { history } = this.props;
 
     try {
-      const user = await auth.doCreateUserWithEmailAndPassword(email, passwordOne);
-      await db.doCreateUser(user.uid, this.state.firstName, this.state.lastName, email)
-      this.setState({ ...initialState })
+      const user = await 
+        auth.doCreateUserWithEmailAndPassword(
+          email, 
+          passwordOne
+        );
+      await db.doCreateUser(
+        user.uid, 
+        this.state.firstName, 
+        this.state.lastName, email
+      );
+      this.setState({ ...initialState });
       history.push('/');        
-    } catch(error) {
-      this.setState({ error: error.message })
+    } catch (error) {
+      this.setState({ error: error.message });
     }
   }
 
@@ -98,15 +108,15 @@ export class Login extends Component {
 
     try {
       await auth.doSignInWithEmailAndPassword(email, password);
-      this.setState({ ...initialState })
+      this.setState({ ...initialState });
       history.push('/');
-    } catch(error) {
-      this.setState({ error: error.message })
+    } catch (error) {
+      this.setState({ error: error.message });
     }
   }
 
-  determineInvalid = (e) => {
-    if(this.state.displayCreate === 'login') {
+  determineInvalid = () => {
+    if (this.state.displayCreate === 'login') {
       return (this.state.email === '' || this.state.passwordOne === '');
     } else {
       return (
@@ -115,7 +125,7 @@ export class Login extends Component {
         this.state.email === '' ||
         this.state.fistName === '' ||
         this.state.lastName === ''
-      )
+      );
     }
   }
 
@@ -135,7 +145,7 @@ export class Login extends Component {
         </button>
         { this.state.error && <p>{this.state.error}</p> }
       </form>
-    )
+    );
   }
 }
 
@@ -145,6 +155,6 @@ Login.propTypes = {
 
 export const mapStateToProps = state => ({
   user: state.user
-})
+});
 
 export default withRouter(connect(mapStateToProps, null)(Login));

@@ -14,42 +14,49 @@ export class Card extends Component {
     this.state = {
       contenteditable: 'false',
       error: ''
-    }
+    };
   }
 
   componentDidMount = async () => {
-    this.props.type === 'games' && await this.setState({contenteditable: 'true'})
+    this.props.type === 'games' && 
+    await this.setState({contenteditable: 'true'});
   }
 
   friendsName = () => {
-    return this.props.type === 'friends' ? this.props.friendName + ' played:' : null
+    return this.props.type === 'friends' 
+      ? this.props.friendName + ' played:' 
+      : null;
   }
 
-  handleBlur = (e) => {
+  handleBlur = (event) => {
     try {
-      db.doWriteReviewData(this.props.user.uid, this.props.favorite, e.target.innerHTML)
+      db.doWriteReviewData(
+        this.props.user.uid, 
+        this.props.favorite, 
+        event.target.innerHTML
+      );
     } catch (error) {
-      this.setState({ error: error.message })
+      this.setState({ error: error.message });
     }
   }
 
   handleDelete = async () => {
     try {
-      await db.doDeleteFavoriteData(this.props.user.uid, this.props.favorite)
+      await db.doDeleteFavoriteData(this.props.user.uid, this.props.favorite);
       const favorites = await db.getFavorites(this.props.user.uid);
-      this.props.updateFavorites(favorites)
+      this.props.updateFavorites(favorites);
     } catch (error) {
-      this.setState({ error: error.message })
+      this.setState({ error: error.message });
     }
   }
 
-  handleAdd = async (e) => {
+  handleAdd = async () => {
     try {
       await db.doAddFavoriteData(this.props.user.uid, this.props.favorite);
       const favorites = await db.getFavorites(this.props.user.uid);
-      this.props.updateFavorites(favorites)
-    } catch(error) {
-      this.setState({ error: error.message })
+      this.props.updateFavorites(favorites);
+    } catch (error) {
+      this.setState({ error: error.message });
     }
   }
 
@@ -61,8 +68,18 @@ export class Card extends Component {
           <h3>{ this.friendsName() }</h3>
           <h3>{ name }</h3>
           <img src={ thumbnail } alt="game-icon" />
-          <img id="delete" src={ deleteIcon } alt="delete-game" onClick={this.handleDelete} />
-          <img id="add" src={ addIcon } alt="add-game" onClick={this.handleAdd} />
+          <img 
+            id="delete" 
+            src={ deleteIcon } 
+            alt="delete-game"   
+            onClick={this.handleDelete} 
+          />
+          <img 
+            id="add" 
+            src={ addIcon } 
+            alt="add-game" 
+            onClick={this.handleAdd} 
+          />
         </div>
         <div className="game-info" id="game-description">
           <p>{ description }</p>
@@ -77,7 +94,7 @@ export class Card extends Component {
           </p>
         </div>
       </article>
-    ) 
+    ); 
   }
 }
 
@@ -91,11 +108,11 @@ Card.propTypes = {
 };
 
 export const mapStateToProps = state => ({
-  user: state.user,
-})
+  user: state.user
+});
 
 export const mapDispatchToProps = dispatch => ({
-  updateFavorites: favorites => dispatch(updateFavorites(favorites)),
-})
+  updateFavorites: favorites => dispatch(updateFavorites(favorites))
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Card)
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

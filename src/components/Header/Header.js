@@ -7,14 +7,14 @@ export class Header extends Component {
     super();
     this.state = {
       error: ''
-    }
+    };
   }
 
   checkSignOut = () => {
     try {
       auth.doSignOut();
-    } catch(error) {
-      this.setState({ error: error.message })
+    } catch (error) {
+      this.setState({ error: error.message });
     }
   }
 
@@ -29,6 +29,6 @@ export class Header extends Component {
         </div>
         <p>{ this.state.error }</p>
       </header>
-    )
+    );
   }
 }

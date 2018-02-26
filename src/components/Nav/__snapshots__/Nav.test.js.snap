@@ -31,7 +31,7 @@ ShallowWrapper {
                     <i
                               className="fas fa-user"
                     />
-                     Your Games
+                    Your Games
           </button>
 </NavLink>,
         <NavLink
@@ -45,7 +45,7 @@ ShallowWrapper {
                     <i
                               className="fas fa-users"
                     />
-                     Your friend's games
+                    Your friend's games
           </button>
 </NavLink>,
         <NavLink
@@ -87,7 +87,7 @@ ShallowWrapper {
             <i
                         className="fas fa-user"
             />
-             Your Games
+            Your Games
 </button>,
           "to": "/dashboard/your-games",
         },
@@ -101,7 +101,7 @@ ShallowWrapper {
               <i
                 className="fas fa-user"
 />,
-              " Your Games",
+              "Your Games",
             ],
             "name": "your-games",
           },
@@ -118,7 +118,7 @@ ShallowWrapper {
               "rendered": null,
               "type": "i",
             },
-            " Your Games",
+            "Your Games",
           ],
           "type": "button",
         },
@@ -137,7 +137,7 @@ ShallowWrapper {
             <i
                         className="fas fa-users"
             />
-             Your friend's games
+            Your friend's games
 </button>,
           "to": "/dashboard/friends-games",
         },
@@ -151,7 +151,7 @@ ShallowWrapper {
               <i
                 className="fas fa-users"
 />,
-              " Your friend's games",
+              "Your friend's games",
             ],
             "name": "friends-games",
           },
@@ -168,7 +168,7 @@ ShallowWrapper {
               "rendered": null,
               "type": "i",
             },
-            " Your friend's games",
+            "Your friend's games",
           ],
           "type": "button",
         },
@@ -253,7 +253,7 @@ ShallowWrapper {
                         <i
                                     className="fas fa-user"
                         />
-                         Your Games
+                        Your Games
             </button>
 </NavLink>,
           <NavLink
@@ -267,7 +267,7 @@ ShallowWrapper {
                         <i
                                     className="fas fa-users"
                         />
-                         Your friend's games
+                        Your friend's games
             </button>
 </NavLink>,
           <NavLink
@@ -309,7 +309,7 @@ ShallowWrapper {
               <i
                             className="fas fa-user"
               />
-               Your Games
+              Your Games
 </button>,
             "to": "/dashboard/your-games",
           },
@@ -323,7 +323,7 @@ ShallowWrapper {
                 <i
                   className="fas fa-user"
 />,
-                " Your Games",
+                "Your Games",
               ],
               "name": "your-games",
             },
@@ -340,7 +340,7 @@ ShallowWrapper {
                 "rendered": null,
                 "type": "i",
               },
-              " Your Games",
+              "Your Games",
             ],
             "type": "button",
           },
@@ -359,7 +359,7 @@ ShallowWrapper {
               <i
                             className="fas fa-users"
               />
-               Your friend's games
+              Your friend's games
 </button>,
             "to": "/dashboard/friends-games",
           },
@@ -373,7 +373,7 @@ ShallowWrapper {
                 <i
                   className="fas fa-users"
 />,
-                " Your friend's games",
+                "Your friend's games",
               ],
               "name": "friends-games",
             },
@@ -390,7 +390,7 @@ ShallowWrapper {
                 "rendered": null,
                 "type": "i",
               },
-              " Your friend's games",
+              "Your friend's games",
             ],
             "type": "button",
           },

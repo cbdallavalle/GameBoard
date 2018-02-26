@@ -20,8 +20,8 @@ export const SignIn = ({ handleChange, email, passwordOne }) => {
         value={ passwordOne }
       />
     </div>
-  )
-}
+  );
+};
 
 
 SignIn.propTypes = {

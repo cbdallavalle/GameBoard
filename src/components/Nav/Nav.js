@@ -10,7 +10,8 @@ export const Nav = () => {
         activeClassName="selected"
       >
         <button name='your-games'>
-          <i className="fas fa-user"></i> Your Games
+          <i className="fas fa-user"></i> 
+          Your Games
         </button>
       </NavLink>
       <NavLink 
@@ -18,7 +19,8 @@ export const Nav = () => {
         activeClassName="selected"
       >
         <button name='friends-games' >
-          <i className="fas fa-users"></i> Your friend's games
+          <i className="fas fa-users"></i>
+          Your friend's games
         </button>
       </NavLink>
       <NavLink 
@@ -38,5 +40,5 @@ export const Nav = () => {
         </button>
       </NavLink>
     </nav>
-  )
-}
+  );
+};
