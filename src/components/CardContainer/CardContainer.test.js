@@ -6,7 +6,7 @@ describe("CardContainer", () => {
   it('should exist', () => {
     const wrapper = shallow(
       <CardContainer 
-        favorites={[]}
+        favorites={{}}
         type="games"
       />
     );
