@@ -41,35 +41,37 @@ export class Dashboard extends Component {
     return (
       <section className="Dashboard">
         <Header />
+        <div className="body-cont">
         <Nav handleClick={this.handleClick}/>
-        <Switch>
-          <Route
-            exact path="/dashboard/your-games"
-            render={ () => 
-              <CardContainer 
-                favorites={this.props.favorites} 
-                type={"games"} 
-              /> 
-            }
-          />
-          <Route 
-            exact path="/dashboard/friends-games" 
-            render={ () => 
-              <CardContainer 
-                favorites={this.state.friendsFavorites} 
-                type={"friends"} 
-              /> 
-            }
-          />
-          <Route 
-            exact path="/dashboard/search-games" 
-            component={ Search }
-          />
-          <Route 
-            exact path="/dashboard/search-users" 
-            component={ AddFriends }
-          />
-        </Switch>
+          <Switch>
+            <Route
+              exact path="/dashboard/your-games"
+              render={ () => 
+                <CardContainer 
+                  favorites={this.props.favorites} 
+                  type={"games"} 
+                /> 
+              }
+            />
+            <Route 
+              exact path="/dashboard/friends-games" 
+              render={ () => 
+                <CardContainer 
+                  favorites={this.state.friendsFavorites} 
+                  type={"friends"} 
+                /> 
+              }
+            />
+            <Route 
+              exact path="/dashboard/search-games" 
+              component={ Search }
+            />
+            <Route 
+              exact path="/dashboard/search-users" 
+              component={ AddFriends }
+            />
+          </Switch>
+        </div>
       </section>
     );
   }

@@ -1,28 +1,36 @@
+header {
+  height: 100px;
+  width: 100%;
+  background-color: #22334e;
+  border-bottom: 2px solid #0000002e;
+  color: white;
+}
+
 header div {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 180px;
+  width: fit-content;
   display: flex;
   flex-direction: row;
-  font-family: 'Righteous', cursive;
   align-items: center;
-  justify-content: center;
-  background-color: #ffffffe3;
-  border-radius: 5px;
+  justify-content: flex-start;
+  padding: 10px;
 }
 
 header div:hover {
   cursor: pointer;
 }
 
-header div button {
+header div img {
+  width: 50px;
+}
+
+header button {
+  position: absolute;
+  top: 0;
+  right: 0;
   height: 25px;
   border: none;
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
-  background-color: unset;
-  border-left: 2px solid #9b9a9a;
   font-weight: bold;
 }
 
@@ -30,8 +38,10 @@ header button div:hover {
   cursor: pointer;
 }
 
-header div h4 {
+header h4 {
   padding: 0 10px;
+  font-family: 'Righteous', cursive;
+  font-size: 50px;
 }
 
 header p {

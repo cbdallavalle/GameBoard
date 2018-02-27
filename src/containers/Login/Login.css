@@ -4,10 +4,14 @@
   max-width: 350px;
   height: 42px;
   margin: 15px 0 7px 0;
-  border: 2px solid #9b9a9a;
-  background-color: #f4f4f4a6;
+  border: 2px solid #313131;
+  background-color: white;
   font-size: 17px;
   font-family: 'Open Sans', sans-serif;
+}
+
+#submit-btn:disabled {
+  background-color: #f4f4f4a6;
 }
 
 h1 {

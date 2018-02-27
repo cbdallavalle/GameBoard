@@ -26,31 +26,35 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Header />,
-        <Unknown
-          handleClick={undefined}
-/>,
-        <Switch>
-          <Route
-                    exact={true}
-                    path="/dashboard/your-games"
-                    render={[Function]}
+        <div
+          className="body-cont"
+>
+          <Unknown
+                    handleClick={undefined}
           />
-          <Route
-                    exact={true}
-                    path="/dashboard/friends-games"
-                    render={[Function]}
-          />
-          <Route
-                    component={[Function]}
-                    exact={true}
-                    path="/dashboard/search-games"
-          />
-          <Route
-                    component={[Function]}
-                    exact={true}
-                    path="/dashboard/search-users"
-          />
-</Switch>,
+          <Switch>
+                    <Route
+                              exact={true}
+                              path="/dashboard/your-games"
+                              render={[Function]}
+                    />
+                    <Route
+                              exact={true}
+                              path="/dashboard/friends-games"
+                              render={[Function]}
+                    />
+                    <Route
+                              component={[Function]}
+                              exact={true}
+                              path="/dashboard/search-games"
+                    />
+                    <Route
+                              component={[Function]}
+                              exact={true}
+                              path="/dashboard/search-users"
+                    />
+          </Switch>
+</div>,
       ],
       "className": "Dashboard",
     },
@@ -68,52 +72,45 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "handleClick": undefined,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
           "children": Array [
-            <Route
-              exact={true}
-              path="/dashboard/your-games"
-              render={[Function]}
+            <Unknown
+              handleClick={undefined}
 />,
-            <Route
-              exact={true}
-              path="/dashboard/friends-games"
-              render={[Function]}
-/>,
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/dashboard/search-games"
-/>,
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/dashboard/search-users"
-/>,
+            <Switch>
+              <Route
+                            exact={true}
+                            path="/dashboard/your-games"
+                            render={[Function]}
+              />
+              <Route
+                            exact={true}
+                            path="/dashboard/friends-games"
+                            render={[Function]}
+              />
+              <Route
+                            component={[Function]}
+                            exact={true}
+                            path="/dashboard/search-games"
+              />
+              <Route
+                            component={[Function]}
+                            exact={true}
+                            path="/dashboard/search-users"
+              />
+</Switch>,
           ],
+          "className": "body-cont",
         },
         "ref": null,
         "rendered": Array [
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
-              "exact": true,
-              "path": "/dashboard/your-games",
-              "render": [Function],
+              "handleClick": undefined,
             },
             "ref": null,
             "rendered": null,
@@ -124,42 +121,88 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "exact": true,
-              "path": "/dashboard/friends-games",
-              "render": [Function],
+              "children": Array [
+                <Route
+                  exact={true}
+                  path="/dashboard/your-games"
+                  render={[Function]}
+/>,
+                <Route
+                  exact={true}
+                  path="/dashboard/friends-games"
+                  render={[Function]}
+/>,
+                <Route
+                  component={[Function]}
+                  exact={true}
+                  path="/dashboard/search-games"
+/>,
+                <Route
+                  component={[Function]}
+                  exact={true}
+                  path="/dashboard/search-users"
+/>,
+              ],
             },
             "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "exact": true,
-              "path": "/dashboard/search-games",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "exact": true,
-              "path": "/dashboard/search-users",
-            },
-            "ref": null,
-            "rendered": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "exact": true,
+                  "path": "/dashboard/your-games",
+                  "render": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "exact": true,
+                  "path": "/dashboard/friends-games",
+                  "render": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "exact": true,
+                  "path": "/dashboard/search-games",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "exact": true,
+                  "path": "/dashboard/search-users",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
         ],
-        "type": [Function],
+        "type": "div",
       },
     ],
     "type": "section",
@@ -172,31 +215,35 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Header />,
-          <Unknown
-            handleClick={undefined}
-/>,
-          <Switch>
-            <Route
-                        exact={true}
-                        path="/dashboard/your-games"
-                        render={[Function]}
+          <div
+            className="body-cont"
+>
+            <Unknown
+                        handleClick={undefined}
             />
-            <Route
-                        exact={true}
-                        path="/dashboard/friends-games"
-                        render={[Function]}
-            />
-            <Route
-                        component={[Function]}
-                        exact={true}
-                        path="/dashboard/search-games"
-            />
-            <Route
-                        component={[Function]}
-                        exact={true}
-                        path="/dashboard/search-users"
-            />
-</Switch>,
+            <Switch>
+                        <Route
+                                    exact={true}
+                                    path="/dashboard/your-games"
+                                    render={[Function]}
+                        />
+                        <Route
+                                    exact={true}
+                                    path="/dashboard/friends-games"
+                                    render={[Function]}
+                        />
+                        <Route
+                                    component={[Function]}
+                                    exact={true}
+                                    path="/dashboard/search-games"
+                        />
+                        <Route
+                                    component={[Function]}
+                                    exact={true}
+                                    path="/dashboard/search-users"
+                        />
+            </Switch>
+</div>,
         ],
         "className": "Dashboard",
       },
@@ -214,52 +261,45 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "handleClick": undefined,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
             "children": Array [
-              <Route
-                exact={true}
-                path="/dashboard/your-games"
-                render={[Function]}
+              <Unknown
+                handleClick={undefined}
 />,
-              <Route
-                exact={true}
-                path="/dashboard/friends-games"
-                render={[Function]}
-/>,
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/dashboard/search-games"
-/>,
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/dashboard/search-users"
-/>,
+              <Switch>
+                <Route
+                                exact={true}
+                                path="/dashboard/your-games"
+                                render={[Function]}
+                />
+                <Route
+                                exact={true}
+                                path="/dashboard/friends-games"
+                                render={[Function]}
+                />
+                <Route
+                                component={[Function]}
+                                exact={true}
+                                path="/dashboard/search-games"
+                />
+                <Route
+                                component={[Function]}
+                                exact={true}
+                                path="/dashboard/search-users"
+                />
+</Switch>,
             ],
+            "className": "body-cont",
           },
           "ref": null,
           "rendered": Array [
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
-                "exact": true,
-                "path": "/dashboard/your-games",
-                "render": [Function],
+                "handleClick": undefined,
               },
               "ref": null,
               "rendered": null,
@@ -270,42 +310,88 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "exact": true,
-                "path": "/dashboard/friends-games",
-                "render": [Function],
+                "children": Array [
+                  <Route
+                    exact={true}
+                    path="/dashboard/your-games"
+                    render={[Function]}
+/>,
+                  <Route
+                    exact={true}
+                    path="/dashboard/friends-games"
+                    render={[Function]}
+/>,
+                  <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/dashboard/search-games"
+/>,
+                  <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/dashboard/search-users"
+/>,
+                ],
               },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/dashboard/search-games",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/dashboard/search-users",
-              },
-              "ref": null,
-              "rendered": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "exact": true,
+                    "path": "/dashboard/your-games",
+                    "render": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "exact": true,
+                    "path": "/dashboard/friends-games",
+                    "render": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "exact": true,
+                    "path": "/dashboard/search-games",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "exact": true,
+                    "path": "/dashboard/search-users",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
           ],
-          "type": [Function],
+          "type": "div",
         },
       ],
       "type": "section",

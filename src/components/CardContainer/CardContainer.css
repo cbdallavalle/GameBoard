@@ -1,9 +1,7 @@
 .CardContainer {
   width: 700px;
-  height: 650px;
-  background-color: #f4f4f4a6;
   overflow-y: scroll;
   padding: 2px 15px 15px 15px;
   box-sizing: border-box;
-  margin: 40px auto;
+  margin: 20px auto;
 }

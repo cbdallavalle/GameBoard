@@ -7,6 +7,7 @@ export const Nav = () => {
     <nav>
       <NavLink 
         to='/dashboard/your-games'
+        className="navlink"
         activeClassName="selected"
       >
         <button name='your-games'>
