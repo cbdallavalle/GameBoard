@@ -1,25 +1,28 @@
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 619px;
+  width: 100%;
   height: fit-content;
-  border: 2px solid #313131;
+  margin-top: 20px;
+  background-color: white;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 nav button {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  background-color: #ffffffcf;
   border: none;
   padding: 10px;
+  background-color: unset;
 }
 
-nav h1 {
-  border-right: 1px solid grey;
+nav button:hover {
+  background-color: #d5f0f7;
 }
 
 .selected {
-  background-color: #d04e00;
+  background-color: #bbdde6;
 }

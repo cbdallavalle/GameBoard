@@ -130,13 +130,13 @@ export class Search extends Component {
           />
           <button type="submit">Search</button>
         </form>
+        { this.displayGame() }
         <div className="display-friends">
           <section className='search-results'>
             { this.displayLoadingGif() }
             { this.displayAllGames() }
           </section>
         </div>
-        { this.displayGame() }
       </section>
     );
   }

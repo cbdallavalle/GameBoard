@@ -38,6 +38,7 @@ ShallowWrapper {
                     Search
           </button>
 </form>,
+        <div />,
         <div
           className="display-friends"
 >
@@ -51,7 +52,6 @@ ShallowWrapper {
                     </h3>
           </section>
 </div>,
-        <div />,
       ],
       "className": "Search",
     },
@@ -110,6 +110,15 @@ ShallowWrapper {
           },
         ],
         "type": "form",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -165,15 +174,6 @@ ShallowWrapper {
         },
         "type": "div",
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": "div",
-      },
     ],
     "type": "section",
   },
@@ -201,6 +201,7 @@ ShallowWrapper {
                         Search
             </button>
 </form>,
+          <div />,
           <div
             className="display-friends"
 >
@@ -214,7 +215,6 @@ ShallowWrapper {
                         </h3>
             </section>
 </div>,
-          <div />,
         ],
         "className": "Search",
       },
@@ -273,6 +273,15 @@ ShallowWrapper {
             },
           ],
           "type": "form",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -328,15 +337,6 @@ ShallowWrapper {
           },
           "type": "div",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": "div",
-        },
       ],
       "type": "section",
     },
@@ -389,6 +389,7 @@ ShallowWrapper {
                     Search
           </button>
 </form>,
+        <div />,
         <div
           className="display-friends"
 >
@@ -402,7 +403,6 @@ ShallowWrapper {
                     </h4>
           </section>
 </div>,
-        <div />,
       ],
       "className": "Search",
     },
@@ -466,6 +466,15 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
         "props": Object {
           "children": <section
             className="search-results"
@@ -514,15 +523,6 @@ ShallowWrapper {
         },
         "type": "div",
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": "div",
-      },
     ],
     "type": "section",
   },
@@ -550,6 +550,7 @@ ShallowWrapper {
                         Search
             </button>
 </form>,
+          <div />,
           <div
             className="display-friends"
 >
@@ -563,7 +564,6 @@ ShallowWrapper {
                         </h4>
             </section>
 </div>,
-          <div />,
         ],
         "className": "Search",
       },
@@ -627,6 +627,15 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
           "props": Object {
             "children": <section
               className="search-results"
@@ -673,15 +682,6 @@ ShallowWrapper {
             ],
             "type": "section",
           },
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
           "type": "div",
         },
       ],
@@ -736,19 +736,6 @@ ShallowWrapper {
                     Search
           </button>
 </form>,
-        <div
-          className="display-friends"
->
-          <section
-                    className="search-results"
-          >
-                    <h4
-                              className="no-results"
-                    >
-                               No search results currently 
-                    </h4>
-          </section>
-</div>,
         <article
           className="game-description"
 >
@@ -769,6 +756,19 @@ ShallowWrapper {
                     type="search"
           />
 </article>,
+        <div
+          className="display-friends"
+>
+          <section
+                    className="search-results"
+          >
+                    <h4
+                              className="no-results"
+                    >
+                               No search results currently 
+                    </h4>
+          </section>
+</div>,
       ],
       "className": "Search",
     },
@@ -827,58 +827,6 @@ ShallowWrapper {
           },
         ],
         "type": "form",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <section
-            className="search-results"
->
-            <h4
-                        className="no-results"
-            >
-                         No search results currently 
-            </h4>
-</section>,
-          "className": "display-friends",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              false,
-              <h4
-                className="no-results"
->
-                 No search results currently 
-</h4>,
-            ],
-            "className": "search-results",
-          },
-          "ref": null,
-          "rendered": Array [
-            false,
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": " No search results currently ",
-                "className": "no-results",
-              },
-              "ref": null,
-              "rendered": " No search results currently ",
-              "type": "h4",
-            },
-          ],
-          "type": "section",
-        },
-        "type": "div",
       },
       Object {
         "instance": null,
@@ -940,6 +888,58 @@ ShallowWrapper {
         ],
         "type": "article",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <section
+            className="search-results"
+>
+            <h4
+                        className="no-results"
+            >
+                         No search results currently 
+            </h4>
+</section>,
+          "className": "display-friends",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              false,
+              <h4
+                className="no-results"
+>
+                 No search results currently 
+</h4>,
+            ],
+            "className": "search-results",
+          },
+          "ref": null,
+          "rendered": Array [
+            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": " No search results currently ",
+                "className": "no-results",
+              },
+              "ref": null,
+              "rendered": " No search results currently ",
+              "type": "h4",
+            },
+          ],
+          "type": "section",
+        },
+        "type": "div",
+      },
     ],
     "type": "section",
   },
@@ -967,19 +967,6 @@ ShallowWrapper {
                         Search
             </button>
 </form>,
-          <div
-            className="display-friends"
->
-            <section
-                        className="search-results"
-            >
-                        <h4
-                                    className="no-results"
-                        >
-                                     No search results currently 
-                        </h4>
-            </section>
-</div>,
           <article
             className="game-description"
 >
@@ -1000,6 +987,19 @@ ShallowWrapper {
                         type="search"
             />
 </article>,
+          <div
+            className="display-friends"
+>
+            <section
+                        className="search-results"
+            >
+                        <h4
+                                    className="no-results"
+                        >
+                                     No search results currently 
+                        </h4>
+            </section>
+</div>,
         ],
         "className": "Search",
       },
@@ -1064,58 +1064,6 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <section
-              className="search-results"
->
-              <h4
-                            className="no-results"
-              >
-                             No search results currently 
-              </h4>
-</section>,
-            "className": "display-friends",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                false,
-                <h4
-                  className="no-results"
->
-                   No search results currently 
-</h4>,
-              ],
-              "className": "search-results",
-            },
-            "ref": null,
-            "rendered": Array [
-              false,
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": " No search results currently ",
-                  "className": "no-results",
-                },
-                "ref": null,
-                "rendered": " No search results currently ",
-                "type": "h4",
-              },
-            ],
-            "type": "section",
-          },
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
             "children": Array [
               <button
                 id="not-added"
@@ -1170,6 +1118,58 @@ ShallowWrapper {
             },
           ],
           "type": "article",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <section
+              className="search-results"
+>
+              <h4
+                            className="no-results"
+              >
+                             No search results currently 
+              </h4>
+</section>,
+            "className": "display-friends",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                false,
+                <h4
+                  className="no-results"
+>
+                   No search results currently 
+</h4>,
+              ],
+              "className": "search-results",
+            },
+            "ref": null,
+            "rendered": Array [
+              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": " No search results currently ",
+                  "className": "no-results",
+                },
+                "ref": null,
+                "rendered": " No search results currently ",
+                "type": "h4",
+              },
+            ],
+            "type": "section",
+          },
+          "type": "div",
         },
       ],
       "type": "section",

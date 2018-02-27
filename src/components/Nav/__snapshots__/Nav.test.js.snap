@@ -23,6 +23,7 @@ ShallowWrapper {
         <NavLink
           activeClassName="selected"
           ariaCurrent="true"
+          className="navlink"
           to="/dashboard/your-games"
 >
           <button
@@ -89,6 +90,7 @@ ShallowWrapper {
             />
             Your Games
 </button>,
+          "className": "navlink",
           "to": "/dashboard/your-games",
         },
         "ref": null,
@@ -245,6 +247,7 @@ ShallowWrapper {
           <NavLink
             activeClassName="selected"
             ariaCurrent="true"
+            className="navlink"
             to="/dashboard/your-games"
 >
             <button
@@ -311,6 +314,7 @@ ShallowWrapper {
               />
               Your Games
 </button>,
+            "className": "navlink",
             "to": "/dashboard/your-games",
           },
           "ref": null,

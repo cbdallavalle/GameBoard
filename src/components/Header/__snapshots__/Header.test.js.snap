@@ -19,16 +19,19 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div>
+          <img
+                    src="die.gif"
+          />
           <h4>
                     GameBoard
           </h4>
-          <button
-                    onClick={[Function]}
-                    type="button"
-          >
-                    Sign out
-          </button>
 </div>,
+        <button
+          onClick={[Function]}
+          type="button"
+>
+          Sign out
+</button>,
         <p />,
       ],
     },
@@ -40,19 +43,27 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
+            <img
+              src="die.gif"
+/>,
             <h4>
               GameBoard
 </h4>,
-            <button
-              onClick={[Function]}
-              type="button"
->
-              Sign out
-</button>,
           ],
         },
         "ref": null,
         "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "src": "die.gif",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
           Object {
             "instance": null,
             "key": undefined,
@@ -64,21 +75,21 @@ ShallowWrapper {
             "rendered": "GameBoard",
             "type": "h4",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Sign out",
-              "onClick": [Function],
-              "type": "button",
-            },
-            "ref": null,
-            "rendered": "Sign out",
-            "type": "button",
-          },
         ],
         "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Sign out",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Sign out",
+        "type": "button",
       },
       Object {
         "instance": null,
@@ -102,16 +113,19 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div>
+            <img
+                        src="die.gif"
+            />
             <h4>
                         GameBoard
             </h4>
-            <button
-                        onClick={[Function]}
-                        type="button"
-            >
-                        Sign out
-            </button>
 </div>,
+          <button
+            onClick={[Function]}
+            type="button"
+>
+            Sign out
+</button>,
           <p />,
         ],
       },
@@ -123,19 +137,27 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
+              <img
+                src="die.gif"
+/>,
               <h4>
                 GameBoard
 </h4>,
-              <button
-                onClick={[Function]}
-                type="button"
->
-                Sign out
-</button>,
             ],
           },
           "ref": null,
           "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "src": "die.gif",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
             Object {
               "instance": null,
               "key": undefined,
@@ -147,21 +169,21 @@ ShallowWrapper {
               "rendered": "GameBoard",
               "type": "h4",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Sign out",
-                "onClick": [Function],
-                "type": "button",
-              },
-              "ref": null,
-              "rendered": "Sign out",
-              "type": "button",
-            },
           ],
           "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Sign out",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Sign out",
+          "type": "button",
         },
         Object {
           "instance": null,
