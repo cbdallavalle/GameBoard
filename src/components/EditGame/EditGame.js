@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { db } from '../../firebase';
+import { connect } from 'react-redux';
 import exit from '../../assets/error.svg';
+import { updateFavorites } from '../../actions';
 import './EditGame.css';
 
 export class EditGame extends Component {
@@ -9,7 +12,20 @@ export class EditGame extends Component {
       owned: 'no',
       timesPlayed: '1-5',
       rating: '-',
-      review: ''
+      review: '',
+      error: ''
+    }
+  }
+
+  handleDelete = async () => {
+    try {
+      await db.doDeleteFavoriteData(this.props.user.uid, this.props.favorite);
+      const favorites = await db.getFavorites(this.props.user.uid);
+      favorites 
+      ? this.props.updateFavorites(favorites) 
+      : this.props.updateFavorites({});
+    } catch (error) {
+      this.setState({ error: error.message });
     }
   }
 
@@ -79,3 +95,13 @@ export class EditGame extends Component {
     )
   }
 }
+
+export const mapStateToProps = state => ({
+  user: state.user
+});
+
+export const mapDispatchToProps = dispatch => ({
+  updateFavorites: favorites => dispatch(updateFavorites(favorites))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditGame);

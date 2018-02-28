@@ -8,8 +8,16 @@
   background-color: #ffffffcf;
   box-sizing: border-box;
   padding: 15px;
-  font-family: 'Open Sans', sans-serif; 
-}
+  font-family: 'Open Sans', sans-serif; }
+
+.games, .friends {
+  animation: 0.7s cubic-bezier(0.29, 1.01, 0.45, 0.94) 0s 1 slideInFromLeft; }
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0); } }
 
 .Card h3 {
   font-weight: bold;
