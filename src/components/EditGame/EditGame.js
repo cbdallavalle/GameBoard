@@ -19,7 +19,7 @@ export class EditGame extends Component {
 
   render() {
     return (
-      <form className="EditGame">
+      <form className="EditGame" id="edit-cont">
         <div 
           id="exit"
           alt="exit edit without saving" 
@@ -71,8 +71,10 @@ export class EditGame extends Component {
           <h2>Review:</h2>
           <textarea name="review" value={this.state.review} onChange={this.handleUpdate} />
         </div>
-        <button type="submit">Save change</button>
-        <button type="button">Delete from collection</button>
+        <div className="button-cont">
+          <button type="submit">Save</button>
+          <button type="button">Delete</button>
+        </div>
       </form>
     )
   }
