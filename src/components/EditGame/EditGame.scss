@@ -22,6 +22,15 @@
   }
 }
 
+@keyframes slideOutFromLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 #edit-cont h2 {
   font-family: "Open Sans", sans-serif; 
   font-size: 20px;  

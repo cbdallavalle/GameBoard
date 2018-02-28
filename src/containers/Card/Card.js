@@ -5,7 +5,7 @@ import addIcon from '../../assets/plus.svg';
 import editIcon from '../../assets/pencil.svg';
 import { updateFavorites } from '../../actions';
 import { Link, Route } from 'react-router-dom';
-import { EditGame } from '../../components/EditGame/EditGame';
+import EditGame from '../../components/EditGame/EditGame';
 
 import { connect } from 'react-redux';
 import { db } from '../../firebase';
@@ -15,15 +15,9 @@ export class Card extends Component {
   constructor() {
     super();
     this.state = {
-      contenteditable: 'false',
       error: '',
       edit: false
     };
-  }
-
-  componentDidMount = async () => {
-    this.props.type === 'games' && 
-    await this.setState({contenteditable: 'true'});
   }
 
   friendsName = () => {
@@ -32,34 +26,34 @@ export class Card extends Component {
       : null;
   }
 
-  handleBlur = (event) => {
-    try {
-      db.doWriteReviewData(
-        this.props.user.uid, 
-        this.props.favorite, 
-        event.target.innerHTML
-      );
-    } catch (error) {
-      this.setState({ error: error.message });
-    }
-  }
+  // handleBlur = (event) => {
+  //   try {
+  //     db.doWriteReviewData(
+  //       this.props.user.uid, 
+  //       this.props.favorite, 
+  //       event.target.innerHTML
+  //     );
+  //   } catch (error) {
+  //     this.setState({ error: error.message });
+  //   }
+  // }
 
   handleEdit = () => {
     console.log('edittting')
     this.setState({ edit: !this.state.edit })
   }
 
-  handleDelete = async () => {
-    try {
-      await db.doDeleteFavoriteData(this.props.user.uid, this.props.favorite);
-      const favorites = await db.getFavorites(this.props.user.uid);
-      favorites 
-      ? this.props.updateFavorites(favorites) 
-      : this.props.updateFavorites({});
-    } catch (error) {
-      this.setState({ error: error.message });
-    }
-  }
+  // handleDelete = async () => {
+  //   try {
+  //     await db.doDeleteFavoriteData(this.props.user.uid, this.props.favorite);
+  //     const favorites = await db.getFavorites(this.props.user.uid);
+  //     favorites 
+  //     ? this.props.updateFavorites(favorites) 
+  //     : this.props.updateFavorites({});
+  //   } catch (error) {
+  //     this.setState({ error: error.message });
+  //   }
+  // }
 
   handleAdd = async () => {
     try {
@@ -98,10 +92,7 @@ export class Card extends Component {
         </div>
         <div className={`game-info`} id="review-cont">
           <h3><span>0</span>/5</h3>
-          <p 
-            contenteditable={this.state.contenteditable}
-            onBlur={this.handleBlur}
-          >
+          <p>
             { review } 
           </p>
         </div>
@@ -137,10 +128,3 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
-
-          // <img 
-          //   id="delete" 
-          //   src={ deleteIcon } 
-          //   alt="delete-game"   
-          //   onClick={this.handleDelete} 
-          // />
