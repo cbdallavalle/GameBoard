@@ -1,6 +1,6 @@
 ## Synopsis
 
-This was a two week personal project built for the Turing School of Software and Design, using React.js, React-Router, Redux, and Google Firebase. The idea and implementation of this application was created and carried on an individual basis. As a novice board game user interested in expanding my gaming experience, I wanted to make an application that allows users to explore the new and exciting board games available.
+This was a two week personal project built for the Turing School of Software and Design, using React.js, React-Router, Redux, and Google Firebase. The idea and implementation of this application was created and carried out on an individual basis. As a novice board game user interested in expanding my gaming experience, I wanted to make an application that allows users to explore the new and exciting board games available.
 
 ## Code Example
 
