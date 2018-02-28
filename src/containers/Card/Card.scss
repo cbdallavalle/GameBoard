@@ -8,43 +8,51 @@
   background-color: #ffffffcf;
   box-sizing: border-box;
   padding: 15px;
-  font-family: 'Open Sans', sans-serif; 
+  font-family: 'Open Sans', sans-serif;
 }
 
 .Card h3 {
   font-weight: bold;
-  text-align: center; }
+  text-align: center;
+}
 
 .Card img {
   margin-top: 10px;
-  max-width: 180px; }
+  max-width: 180px;
+}
 
 .info-div {
   width: 50px;
   height: 50px;
-  background-color: magenta; }
+  background-color: magenta;
+}
 
 .friends .game-info,
 .games .game-info {
   width: 30%;
-  line-height: 20px; }
+  line-height: 20px;
+}
 
 .search #game-title {
-  width: 30%; }
+  width: 30%;
+}
 
 .search #game-description {
   width: 55%;
   line-height: 20px;
-  padding: 0 40px 0 15px; }
+  padding: 0 40px 0 15px;
+}
 
 .search #review-cont {
-  display: none; }
+  display: none;
+}
 
 #game-description {
   padding: 0 5px;
   width: 40%;
   height: 240px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+}
 
 #add,
 #edit {
@@ -55,28 +63,36 @@
   height: 20px;
   border-radius: 10px;
   background-repeat: no-repeat;
-  background-position: center; }
-  #add:hover,
-  #edit:hover {
-    cursor: pointer; }
+  background-position: center;
+  &:hover {
+    cursor: pointer;
+  };
+}
 
 #add {
-  background-image: url("../../assets/plus.svg"); }
-  #add:hover {
-    background-image: url("../../assets/plus-hover.svg"); }
+  background-image: url('../../assets/plus.svg');
+  &:hover {
+    background-image: url('../../assets/plus-hover.svg');
+  };
+}
 
 #edit {
-  background-image: url("../../assets/pencil.svg"); }
-  #edit:hover {
-    background-image: url("../../assets/pencil-hover.svg"); }
+  background-image: url('../../assets/pencil.svg');
+  &:hover {
+    background-image: url('../../assets/pencil-hover.svg');
+  }
+}
 
 #delete, #add {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .search #edit,
 .friends #edit {
-  display: none; }
+  display: none;
+}
 
 .games #add,
 .search #add {
-  display: none; }
+  display: none;
+}

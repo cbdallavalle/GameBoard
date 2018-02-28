@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import deleteIcon from '../../assets/error.svg';
 import addIcon from '../../assets/plus.svg';
+import editIcon from '../../assets/pencil.svg';
 import { updateFavorites } from '../../actions';
-import { withRouter } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+import { EditGame } from '../../components/EditGame/EditGame';
 
 import { connect } from 'react-redux';
 import { db } from '../../firebase';
@@ -14,7 +16,8 @@ export class Card extends Component {
     super();
     this.state = {
       contenteditable: 'false',
-      error: ''
+      error: '',
+      edit: false
     };
   }
 
@@ -41,6 +44,11 @@ export class Card extends Component {
     }
   }
 
+  handleEdit = () => {
+    console.log('edittting')
+    this.setState({ edit: !this.state.edit })
+  }
+
   handleDelete = async () => {
     try {
       await db.doDeleteFavoriteData(this.props.user.uid, this.props.favorite);
@@ -63,26 +71,27 @@ export class Card extends Component {
     }
   }
 
-  render() {
+  determineDisplay = () => {
     const { description, name, thumbnail, review } = this.props.favorite;
-    return (
-      <article className={`Card ${this.props.type}`}>
+
+    return !this.state.edit ?
+    <article className={`Card ${this.props.type}`}>
         <div className="game-info" id="game-title">
           <h3>{ this.friendsName() }</h3>
           <h3>{ name }</h3>
           <img src={ thumbnail } alt="game-icon" />
-          <img 
-            id="delete" 
-            src={ deleteIcon } 
-            alt="delete-game"   
-            onClick={this.handleDelete} 
-          />
-          <img 
-            id="add" 
-            src={ addIcon } 
-            alt="add-game" 
+          <div
+            id="edit"
+            alt="edit a game in your collection"
+            onClick={this.handleEdit}
+          >
+          </div>
+          <div
+            id="add"
+            alt="edit a game in your collection"
             onClick={this.handleAdd} 
-          />
+          >
+          </div>
         </div>
         <div className="game-info" id="game-description">
           <p>{ description }</p>
@@ -97,6 +106,15 @@ export class Card extends Component {
           </p>
         </div>
       </article>
+      :
+      <EditGame game={this.props.favorite} handleEdit={this.handleEdit} />
+  }
+
+  render() {
+    return (
+      <div>
+      { this.determineDisplay() }
+      </div>
     ); 
   }
 }
@@ -119,3 +137,10 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
+
+          // <img 
+          //   id="delete" 
+          //   src={ deleteIcon } 
+          //   alt="delete-game"   
+          //   onClick={this.handleDelete} 
+          // />
