@@ -15,7 +15,7 @@ export const Main = (props) => {
           render={() => (
             !props.user 
               ? <Redirect to="/login" /> 
-              : <Redirect to="/dashboard" />
+              : <Redirect to="/dashboard/your-games" />
           )}
         />
         <Route 

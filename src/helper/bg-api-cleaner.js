@@ -42,5 +42,6 @@ export const convertXMLToJSON = async(response) => {
   const convert = require('xml-js');
   const options = {ignoreComment: true, alwaysChildren: true };
   const result = convert.xml2js(responseText, options);
+  console.log(result);
   return result;
 };
