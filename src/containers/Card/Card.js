@@ -33,7 +33,9 @@ export class Card extends Component {
       : null;
   }
 
-  handleEdit = () => {
+  handleEdit = (e, review={}) => {
+    e.preventDefault();
+    this.setState({ review })
     this.setState({ edit: !this.state.edit })
   }
 
@@ -49,7 +51,7 @@ export class Card extends Component {
 
   getGameReview = async() => {
     try {
-      const review = await db.doGetReviewData(this.props.user.uid, this.props.favorite.name);
+      const review = await db.doGetReviewData(this.props.user.uid, this.props.favorite.name);  
       review && this.setState({ review });
     } catch (error) {
       this.setState({ error: error.message });
@@ -60,6 +62,22 @@ export class Card extends Component {
     return this.state.review.owned === 'yes' 
     ? <p id="owned-p">owned <i class="far fa-check-circle"></i></p>
     : <p id="owned-p">played <i class="far fa-play-circle"></i></p>
+  }
+
+  determineReview = () => {
+    return !this.props.review 
+    ? <div className={`game-info`} id="review-cont">
+        <h3><span>{this.state.review.rating}</span>/5</h3>
+        <p>
+          { this.state.review.review } 
+        </p>
+      </div>
+    : <div className={`game-info`} id="review-cont">
+        <h3><span>{this.props.review.rating}</span>/5</h3>
+        <p>
+          { this.props.review.review } 
+        </p>
+      </div>
   }
 
   determineDisplay = () => {
@@ -89,12 +107,7 @@ export class Card extends Component {
         <div className="game-info" id="game-description">
           <p>{ description }</p>
         </div>
-        <div className={`game-info`} id="review-cont">
-          <h3><span>{rating}</span>/5</h3>
-          <p>
-            { review } 
-          </p>
-        </div>
+        { this.determineReview() }
       </article>
       :
       <EditGame favorite={this.props.favorite} handleEdit={this.handleEdit} />

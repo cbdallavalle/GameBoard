@@ -54,6 +54,10 @@ export const doWriteLastFavoritedData = async (userId, favorite) => {
   db.ref('users/' + userId + '/lastFavorited').set(favorite);
 };
 
+export const doWriteLastFavoritedReview = async (userId, review) => {
+  db.ref('users/' + userId + '/lastFavorited/' + 'review').set(review);
+}
+
 export const checkFavoriteDuplication = (existingFavorites, favorite) => {
   const { name, id, description, image, thumbnail } = favorite;
   const review = "No review - click to add one";
@@ -102,9 +106,13 @@ export const getFriendsFavorites = async (userId) => {
   const friends = await getFriends(userId);
   const value = await onceGetUsers();
   if (friends) {
-    return friends.reduce( (accu, friendId) => {
+    return friends.reduce( async(accu, friendId) => {
       if (value[friendId].lastFavorited) {
-        accu[value[friendId].user.firstName] = value[friendId].lastFavorited;
+        const review = await doGetLastReviewedData(friendId);
+        accu[value[friendId].user.firstName] = {
+          game: value[friendId].lastFavorited,
+          review
+        };
       }
       return accu;
     }, {} ); 
@@ -118,6 +126,7 @@ export const doWriteReviewData = async (userId, favorite, review) => {
     const { name } = favorite;
     db.ref('users/' + userId + '/reviews/' + name).set(review);
     await doWriteLastFavoritedData(userId, favorite);
+    await doWriteLastFavoritedReview(userId, review);
   } catch (error) {
     throw new Error('unable to process review');
   }
@@ -130,4 +139,9 @@ export const doGetReviewData = async(userId, name) => {
   } catch (error) {
     throw new Error('unable to get reviews');
   }
+}
+
+export const doGetLastReviewedData = async(userId) => {
+  const users = await this.onceGetUsers();
+  return users[userId].lastFavorited.review;
 }

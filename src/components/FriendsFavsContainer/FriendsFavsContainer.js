@@ -7,7 +7,8 @@ export const FriendsFavsContainer = ({favorites, type}) => {
     return (
       <Card 
         key={ index }
-        favorite={ favorites[key] }
+        favorite={ favorites[key].game }
+        review={ favorites[key].review }
         friendName={ key }
         type={ type }
       />

@@ -37,6 +37,7 @@ export class Search extends Component {
 
 
   triggerSearch = async (string) => {
+    this.setState({ game: {} })
     const search = string.toLowerCase().split(' ').join('+');
     try {
       const result = await api.fetchBoardGames(`search?query=${search}`);

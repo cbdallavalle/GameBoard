@@ -117,7 +117,8 @@ AddFriends.propTypes = {
 };
 
 export const mapStateToProps = state => ({
-  user: state.user
+  user: state.user,
+  friends: state.friends
 });
 
 export const mapDispatchToProps = dispatch => ({
