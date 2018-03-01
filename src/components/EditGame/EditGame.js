@@ -101,8 +101,8 @@ export class EditGame extends Component {
           <textarea name="review" value={this.state.review} onChange={this.handleUpdate} />
         </div>
         <div className="button-cont">
-          <button type="submit" onClick={() => {this.handleWriteReview()}}>Save</button>
-          <button type="button" onClick={() => {this.props.handleEdit(); this.handleDelete()}}>Delete</button>
+          <button type="submit" onClick={(e) => {this.props.handleEdit(e, this.state); this.handleWriteReview()}}>Save</button>
+          <button type="button" onClick={(e) => {this.props.handleEdit(e); this.handleDelete()}}>Delete</button>
         </div>
       </form>
     )
