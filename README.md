@@ -32,3 +32,11 @@ Thank you to joshuajhun and Jeff-Duke for helping me handle the XML to JSON conv
 
 ## Screenshots
 ![screencapture-localhost-3000-login-1519933765249](https://user-images.githubusercontent.com/28467245/36866260-0c1788e4-1d4f-11e8-828f-af75bf371dab.png)
+
+![screencapture-localhost-3000-dashboard-your-games-1519933852616](https://user-images.githubusercontent.com/28467245/36866341-43864f18-1d4f-11e8-9da9-3dae8e3f54a9.png)
+
+![screencapture-localhost-3000-dashboard-search-users-1519933983038](https://user-images.githubusercontent.com/28467245/36866451-88ec38ec-1d4f-11e8-8c7d-a7b1404b7719.png)
+
+![screencapture-localhost-3000-dashboard-search-games-1519933974919](https://user-images.githubusercontent.com/28467245/36866454-8c6dd3a4-1d4f-11e8-80c6-46bd6f5874b6.png)
+
+![screencapture-localhost-3000-dashboard-friends-games-1519933930564](https://user-images.githubusercontent.com/28467245/36866461-8fbec446-1d4f-11e8-915c-9b295263e2bc.png)
