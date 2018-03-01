@@ -7,6 +7,7 @@ import { db } from '../../firebase';
 import AddFriends from '../AddFriends/AddFriends';
 import Search from '../Search/Search';
 import { CardContainer } from '../../components/CardContainer/CardContainer';
+import { FriendsFavsContainer } from '../../components/FriendsFavsContainer/FriendsFavsContainer';
 import { Header } from '../../components/Header/Header';
 import { Nav } from '../../components/Nav/Nav';
 
@@ -56,7 +57,7 @@ export class Dashboard extends Component {
             <Route 
               exact path="/dashboard/friends-games" 
               render={ () => 
-                <CardContainer 
+                <FriendsFavsContainer 
                   favorites={this.state.friendsFavorites} 
                   type={"friends"} 
                 /> 
