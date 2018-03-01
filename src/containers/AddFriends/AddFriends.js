@@ -52,6 +52,7 @@ export class AddFriends extends Component {
         <h4 
           key={index} 
           onClick={ () => this.addFriendsToDB(friend.id) }
+          id="friend-results"
         >
           <img 
             id="add-friends" 
@@ -62,9 +63,24 @@ export class AddFriends extends Component {
         </h4>
       )
       : 
-      <div className="no-results">
-        No friends found :(
+      <div>
+        { this.displayAllUsers() }
       </div>;
+  }
+
+  displayAllUsers = () => {
+    return this.state.allUsers.map( (friend, index) => <h4 
+          key={index} 
+          onClick={ () => this.addFriendsToDB(friend.id) }
+          id="friend-results"
+        >
+          <img 
+            id="add-friends" 
+            src={ addIcon } 
+            alt="add-game" 
+          />
+          {friend.firstName} {friend.lastName}, {friend.email}
+        </h4>)
   }
 
   addFriendsToDB = async (id) => {

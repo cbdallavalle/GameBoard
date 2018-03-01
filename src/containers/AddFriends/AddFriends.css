@@ -14,8 +14,9 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.AddFriends h4 {
+#friend-results {
   padding: 25px 10px;
+  font-size: 15px;
   cursor: pointer;
   text-align: left;
   font-family: 'Open Sans', sans-serif;

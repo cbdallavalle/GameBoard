@@ -43,8 +43,10 @@
   border: 2px solid #313131;
   font-size: 17px;
   margin-top: 14px;
-  background-color: #dfbaa7;
+  background-color: #22334e;
+  color: white;
   border-left: none;
+  z-index: 100;
 }
 
 .Search h1 {
@@ -70,6 +72,11 @@
   background-color: #ffffffcf;
 }
 
+.search #owned-p,
+.friends #owned-p {
+  display: none;
+}
+
 #not-added {
   position: absolute;
   top: 11px;
@@ -91,7 +98,7 @@
 
 #added {
   position: absolute;
-  top: 11;
+  top: 11px;
   right: 25px;
   border: none;
   border-radius: 120px;

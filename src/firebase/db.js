@@ -116,10 +116,18 @@ export const getFriendsFavorites = async (userId) => {
 export const doWriteReviewData = async (userId, favorite, review) => {
   try {
     const { name } = favorite;
-    const reviewedGame = { ...favorite, review };
-    db.ref('users/' + userId + '/favorites/' + name).set(reviewedGame);
-    await doWriteLastFavoritedData(userId, reviewedGame);
+    db.ref('users/' + userId + '/reviews/' + name).set(review);
+    await doWriteLastFavoritedData(userId, favorite);
   } catch (error) {
     throw new Error('unable to process review');
   }
 };
+
+export const doGetReviewData = async(userId, name) => {
+  try {
+    const users = await this.onceGetUsers();
+    return users[userId].reviews[name];
+  } catch (error) {
+    throw new Error('unable to get reviews');
+  }
+}

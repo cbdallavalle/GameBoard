@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import deleteIcon from '../../assets/error.svg';
 import addIcon from '../../assets/plus.svg';
 import editIcon from '../../assets/pencil.svg';
+import check from '../../assets/success.svg';
+import negative from '../../assets/negative.svg';
 import { updateFavorites } from '../../actions';
 import { Link, Route } from 'react-router-dom';
 import EditGame from '../../components/EditGame/EditGame';
@@ -16,8 +18,13 @@ export class Card extends Component {
     super();
     this.state = {
       error: '',
-      edit: false
+      edit: false,
+      review: {}
     };
+  }
+
+  componentDidMount = () => {
+    this.getGameReview();
   }
 
   friendsName = () => {
@@ -26,34 +33,9 @@ export class Card extends Component {
       : null;
   }
 
-  // handleBlur = (event) => {
-  //   try {
-  //     db.doWriteReviewData(
-  //       this.props.user.uid, 
-  //       this.props.favorite, 
-  //       event.target.innerHTML
-  //     );
-  //   } catch (error) {
-  //     this.setState({ error: error.message });
-  //   }
-  // }
-
   handleEdit = () => {
-    console.log('edittting')
     this.setState({ edit: !this.state.edit })
   }
-
-  // handleDelete = async () => {
-  //   try {
-  //     await db.doDeleteFavoriteData(this.props.user.uid, this.props.favorite);
-  //     const favorites = await db.getFavorites(this.props.user.uid);
-  //     favorites 
-  //     ? this.props.updateFavorites(favorites) 
-  //     : this.props.updateFavorites({});
-  //   } catch (error) {
-  //     this.setState({ error: error.message });
-  //   }
-  // }
 
   handleAdd = async () => {
     try {
@@ -65,8 +47,24 @@ export class Card extends Component {
     }
   }
 
+  getGameReview = async() => {
+    try {
+      const review = await db.doGetReviewData(this.props.user.uid, this.props.favorite.name);
+      review && this.setState({ review });
+    } catch (error) {
+      this.setState({ error: error.message });
+    }
+  }
+
+  determineOwned = () => {
+    return this.state.review.owned === 'yes' 
+    ? <p id="owned-p">owned <i class="far fa-check-circle"></i></p>
+    : <p id="owned-p">played <i class="far fa-play-circle"></i></p>
+  }
+
   determineDisplay = () => {
-    const { description, name, thumbnail, review } = this.props.favorite;
+    const { description, name, thumbnail } = this.props.favorite;
+    const { rating, review, timesPlayed } = this.state.review;
 
     return !this.state.edit ?
     <article className={`Card ${this.props.type}`}>
@@ -74,6 +72,7 @@ export class Card extends Component {
           <h3>{ this.friendsName() }</h3>
           <h3>{ name }</h3>
           <img src={ thumbnail } alt="game-icon" />
+          { this.determineOwned() }
           <div
             id="edit"
             alt="edit a game in your collection"
@@ -91,14 +90,14 @@ export class Card extends Component {
           <p>{ description }</p>
         </div>
         <div className={`game-info`} id="review-cont">
-          <h3><span>0</span>/5</h3>
+          <h3><span>{rating}</span>/5</h3>
           <p>
             { review } 
           </p>
         </div>
       </article>
       :
-      <EditGame game={this.props.favorite} handleEdit={this.handleEdit} />
+      <EditGame favorite={this.props.favorite} handleEdit={this.handleEdit} />
   }
 
   render() {
