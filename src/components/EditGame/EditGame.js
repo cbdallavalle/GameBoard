@@ -29,6 +29,19 @@ export class EditGame extends Component {
     }
   }
 
+  handleWriteReview = () => {
+    const { owned, timesPlayed, rating, review } = this.state;
+    try {
+      db.doWriteReviewData(
+        this.props.user.uid, 
+        this.props.favorite,
+        { owned, timesPlayed, rating, review }
+      );
+    } catch (error) {
+      this.setState({ error: error.message });
+    }
+  }
+
   handleUpdate = e => {
     this.setState({ [e.target.name]: e.target.value })
   }
@@ -88,8 +101,8 @@ export class EditGame extends Component {
           <textarea name="review" value={this.state.review} onChange={this.handleUpdate} />
         </div>
         <div className="button-cont">
-          <button type="submit">Save</button>
-          <button type="button">Delete</button>
+          <button type="submit" onClick={() => {this.handleWriteReview()}}>Save</button>
+          <button type="button" onClick={() => {this.props.handleEdit(); this.handleDelete()}}>Delete</button>
         </div>
       </form>
     )
