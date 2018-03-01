@@ -31,7 +31,6 @@ export class Dashboard extends Component {
       if (this.props.user.uid) {
         const friendsFavorites = await 
           db.getFriendsFavorites(this.props.user.uid);
-        // const freindsReviews = db.doGetLastReviewedData
         this.setState({ friendsFavorites });
       }
     } catch (error) {

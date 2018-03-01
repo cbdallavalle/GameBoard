@@ -23,250 +23,60 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <div
-          className="game-info"
-          id="game-title"
+      "children": <article
+        className="Card friends"
 >
-          <h3>
-                    coda played:
-          </h3>
-          <h3 />
-          <img
-                    alt="game-icon"
-                    src={undefined}
-          />
-          <img
-                    alt="delete-game"
-                    id="delete"
-                    onClick={[Function]}
-                    src="error.svg"
-          />
-          <img
-                    alt="add-game"
-                    id="add"
-                    onClick={[Function]}
-                    src="plus.svg"
-          />
-</div>,
         <div
-          className="game-info"
-          id="game-description"
->
-          <p />
-</div>,
+                className="game-info"
+                id="game-title"
+        >
+                <h3>
+                        coda played:
+                </h3>
+                <h3 />
+                <img
+                        alt="game-icon"
+                        src={undefined}
+                />
+                <p
+                        id="owned-p"
+                >
+                        played 
+                        <i
+                                class="far fa-play-circle"
+                        />
+                </p>
+                <div
+                        alt="edit a game in your collection"
+                        id="edit"
+                        onClick={[Function]}
+                />
+                <div
+                        alt="edit a game in your collection"
+                        id="add"
+                        onClick={[Function]}
+                />
+        </div>
         <div
-          className="game-info"
-          id="review-cont"
->
-          <h3>
-                    <span>
-                              0
-                    </span>
-                    /5
-          </h3>
-          <p
-                    contenteditable="false"
-                    onBlur={[Function]}
-          />
-</div>,
-      ],
-      "className": "Card friends",
+                className="game-info"
+                id="game-description"
+        >
+                <p />
+        </div>
+        <div
+                className="game-info"
+                id="review-cont"
+        >
+                <h3>
+                        <span />
+                        /5
+                </h3>
+                <p />
+        </div>
+</article>,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <h3>
-              coda played:
-</h3>,
-            <h3 />,
-            <img
-              alt="game-icon"
-              src={undefined}
-/>,
-            <img
-              alt="delete-game"
-              id="delete"
-              onClick={[Function]}
-              src="error.svg"
-/>,
-            <img
-              alt="add-game"
-              id="add"
-              onClick={[Function]}
-              src="plus.svg"
-/>,
-          ],
-          "className": "game-info",
-          "id": "game-title",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "coda played:",
-            },
-            "ref": null,
-            "rendered": "coda played:",
-            "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": undefined,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "alt": "game-icon",
-              "src": undefined,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "img",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "alt": "delete-game",
-              "id": "delete",
-              "onClick": [Function],
-              "src": "error.svg",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "img",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "alt": "add-game",
-              "id": "add",
-              "onClick": [Function],
-              "src": "plus.svg",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "img",
-          },
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <p />,
-          "className": "game-info",
-          "id": "game-description",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "p",
-        },
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <h3>
-              <span>
-                            0
-              </span>
-              /5
-</h3>,
-            <p
-              contenteditable="false"
-              onBlur={[Function]}
-/>,
-          ],
-          "className": "game-info",
-          "id": "review-cont",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <span>
-                  0
-</span>,
-                "/5",
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "0",
-                },
-                "ref": null,
-                "rendered": "0",
-                "type": "span",
-              },
-              "/5",
-            ],
-            "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": undefined,
-              "contenteditable": "false",
-              "onBlur": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "p",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "article",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -284,17 +94,23 @@ ShallowWrapper {
                         alt="game-icon"
                         src={undefined}
             />
-            <img
-                        alt="delete-game"
-                        id="delete"
+            <p
+                        id="owned-p"
+            >
+                        played 
+                        <i
+                                    class="far fa-play-circle"
+                        />
+            </p>
+            <div
+                        alt="edit a game in your collection"
+                        id="edit"
                         onClick={[Function]}
-                        src="error.svg"
             />
-            <img
-                        alt="add-game"
+            <div
+                        alt="edit a game in your collection"
                         id="add"
                         onClick={[Function]}
-                        src="plus.svg"
             />
 </div>,
           <div
@@ -308,15 +124,10 @@ ShallowWrapper {
             id="review-cont"
 >
             <h3>
-                        <span>
-                                    0
-                        </span>
+                        <span />
                         /5
             </h3>
-            <p
-                        contenteditable="false"
-                        onBlur={[Function]}
-            />
+            <p />
 </div>,
         ],
         "className": "Card friends",
@@ -337,17 +148,23 @@ ShallowWrapper {
                 alt="game-icon"
                 src={undefined}
 />,
-              <img
-                alt="delete-game"
-                id="delete"
+              <p
+                id="owned-p"
+>
+                played 
+                <i
+                                class="far fa-play-circle"
+                />
+</p>,
+              <div
+                alt="edit a game in your collection"
+                id="edit"
                 onClick={[Function]}
-                src="error.svg"
 />,
-              <img
-                alt="add-game"
+              <div
+                alt="edit a game in your collection"
                 id="add"
                 onClick={[Function]}
-                src="plus.svg"
 />,
             ],
             "className": "game-info",
@@ -394,28 +211,56 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "alt": "delete-game",
-                "id": "delete",
-                "onClick": [Function],
-                "src": "error.svg",
+                "children": Array [
+                  "played ",
+                  <i
+                    class="far fa-play-circle"
+/>,
+                ],
+                "id": "owned-p",
               },
               "ref": null,
-              "rendered": null,
-              "type": "img",
+              "rendered": Array [
+                "played ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "class": "far fa-play-circle",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+              ],
+              "type": "p",
             },
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "alt": "add-game",
-                "id": "add",
+                "alt": "edit a game in your collection",
+                "id": "edit",
                 "onClick": [Function],
-                "src": "plus.svg",
               },
               "ref": null,
               "rendered": null,
-              "type": "img",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "edit a game in your collection",
+                "id": "add",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
             },
           ],
           "type": "div",
@@ -450,15 +295,10 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <h3>
-                <span>
-                                0
-                </span>
+                <span />
                 /5
 </h3>,
-              <p
-                contenteditable="false"
-                onBlur={[Function]}
-/>,
+              <p />,
             ],
             "className": "game-info",
             "id": "review-cont",
@@ -471,9 +311,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <span>
-                    0
-</span>,
+                  <span />,
                   "/5",
                 ],
               },
@@ -484,10 +322,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "0",
+                    "children": undefined,
                   },
                   "ref": null,
-                  "rendered": "0",
+                  "rendered": null,
                   "type": "span",
                 },
                 "/5",
@@ -500,8 +338,6 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": undefined,
-                "contenteditable": "false",
-                "onBlur": [Function],
               },
               "ref": null,
               "rendered": null,
@@ -512,6 +348,342 @@ ShallowWrapper {
         },
       ],
       "type": "article",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <article
+          className="Card friends"
+>
+          <div
+                    className="game-info"
+                    id="game-title"
+          >
+                    <h3>
+                              coda played:
+                    </h3>
+                    <h3 />
+                    <img
+                              alt="game-icon"
+                              src={undefined}
+                    />
+                    <p
+                              id="owned-p"
+                    >
+                              played 
+                              <i
+                                        class="far fa-play-circle"
+                              />
+                    </p>
+                    <div
+                              alt="edit a game in your collection"
+                              id="edit"
+                              onClick={[Function]}
+                    />
+                    <div
+                              alt="edit a game in your collection"
+                              id="add"
+                              onClick={[Function]}
+                    />
+          </div>
+          <div
+                    className="game-info"
+                    id="game-description"
+          >
+                    <p />
+          </div>
+          <div
+                    className="game-info"
+                    id="review-cont"
+          >
+                    <h3>
+                              <span />
+                              /5
+                    </h3>
+                    <p />
+          </div>
+</article>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="game-info"
+              id="game-title"
+>
+              <h3>
+                            coda played:
+              </h3>
+              <h3 />
+              <img
+                            alt="game-icon"
+                            src={undefined}
+              />
+              <p
+                            id="owned-p"
+              >
+                            played 
+                            <i
+                                          class="far fa-play-circle"
+                            />
+              </p>
+              <div
+                            alt="edit a game in your collection"
+                            id="edit"
+                            onClick={[Function]}
+              />
+              <div
+                            alt="edit a game in your collection"
+                            id="add"
+                            onClick={[Function]}
+              />
+</div>,
+            <div
+              className="game-info"
+              id="game-description"
+>
+              <p />
+</div>,
+            <div
+              className="game-info"
+              id="review-cont"
+>
+              <h3>
+                            <span />
+                            /5
+              </h3>
+              <p />
+</div>,
+          ],
+          "className": "Card friends",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  coda played:
+</h3>,
+                <h3 />,
+                <img
+                  alt="game-icon"
+                  src={undefined}
+/>,
+                <p
+                  id="owned-p"
+>
+                  played 
+                  <i
+                                    class="far fa-play-circle"
+                  />
+</p>,
+                <div
+                  alt="edit a game in your collection"
+                  id="edit"
+                  onClick={[Function]}
+/>,
+                <div
+                  alt="edit a game in your collection"
+                  id="add"
+                  onClick={[Function]}
+/>,
+              ],
+              "className": "game-info",
+              "id": "game-title",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "coda played:",
+                },
+                "ref": null,
+                "rendered": "coda played:",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "game-icon",
+                  "src": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "played ",
+                    <i
+                      class="far fa-play-circle"
+/>,
+                  ],
+                  "id": "owned-p",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "played ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "class": "far fa-play-circle",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "i",
+                  },
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "edit a game in your collection",
+                  "id": "edit",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "edit a game in your collection",
+                  "id": "add",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <p />,
+              "className": "game-info",
+              "id": "game-description",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "p",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  <span />
+                  /5
+</h3>,
+                <p />,
+              ],
+              "className": "game-info",
+              "id": "review-cont",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <span />,
+                    "/5",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "span",
+                  },
+                  "/5",
+                ],
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "article",
+      },
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -547,246 +719,58 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <div
-          className="game-info"
-          id="game-title"
+      "children": <article
+        className="Card games"
 >
-          <h3 />
-          <h3 />
-          <img
-                    alt="game-icon"
-                    src={undefined}
-          />
-          <img
-                    alt="delete-game"
-                    id="delete"
-                    onClick={[Function]}
-                    src="error.svg"
-          />
-          <img
-                    alt="add-game"
-                    id="add"
-                    onClick={[Function]}
-                    src="plus.svg"
-          />
-</div>,
         <div
-          className="game-info"
-          id="game-description"
->
-          <p />
-</div>,
+                className="game-info"
+                id="game-title"
+        >
+                <h3 />
+                <h3 />
+                <img
+                        alt="game-icon"
+                        src={undefined}
+                />
+                <p
+                        id="owned-p"
+                >
+                        played 
+                        <i
+                                class="far fa-play-circle"
+                        />
+                </p>
+                <div
+                        alt="edit a game in your collection"
+                        id="edit"
+                        onClick={[Function]}
+                />
+                <div
+                        alt="edit a game in your collection"
+                        id="add"
+                        onClick={[Function]}
+                />
+        </div>
         <div
-          className="game-info"
-          id="review-cont"
->
-          <h3>
-                    <span>
-                              0
-                    </span>
-                    /5
-          </h3>
-          <p
-                    contenteditable="true"
-                    onBlur={[Function]}
-          />
-</div>,
-      ],
-      "className": "Card games",
+                className="game-info"
+                id="game-description"
+        >
+                <p />
+        </div>
+        <div
+                className="game-info"
+                id="review-cont"
+        >
+                <h3>
+                        <span />
+                        /5
+                </h3>
+                <p />
+        </div>
+</article>,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <h3 />,
-            <h3 />,
-            <img
-              alt="game-icon"
-              src={undefined}
-/>,
-            <img
-              alt="delete-game"
-              id="delete"
-              onClick={[Function]}
-              src="error.svg"
-/>,
-            <img
-              alt="add-game"
-              id="add"
-              onClick={[Function]}
-              src="plus.svg"
-/>,
-          ],
-          "className": "game-info",
-          "id": "game-title",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": null,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": undefined,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "alt": "game-icon",
-              "src": undefined,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "img",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "alt": "delete-game",
-              "id": "delete",
-              "onClick": [Function],
-              "src": "error.svg",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "img",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "alt": "add-game",
-              "id": "add",
-              "onClick": [Function],
-              "src": "plus.svg",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "img",
-          },
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <p />,
-          "className": "game-info",
-          "id": "game-description",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "p",
-        },
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <h3>
-              <span>
-                            0
-              </span>
-              /5
-</h3>,
-            <p
-              contenteditable="true"
-              onBlur={[Function]}
-/>,
-          ],
-          "className": "game-info",
-          "id": "review-cont",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <span>
-                  0
-</span>,
-                "/5",
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "0",
-                },
-                "ref": null,
-                "rendered": "0",
-                "type": "span",
-              },
-              "/5",
-            ],
-            "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": undefined,
-              "contenteditable": "true",
-              "onBlur": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "p",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "article",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -802,17 +786,23 @@ ShallowWrapper {
                         alt="game-icon"
                         src={undefined}
             />
-            <img
-                        alt="delete-game"
-                        id="delete"
+            <p
+                        id="owned-p"
+            >
+                        played 
+                        <i
+                                    class="far fa-play-circle"
+                        />
+            </p>
+            <div
+                        alt="edit a game in your collection"
+                        id="edit"
                         onClick={[Function]}
-                        src="error.svg"
             />
-            <img
-                        alt="add-game"
+            <div
+                        alt="edit a game in your collection"
                         id="add"
                         onClick={[Function]}
-                        src="plus.svg"
             />
 </div>,
           <div
@@ -826,15 +816,10 @@ ShallowWrapper {
             id="review-cont"
 >
             <h3>
-                        <span>
-                                    0
-                        </span>
+                        <span />
                         /5
             </h3>
-            <p
-                        contenteditable="true"
-                        onBlur={[Function]}
-            />
+            <p />
 </div>,
         ],
         "className": "Card games",
@@ -853,17 +838,23 @@ ShallowWrapper {
                 alt="game-icon"
                 src={undefined}
 />,
-              <img
-                alt="delete-game"
-                id="delete"
+              <p
+                id="owned-p"
+>
+                played 
+                <i
+                                class="far fa-play-circle"
+                />
+</p>,
+              <div
+                alt="edit a game in your collection"
+                id="edit"
                 onClick={[Function]}
-                src="error.svg"
 />,
-              <img
-                alt="add-game"
+              <div
+                alt="edit a game in your collection"
                 id="add"
                 onClick={[Function]}
-                src="plus.svg"
 />,
             ],
             "className": "game-info",
@@ -910,28 +901,56 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "alt": "delete-game",
-                "id": "delete",
-                "onClick": [Function],
-                "src": "error.svg",
+                "children": Array [
+                  "played ",
+                  <i
+                    class="far fa-play-circle"
+/>,
+                ],
+                "id": "owned-p",
               },
               "ref": null,
-              "rendered": null,
-              "type": "img",
+              "rendered": Array [
+                "played ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "class": "far fa-play-circle",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+              ],
+              "type": "p",
             },
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "alt": "add-game",
-                "id": "add",
+                "alt": "edit a game in your collection",
+                "id": "edit",
                 "onClick": [Function],
-                "src": "plus.svg",
               },
               "ref": null,
               "rendered": null,
-              "type": "img",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "edit a game in your collection",
+                "id": "add",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
             },
           ],
           "type": "div",
@@ -966,15 +985,10 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <h3>
-                <span>
-                                0
-                </span>
+                <span />
                 /5
 </h3>,
-              <p
-                contenteditable="true"
-                onBlur={[Function]}
-/>,
+              <p />,
             ],
             "className": "game-info",
             "id": "review-cont",
@@ -987,9 +1001,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <span>
-                    0
-</span>,
+                  <span />,
                   "/5",
                 ],
               },
@@ -1000,10 +1012,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "0",
+                    "children": undefined,
                   },
                   "ref": null,
-                  "rendered": "0",
+                  "rendered": null,
                   "type": "span",
                 },
                 "/5",
@@ -1016,8 +1028,6 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": undefined,
-                "contenteditable": "true",
-                "onBlur": [Function],
               },
               "ref": null,
               "rendered": null,
@@ -1028,6 +1038,336 @@ ShallowWrapper {
         },
       ],
       "type": "article",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <article
+          className="Card games"
+>
+          <div
+                    className="game-info"
+                    id="game-title"
+          >
+                    <h3 />
+                    <h3 />
+                    <img
+                              alt="game-icon"
+                              src={undefined}
+                    />
+                    <p
+                              id="owned-p"
+                    >
+                              played 
+                              <i
+                                        class="far fa-play-circle"
+                              />
+                    </p>
+                    <div
+                              alt="edit a game in your collection"
+                              id="edit"
+                              onClick={[Function]}
+                    />
+                    <div
+                              alt="edit a game in your collection"
+                              id="add"
+                              onClick={[Function]}
+                    />
+          </div>
+          <div
+                    className="game-info"
+                    id="game-description"
+          >
+                    <p />
+          </div>
+          <div
+                    className="game-info"
+                    id="review-cont"
+          >
+                    <h3>
+                              <span />
+                              /5
+                    </h3>
+                    <p />
+          </div>
+</article>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="game-info"
+              id="game-title"
+>
+              <h3 />
+              <h3 />
+              <img
+                            alt="game-icon"
+                            src={undefined}
+              />
+              <p
+                            id="owned-p"
+              >
+                            played 
+                            <i
+                                          class="far fa-play-circle"
+                            />
+              </p>
+              <div
+                            alt="edit a game in your collection"
+                            id="edit"
+                            onClick={[Function]}
+              />
+              <div
+                            alt="edit a game in your collection"
+                            id="add"
+                            onClick={[Function]}
+              />
+</div>,
+            <div
+              className="game-info"
+              id="game-description"
+>
+              <p />
+</div>,
+            <div
+              className="game-info"
+              id="review-cont"
+>
+              <h3>
+                            <span />
+                            /5
+              </h3>
+              <p />
+</div>,
+          ],
+          "className": "Card games",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3 />,
+                <h3 />,
+                <img
+                  alt="game-icon"
+                  src={undefined}
+/>,
+                <p
+                  id="owned-p"
+>
+                  played 
+                  <i
+                                    class="far fa-play-circle"
+                  />
+</p>,
+                <div
+                  alt="edit a game in your collection"
+                  id="edit"
+                  onClick={[Function]}
+/>,
+                <div
+                  alt="edit a game in your collection"
+                  id="add"
+                  onClick={[Function]}
+/>,
+              ],
+              "className": "game-info",
+              "id": "game-title",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": null,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "game-icon",
+                  "src": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "played ",
+                    <i
+                      class="far fa-play-circle"
+/>,
+                  ],
+                  "id": "owned-p",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "played ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "class": "far fa-play-circle",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "i",
+                  },
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "edit a game in your collection",
+                  "id": "edit",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "edit a game in your collection",
+                  "id": "add",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <p />,
+              "className": "game-info",
+              "id": "game-description",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "p",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  <span />
+                  /5
+</h3>,
+                <p />,
+              ],
+              "className": "game-info",
+              "id": "review-cont",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <span />,
+                    "/5",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "span",
+                  },
+                  "/5",
+                ],
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "article",
+      },
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
