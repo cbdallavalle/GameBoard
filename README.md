@@ -29,3 +29,6 @@ The application is now ready to run using the code ```npm start```
 ## Contributors
 
 Thank you to joshuajhun and Jeff-Duke for helping me handle the XML to JSON conversion, as well as, helping me create a smoother UI.
+
+## Screenshots
+![screencapture-localhost-3000-login-1519933765249](https://user-images.githubusercontent.com/28467245/36866260-0c1788e4-1d4f-11e8-828f-af75bf371dab.png)
