@@ -8,11 +8,11 @@ This website allows users to keep track of the board games they own, rate them, 
 
 ## Implementation
 
-The project is built in React.js with Google Firebase as a backend for user authentification and database storage. The create-react-app was used as the starter, which documentation can be found (here)[https://github.com/facebook/create-react-app]. 
+The project is built in React.js with Google Firebase as a backend for user authentification and database storage. The create-react-app was used as the starter, which documentation can be found [here](https://github.com/facebook/create-react-app). 
 
 ## API Reference
 
-The board game api is taken from (BoardGameGeek)[https://boardgamegeek.com/wiki/page/BGG_XML_API2]. Users can search for the name of a game and the api will return the names of the board games that match that searched name. Then users can click on the game they want to see, which makes an additional api call to get the details of the game. The api returns data in XML, so an XML to JSON npm package is used to convert the data from XML to a JSON object.
+The board game api is taken from [BoardGameGeek](https://boardgamegeek.com/wiki/page/BGG_XML_API2). Users can search for the name of a game and the api will return the names of the board games that match that searched name. Then users can click on the game they want to see, which makes an additional api call to get the details of the game. The api returns data in XML, so an XML to JSON npm package is used to convert the data from XML to a JSON object.
 
 ## Tests
 
