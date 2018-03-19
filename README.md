@@ -4,7 +4,7 @@ This was a two week personal project built for the Turing School of Software and
 
 ## Code Example
 
-This website allows users to keep track of the board games they own, rate them, and see what their friends are playing! The most popular website that lets people find board games, add them to a collection, rate them and friend other users is (BoardGameGeek.com)[https://boardgamegeek.com/], which is not user friendly and intimidating to new board game users. My app seeks to let new board game users come and start building a community with other board game users, so users can see what games are highly rated and what games their friends own that they can play together. 
+This website allows users to keep track of the board games they own, rate them, and see what their friends are playing! The most popular website that lets people find board games, add them to a collection, rate them and friend other users is [BoardGameGeek.com](https://boardgamegeek.com/), which is not user friendly and intimidating to new board game users. My app seeks to let new board game users come and start building a community with other board game users, so users can see what games are highly rated and what games their friends own that they can play together. 
 
 ## Implementation
 
